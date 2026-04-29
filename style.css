@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 1440px;
+  margin: auto;
+  background: #D7CCC8;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  background: #4C312A;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+}
+
+.logo {
+  font-family: 'Boogaloo';
+  font-size: 28px;
+}
+
+.navbar nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+.profile {
+  width: 35px;
+  height: 35px;
+  background: white;
+  border-radius: 50%;
+}
+
+/* ================= HERO ================= */
+.hero {
+  position: relative; /* PENTING */
+  display: flex;
+  justify-content: space-between;
+  padding: 80px 100px 160px; /* bawah ditambah buat ruang */
+}
+
+.hero-left {
+  width: 45%;
+}
+
+.hero-left h2 {
+  font-family: 'Boogaloo';
+  font-size: 52px;
+  line-height: 70px;
+  color: #3E2723;
+}
+
+.hero-left p {
+  width: 350px;
+  margin-top: 20px;
+  color: #4C312A;
+}
+
+.hero-left button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #4C312A;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-right img {
+  width: 480px;
+}
+
+/* ================= TEAR (FIX TOTAL) ================= */
+.tear-wrapper {
+  position: absolute;
+  top: 400px; /* INI KUNCI POSISI */
+  left: 0;
+  width: 100%;
+  height: 200px;
+}
+
+/* KERTAS */
+.tear-img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
+  z-index: 1;
+}
+
+/* TEKS */
+.tear-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+}
+
+.tear-text h2 {
+  font-family: 'Boogaloo';
+  font-size: 44px;
+  color: #3E2723;
+}
+
+.tear-text p {
+  margin-top: 5px;
+  color: #4C312A;
+}
+
+/* KUCING */
+.cat-left {
+  position: absolute;
+  left: 160px;
+  bottom: -20px;
+  width: 120px;
+  z-index: 3;
+}
+
+.cat-right {
+  position: absolute;
+  right: 160px;
+  bottom: -20px;
+  width: 120px;
+  z-index: 3;
+}
+
+/* ================= CONTACT ================= */
+.contact {
+  margin-top: 120px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 120px 100px 100px; /* atas ditambah biar ga nabrak */
+}
+
+.contact-left {
+  width: 40%;
+}
+
+.contact-left h2 {
+  font-family: 'Boogaloo';
+  font-size: 56px;
+  line-height: 65px;
+  color: #3E2723;
+}
+
+.contact-left p {
+  margin-top: 15px;
+  width: 300px;
+  color: #4C312A;
+}
+
+.info p {
+  margin-top: 10px;
+}
+
+/* FORM */
+.contact-right {
+  width: 50%;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #4C312A;
+  background: transparent;
+  outline: none;
+}
+
+textarea {
+  height: 120px;
+  resize: none;
+}
+
+.contact-right button {
+  margin-top: 15px;
+  padding: 8px 20px;
+  background: #4C312A;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 12px;
+  color: #4C312A;
+}
