@@ -1,208 +1,267 @@
+/* Reset & Base Styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-  width: 1440px;
-  margin: auto;
-  background: #D7CCC8;
-  font-family: 'Poppins', sans-serif;
+    background-color: #d7ccc8;
+    color: #3e2723;
 }
 
-/* ================= NAVBAR ================= */
+/* Navbar */
 .navbar {
-  background: #4C312A;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: #4c312a;
+    color: white;
 }
 
 .logo {
-  font-family: 'Boogaloo';
-  font-size: 28px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.navbar nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 18px;
 }
 
-.profile {
-  width: 35px;
-  height: 35px;
-  background: white;
-  border-radius: 50%;
+.user-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
 }
 
-/* ================= HERO ================= */
-.hero {
-  position: relative; /* PENTING */
-  display: flex;
-  justify-content: space-between;
-  padding: 80px 100px 160px; /* bawah ditambah buat ruang */
+/* Main Container */
+.container {
+    display: flex;
+    min-height: 80vh;
+    align-items: center;
+    padding: 40px 60px;
+    gap: 50px;
 }
 
-.hero-left {
-  width: 45%;
+.login-section {
+    flex: 1;
+    max-width: 500px;
 }
 
-.hero-left h2 {
-  font-family: 'Boogaloo';
-  font-size: 52px;
-  line-height: 70px;
-  color: #3E2723;
+.image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
-.hero-left p {
-  width: 350px;
-  margin-top: 20px;
-  color: #4C312A;
+.building-img {
+    max-width: 100%;
+    height: auto;
 }
 
-.hero-left button {
-  margin-top: 20px;
-  padding: 12px 24px;
-  background: #4C312A;
-  color: white;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
+/* Form Styles */
+.title { font-size: 48px; margin-bottom: 10px; }
+.subtitle { margin-bottom: 30px; color: #5d4037; }
+
+.input-group {
+    margin-bottom: 20px;
 }
 
-.hero-right img {
-  width: 480px;
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
 }
 
-/* ================= TEAR (FIX TOTAL) ================= */
-.tear-wrapper {
-  position: absolute;
-  top: 400px; /* INI KUNCI POSISI */
-  left: 0;
-  width: 100%;
-  height: 200px;
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cdcdcd;
+    border-radius: 8px;
+    box-shadow: inset 0px 2px 4px rgba(0,0,0,0.1);
 }
 
-/* KERTAS */
-.tear-img {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1200px;
-  z-index: 1;
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
 }
 
-/* TEKS */
-.tear-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  text-align: center;
+.forgot-pass { color: #3e2723; text-decoration: none; }
+
+/* Buttons */
+button {
+    width: 100%;
+    height: 45px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 15px;
+    transition: 0.3s;
 }
 
-.tear-text h2 {
-  font-family: 'Boogaloo';
-  font-size: 44px;
-  color: #3E2723;
+.btn-primary {
+    background-color: #4c312a;
+    color: white;
+}
+.google-btn-link {
+    text-decoration: none;
+    display: block; /* Agar mengikuti lebar form */
+    width: 100%;
 }
 
-.tear-text p {
-  margin-top: 5px;
-  color: #4C312A;
+.btn-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    height: 45px;
+    background-color: #ffffff;
+    border: 1px solid #cdcdcd;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* KUCING */
-.cat-left {
-  position: absolute;
-  left: 160px;
-  bottom: -20px;
-  width: 120px;
-  z-index: 3;
+.btn-google:hover {
+    background-color: #f7f7f7;
 }
 
-.cat-right {
-  position: absolute;
-  right: 160px;
-  bottom: -20px;
-  width: 120px;
-  z-index: 3;
+.btn-google img {
+    width: 20px;
+    height: 20px;
 }
 
-/* ================= CONTACT ================= */
-.contact {
-  margin-top: 120px;
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  padding: 120px 100px 100px; /* atas ditambah biar ga nabrak */
+.btn-google span {
+    color: #3e2723;
+    font-size: 16px;
+    font-weight: 500;
 }
 
-.contact-left {
-  width: 40%;
+/* Container untuk tombol Nature, Coffee, Places */
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 60px;
 }
 
-.contact-left h2 {
-  font-family: 'Boogaloo';
-  font-size: 56px;
-  line-height: 65px;
-  color: #3E2723;
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    background-color: #4c312a;
+    padding: 10px 20px;
+    border-radius: 20px;
 }
 
-.contact-left p {
-  margin-top: 15px;
-  width: 300px;
-  color: #4C312A;
+.filter-btn {
+    background: none;
+    border: none;
+    color: #d7ccc8;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-.info p {
-  margin-top: 10px;
+.filter-btn.active {
+    color: #ffcc80; /* Warna kuning emas untuk Nature */
+    font-weight: bold;
 }
 
-/* FORM */
-.contact-right {
-  width: 50%;
+/* Container Grid 3 Kolom */
+.spots-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Membuat 3 kolom */
+    gap: 30px;
+    padding: 0 60px 60px 60px;
 }
 
-.row {
-  display: flex;
-  gap: 20px;
+/* Styling Card */
+.spot-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  border: 1px solid #4C312A;
-  background: transparent;
-  outline: none;
+.spot-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
-textarea {
-  height: 120px;
-  resize: none;
+.spot-info {
+    padding: 15px;
+    position: relative;
 }
 
-.contact-right button {
-  margin-top: 15px;
-  padding: 8px 20px;
-  background: #4C312A;
-  color: white;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
+.category-label {
+    font-size: 12px;
+    color: #8b7d79;
 }
 
-/* ================= FOOTER ================= */
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 12px;
-  color: #4C312A;
+.spot-info h3 {
+    margin: 5px 0;
+    font-size: 18px;
+    color: #3e2723;
+}
+
+.spot-info p {
+    font-size: 14px;
+    color: #8b7d79;
+}
+
+.btn-details {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    background-color: #4c312a;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* Responsive: Jika layar kecil, jadi 1 kolom */
+@media (max-width: 900px) {
+    .spots-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .filter-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.btn-google img { width: 20px; }
+
+.signup-text { text-align: center; }
+.signup-text a { color: #5990ff; text-decoration: none; font-weight: bold; }
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 14px;
+}
+
+/* RESPONSIVE BREAKPOINT */
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .image-section { order: -1; } /* Gambar pindah ke atas di mobile */
+    .navbar { padding: 20px; }
+    .nav-links { display: none; } /* Sembunyikan menu di mobile atau buat hamburger */
+    .title { font-size: 32px; }
 }
