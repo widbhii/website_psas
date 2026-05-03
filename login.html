@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8" />
+    <title>ChillZOne Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <div class="LOGIN">
+        <header class="navbar">
+            <div class="logo">ChillZOne</div>
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Spots</a>
+                <a href="#">Review</a>
+                <a href="#">Article</a>
+            </nav>
+            <div class="user-action">
+                <img class="user-icon" src="user icon 1.png" alt="User" />
+            </div>
+        </header>
+
+        <main class="container">
+            <section class="login-section">
+                <div class="login-header">
+                    <h1 class="title">Welcome Back</h1>
+                    <p class="subtitle">Welcome back! Please enter your details.</p>
+                </div>
+
+                <form class="login-form">
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" placeholder="Enter your email" required />
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input id="password" type="password" placeholder="••••••••" required />
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" id="remember-me" />
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-pass">Forgot Password?</a>
+                    </div>
+
+                    <button class="btn-primary" type="submit">Create Account</button>
+                    
+                    <a href="https://accounts.google.com/v3/signin/identifier?authuser=0&continue=https%3A%2F%2Fmyaccount.google.com%2F&ec=GAlAwE&hl=en&service=accountsettings&flowName=GlifWebSignIn&flowEntry=AddSession" class="google-btn-link">
+                        <button class="btn-google" type="button">
+                            <img src="google.png" alt="Google Logo" />
+                            <span>Sign In with Google</span>
+                        </button>
+                    </a>
+
+                    <p class="signup-text">
+                        Don’t have an account? <a href="#">Sign Up</a>
+                    </p>
+                </form>
+            </section>
+
+            <section class="image-section">
+                <img class="building-img" src="gambar 1.png" alt="Illustration" />
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>© 2026 ChillZOne. All rights reserved.<br/>Create your vibe • Zone your moment • Own your experience</p>
+        </footer>
+    </div>
+</body>
+</html>
