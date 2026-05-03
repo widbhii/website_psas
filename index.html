@@ -4,52 +4,61 @@
   <meta charset="UTF-8">
   <title>ChillZone</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Poppins:wght@300;400;500&family=Alatsi&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- NAVBAR -->
 <header class="navbar">
-  <h1 class="logo">ChillZone</h1>
+  <div class="container nav-wrap">
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Spots</a>
-    <a href="#">Review</a>
-    <a href="#">Article</a>
-  </nav>
+    <h1 class="logo">ChillZone</h1>
 
-  <div class="profile"></div>
+    <nav class="menu">
+      <a class="active">Home</a>
+      <a>Spots</a>
+      <a>Review</a>
+      <a>Article</a>
+    </nav>
+
+    <img src="user.png" class="profile">
+  </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
+  <div class="container hero-wrap">
 
-  <div class="hero-left">
-    <h2>Create your vibe</h2>
-    <h2>Zone your moment</h2>
-    <h2>Own your experience</h2>
+    <div class="hero-left">
+      <h2>Create your vibe</h2>
+      <h2>Zone your moment</h2>
+      <h2>Own your experience</h2>
 
-    <p>
-      Find your favorite hangout spot, explore vibes,
-      and book your moment easily.
-    </p>
+      <p>
+        Find your favorite hangout spot, explore vibes,
+        and book your moment easily.
+      </p>
 
-    <button>Find Your Spot</button>
+      <button class="btn">Find Your Spot</button>
+    </div>
+
+    <div class="hero-right">
+      <img src="building.png" alt="">
+    </div>
+
   </div>
 
-  <div class="hero-right">
-    <img src="building.png">
-  </div>
-
-  <!-- TEAR (CUMA SATU DI SINI) -->
-  <div class="tear-wrapper">
-    <img src="tear.png" class="tear-img">
+  <!-- TEAR -->
+  <div class="tear-section">
+    <img src="tear.png" class="tear">
 
     <div class="tear-text">
       <h2>Get to know ChillZone better</h2>
       <p>Scroll down to see more</p>
+      <img src="element2.png" class="spark">
     </div>
 
     <img src="element1.png" class="cat-left">
@@ -60,39 +69,53 @@
 
 <!-- CONTACT -->
 <section class="contact">
-  <div class="contact-left">
-    <h2>Connect<br>With Us</h2>
+  <div class="container contact-wrap">
 
-    <p>We’d love to hear from you!</p>
-    <p>
-      If you have any questions, feedback, or
-      just want to connect, feel free to fill out
-      the form and we’ll get back to you soon.
-    </p>
+    <div class="contact-left">
+      <h2>Connect<br>With Us</h2>
 
-    <div class="info">
-      <p>📧 chillzone@gmail.com</p>
-      <p>📞 0812345678910</p>
-      <p>📷 @chillzone_</p>
-    </div>
-  </div>
+      <p class="desc">We’d love to hear from you!</p>
 
-  <div class="contact-right">
-    <form>
-      <div class="row">
-        <input type="text" placeholder="First Name">
-        <input type="text" placeholder="Last Name">
+      <p class="desc2">
+        If you have any questions, feedback, or just want to connect,
+        feel free to fill out the form and we’ll get back to you soon.
+      </p>
+
+      <div class="info">
+        <div class="info-item">
+          <img src="email.png">
+          <span>chillzone@gmail.com</span>
+        </div>
+
+        <div class="info-item">
+          <img src="phone.png">
+          <span>081234567891</span>
+        </div>
+
+        <div class="info-item">
+          <img src="instagram.png">
+          <span>@chillzone_</span>
+        </div>
       </div>
+    </div>
 
-      <input type="email" placeholder="Email">
-      <textarea placeholder="Message"></textarea>
+    <div class="contact-right">
+      <form>
+        <div class="row">
+          <input type="text" placeholder="First Name">
+          <input type="text" placeholder="Last Name">
+        </div>
 
-      <button type="submit">Send</button>
-    </form>
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Message"></textarea>
+
+        <button type="submit" class="btn">Send</button>
+      </form>
+    </div>
+
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>© 2026 ChillZone. All rights reserved.</p>
   <p>Create your vibe · Zone your moment · Own your experience</p>
