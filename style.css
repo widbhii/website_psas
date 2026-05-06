@@ -1,229 +1,48 @@
-/* RESET */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 * {
-  margin: 0;
-  padding: 0;
+  -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
-
+html,
 body {
-  background: #CFC3BD;
-  font-family: 'Poppins', sans-serif;
-  color: #4C312A;
+  margin: 0px;
+  height: 100%;
 }
-
-/* CONTAINER */
-.container {
-  max-width: 1440px;
-  margin: auto;
-  padding: 0 60px;
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
 }
-
-/* NAVBAR */
-.navbar {
-  background: #4C312A;
-}
-
-.nav-inner {
-  padding: 0 60px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-family: 'Boogaloo';
-  color: white;
-  font-size: 28px;
-}
-
-.menu {
-  display: flex;
-  gap: 40px;
-}
-
-.menu a {
-  font-family: 'Alatsi';
-  color: white;
+a {
   text-decoration: none;
-  font-size: 16px;
 }
+/* @FONTWARNING[{"type": "restricted", "family": "Boldonse-Regular", "weight": "400", "style": "normal", "allowsCrossOrigin": false}] */
 
-.menu .active {
-  color: #FFD54F;
+@font-face {
+  font-family: "Boldonse-Regular";
+  src: local("Boldonse-Regular");
 }
+/* @FONTWARNING[{"type": "restricted", "family": "Alatsi-Regular", "weight": "400", "style": "normal", "allowsCrossOrigin": false}] */
 
-.profile {
-  width: 36px;
+@font-face {
+  font-family: "Alatsi-Regular";
+  src: local("Alatsi-Regular");
 }
+/* @FONTWARNING[{"type": "restricted", "family": "Boogaloo-Regular", "weight": "400", "style": "normal", "allowsCrossOrigin": false}] */
 
-/* HERO */
-.hero {
-  padding: 60px 0 20px;
+@font-face {
+  font-family: "Boogaloo-Regular";
+  src: local("Boogaloo-Regular");
 }
+/* @FONTWARNING[{"type": "restricted", "family": "Poppins-Regular", "weight": "400", "style": "normal", "allowsCrossOrigin": false}] */
 
-.hero-wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
+@font-face {
+  font-family: "Poppins-Regular";
+  src: local("Poppins-Regular");
 }
+/* @FONTWARNING[{"type": "restricted", "family": "Poppins-SemiBold", "weight": "600", "style": "normal", "allowsCrossOrigin": false}] */
 
-.hero-left {
-  max-width: 500px;
-}
-
-.hero-left h2 {
-  font-family: 'Boogaloo';
-  font-size: 60px;
-  line-height: 70px;
-}
-
-.hero-left p {
-  margin-top: 20px;
-  max-width: 400px;
-}
-
-/* BUTTON */
-.btn {
-  margin-top: 20px;
-  padding: 12px 26px;
-  background: #4C312A;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  font-family: 'Alatsi';
-  cursor: pointer;
-}
-
-.hero-right img {
-  width: 520px;
-}
-
-/* TEAR */
-.tear-section {
-  position: relative;
-  margin-top: 20px;
-}
-
-.tear {
-  width: 100%;
-  display: block;
-  position: relative;
-  z-index: 1;
-}
-
-/* TEXT */
-.tear-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  text-align: center;
-}
-
-.tear-text h2 {
-  font-family: 'Boogaloo';
-  font-size: 40px;
-}
-
-.tear-text p {
-  margin-top: 8px;
-  font-size: 14px;
-}
-
-/* SPARK */
-.spark {
-  position: absolute;
-  right: -70px;
-  top: -20px;
-  width: 70px;
-}
-
-.cat-left {
-  position: absolute;
-  left: 120px;
-  top: 500px; /* ini yang bikin naik */
-  width: 120px;
-  z-index: 3;
-}
-
-.cat-right {
-  position: absolute;
-  right: 120px;
-  top: 500px;
-  width: 120px;
-  z-index: 3;
-}
-
-/* CONTACT */
-.contact {
-  padding: 100px 0 60px;
-}
-
-.contact-wrap {
-  display: flex;
-  justify-content: space-between;
-  gap: 60px;
-}
-
-.contact-left h2 {
-  font-family: 'Boogaloo';
-  font-size: 56px;
-}
-
-.desc {
-  margin-top: 20px;
-}
-
-.desc2 {
-  margin-top: 10px;
-  max-width: 300px;
-}
-
-.info-item {
-  display: flex;
-  gap: 12px;
-  margin-top: 15px;
-}
-
-.info-item img {
-  width: 36px;
-}
-
-/* FORM */
-.contact-right {
-  width: 500px;
-}
-
-.row {
-  display: flex;
-  gap: 20px;
-}
-
-input,
-textarea {
-  width: 100%;
-  margin-top: 10px;
-  padding: 10px;
-  border: 1px solid #4C312A;
-  border-radius: 6px;
-  background: transparent;
-}
-
-textarea {
-  height: 120px;
-}
-
-.send {
-  float: right;
-  margin-top: 20px;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 30px;
-  font-size: 12px;
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: local("Poppins-SemiBold");
 }
