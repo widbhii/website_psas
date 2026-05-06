@@ -1,267 +1,48 @@
-/* Reset & Base Styles */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
 }
-
+html,
 body {
-    background-color: #d7ccc8;
-    color: #3e2723;
+  margin: 0px;
+  height: 100%;
 }
-
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 60px;
-    background-color: #4c312a;
-    color: white;
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
 }
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
+a {
+  text-decoration: none;
 }
+/* @FONTWARNING[{"type": "restricted", "family": "Boldonse-Regular", "weight": "400", "style": "normal", "allowsCrossOrigin": false}] */
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    margin-left: 30px;
-    font-size: 18px;
+@font-face {
+  font-family: "Boldonse-Regular";
+  src: local("Boldonse-Regular");
 }
+/* @FONTWARNING[{"type": "restricted", "family": "Alatsi-Regular", "weight": "400", "style": "normal", "allowsCrossOrigin": false}] */
 
-.user-icon {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
+@font-face {
+  font-family: "Alatsi-Regular";
+  src: local("Alatsi-Regular");
 }
+/* @FONTWARNING[{"type": "restricted", "family": "Boogaloo-Regular", "weight": "400", "style": "normal", "allowsCrossOrigin": false}] */
 
-/* Main Container */
-.container {
-    display: flex;
-    min-height: 80vh;
-    align-items: center;
-    padding: 40px 60px;
-    gap: 50px;
+@font-face {
+  font-family: "Boogaloo-Regular";
+  src: local("Boogaloo-Regular");
 }
+/* @FONTWARNING[{"type": "restricted", "family": "Poppins-Regular", "weight": "400", "style": "normal", "allowsCrossOrigin": false}] */
 
-.login-section {
-    flex: 1;
-    max-width: 500px;
+@font-face {
+  font-family: "Poppins-Regular";
+  src: local("Poppins-Regular");
 }
+/* @FONTWARNING[{"type": "restricted", "family": "Poppins-SemiBold", "weight": "600", "style": "normal", "allowsCrossOrigin": false}] */
 
-.image-section {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.building-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Form Styles */
-.title { font-size: 48px; margin-bottom: 10px; }
-.subtitle { margin-bottom: 30px; color: #5d4037; }
-
-.input-group {
-    margin-bottom: 20px;
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #cdcdcd;
-    border-radius: 8px;
-    box-shadow: inset 0px 2px 4px rgba(0,0,0,0.1);
-}
-
-.form-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
-}
-
-.forgot-pass { color: #3e2723; text-decoration: none; }
-
-/* Buttons */
-button {
-    width: 100%;
-    height: 45px;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    margin-bottom: 15px;
-    transition: 0.3s;
-}
-
-.btn-primary {
-    background-color: #4c312a;
-    color: white;
-}
-.google-btn-link {
-    text-decoration: none;
-    display: block; /* Agar mengikuti lebar form */
-    width: 100%;
-}
-
-.btn-google {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    width: 100%;
-    height: 45px;
-    background-color: #ffffff;
-    border: 1px solid #cdcdcd;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn-google:hover {
-    background-color: #f7f7f7;
-}
-
-.btn-google img {
-    width: 20px;
-    height: 20px;
-}
-
-.btn-google span {
-    color: #3e2723;
-    font-size: 16px;
-    font-weight: 500;
-}
-
-/* Container untuk tombol Nature, Coffee, Places */
-.filter-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 60px;
-}
-
-.filter-buttons {
-    display: flex;
-    gap: 10px;
-    background-color: #4c312a;
-    padding: 10px 20px;
-    border-radius: 20px;
-}
-
-.filter-btn {
-    background: none;
-    border: none;
-    color: #d7ccc8;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.filter-btn.active {
-    color: #ffcc80; /* Warna kuning emas untuk Nature */
-    font-weight: bold;
-}
-
-/* Container Grid 3 Kolom */
-.spots-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Membuat 3 kolom */
-    gap: 30px;
-    padding: 0 60px 60px 60px;
-}
-
-/* Styling Card */
-.spot-card {
-    background-color: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.spot-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.spot-info {
-    padding: 15px;
-    position: relative;
-}
-
-.category-label {
-    font-size: 12px;
-    color: #8b7d79;
-}
-
-.spot-info h3 {
-    margin: 5px 0;
-    font-size: 18px;
-    color: #3e2723;
-}
-
-.spot-info p {
-    font-size: 14px;
-    color: #8b7d79;
-}
-
-.btn-details {
-    position: absolute;
-    right: 15px;
-    bottom: 15px;
-    background-color: #4c312a;
-    color: white;
-    border: none;
-    padding: 5px 15px;
-    border-radius: 5px;
-    font-size: 12px;
-    cursor: pointer;
-}
-
-/* Responsive: Jika layar kecil, jadi 1 kolom */
-@media (max-width: 900px) {
-    .spots-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .filter-container {
-        flex-direction: column;
-        gap: 20px;
-    }
-}
-
-.btn-google img { width: 20px; }
-
-.signup-text { text-align: center; }
-.signup-text a { color: #5990ff; text-decoration: none; font-weight: bold; }
-
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 40px;
-    font-size: 14px;
-}
-
-/* RESPONSIVE BREAKPOINT */
-@media (max-width: 992px) {
-    .container {
-        flex-direction: column;
-        padding: 20px;
-    }
-    .image-section { order: -1; } /* Gambar pindah ke atas di mobile */
-    .navbar { padding: 20px; }
-    .nav-links { display: none; } /* Sembunyikan menu di mobile atau buat hamburger */
-    .title { font-size: 32px; }
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: local("Poppins-SemiBold");
 }
