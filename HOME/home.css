@@ -1,0 +1,225 @@
+/* HERO */
+
+.hero-wrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 40px;
+}
+
+.hero-left{
+  max-width: 500px;
+}
+
+.hero-left h2{
+  font-family: 'Boogaloo', cursive;
+  font-size: 60px;
+
+  line-height: 70px;
+}
+
+.hero-left p{
+  margin-top: 20px;
+
+  max-width: 400px;
+
+  font-size: 16px;
+  line-height: 28px;
+}
+
+/* HERO IMAGE */
+
+.hero-right img{
+  width: 620px;
+}
+
+/* =========================
+   TEAR SECTION
+========================= */
+
+.tear-section{
+  position: relative;
+  margin-top: 20px;
+}
+
+.tear{
+  width: 100%;
+  display: block;
+
+  position: relative;
+  z-index: 1;
+}
+
+/* TEAR TEXT */
+
+.tear-text{
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 2;
+
+  text-align: center;
+}
+
+.tear-text h2{
+  font-family: 'Boogaloo', cursive;
+  font-size: 40px;
+}
+
+.tear-text p{
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* SPARK */
+
+.spark{
+  position: absolute;
+
+  right: -70px;
+  top: -20px;
+
+  width: 70px;
+}
+
+/* CAT */
+
+.cat-left{
+  position: absolute;
+
+  left: 120px;
+  top: 500px;
+
+  width: 120px;
+
+  z-index: 3;
+}
+
+.cat-right{
+  position: absolute;
+
+  right: 120px;
+  top: 500px;
+
+  width: 120px;
+
+  z-index: 3;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+  padding: 100px 0 60px;
+}
+
+.contact-wrap{
+  display: flex;
+  justify-content: space-between;
+
+  gap: 60px;
+}
+
+/* LEFT */
+
+.contact-left h2{
+  font-family: 'Boogaloo', cursive;
+  font-size: 56px;
+
+  line-height: 60px;
+}
+
+.desc{
+  margin-top: 20px;
+}
+
+.desc2{
+  margin-top: 10px;
+
+  max-width: 300px;
+
+  line-height: 28px;
+}
+
+/* INFO */
+
+.info{
+  margin-top: 30px;
+}
+
+.info-item{
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 16px;
+}
+
+.info-item img{
+  width: 36px;
+}
+
+.info-item span{
+  font-size: 15px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.contact-right{
+  width: 500px;
+}
+
+.row{
+  display: flex;
+  gap: 20px;
+}
+
+/* INPUT */
+
+input,
+textarea{
+  width: 100%;
+
+  margin-top: 12px;
+  padding: 12px 14px;
+
+  border: 1px solid #4C312A;
+  border-radius: 8px;
+
+  background: transparent;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+
+  outline: none;
+}
+
+/* FOCUS */
+
+input:focus,
+textarea:focus{
+  border-color: #2F1D19;
+}
+
+/* TEXTAREA */
+
+textarea{
+  height: 120px;
+  resize: none;
+}
+
+/* SEND BUTTON */
+
+.send{
+  float: right;
+  margin-top: 20px;
+}

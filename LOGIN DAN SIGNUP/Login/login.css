@@ -1,7 +1,8 @@
 /* =========================
    BASE
 ========================= */
-body {
+
+body{
   background: #CFC3BD;
   color: #4C312A;
   font-family: 'Poppins', sans-serif;
@@ -10,52 +11,64 @@ body {
 /* =========================
    SECTION
 ========================= */
-.signup-section {
+
+.login{
   padding: 60px 0;
 }
 
 /* =========================
    LAYOUT
 ========================= */
-.signup-wrap {
+
+.login-wrap{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 50px;
+
+  gap: 40px;
 }
 
 /* =========================
    LEFT
 ========================= */
-.signup-left {
+
+.login-left{
   width: 420px;
 }
 
 /* TITLE */
-.signup-left h2 {
+
+.login-left h2{
   font-family: 'Boogaloo', cursive;
   font-size: 58px;
+
   text-align: center;
+
   margin-bottom: 10px;
 }
 
 /* SUBTITLE */
-.signup-left p {
+
+.login-left p{
   font-size: 16px;
   text-align: center;
+
   margin-bottom: 28px;
 }
 
 /* =========================
    FORM
 ========================= */
-.signup-left form {
+
+.login-left form{
   width: 100%;
 }
 
 /* LABEL */
-.signup-left label {
+
+.login-left label{
   display: block;
+
   margin-top: 16px;
   margin-bottom: 8px;
 
@@ -66,11 +79,12 @@ body {
 /* =========================
    INPUT
 ========================= */
-.signup-left input[type="text"],
-.signup-left input[type="email"],
-.signup-left input[type="password"] {
+
+.login-left input[type="email"],
+.login-left input[type="password"]{
   width: 100%;
   height: 50px;
+
   padding: 0 16px;
 
   border: 1px solid #7A5A50;
@@ -80,29 +94,21 @@ body {
 
   color: #4C312A;
   font-size: 15px;
+
   outline: none;
 }
 
-.signup-left input::placeholder {
+.login-left input::placeholder{
   color: #8B7A74;
   font-family: 'Poppins', sans-serif;
 }
 
 /* =========================
-   PASSWORD NOTE
-========================= */
-.password-note {
-  margin-top: 8px;
-  font-size: 13px !important;
-  text-align: left !important;
-  color: #6F5B55;
-}
-
-/* =========================
    BUTTON
 ========================= */
-.signup-left .btn,
-.google-btn {
+
+.login-btn,
+.google-btn{
   width: 100%;
   height: 48px;
 
@@ -118,36 +124,104 @@ body {
   cursor: pointer;
 }
 
-/* CREATE ACCOUNT */
-.signup-left .btn {
+/* LOGIN BUTTON */
+
+.login-btn{
   margin-top: 20px;
+
   background: #4C312A;
   color: white;
-  border: none;
+
+  text-decoration: none;
+
+  transition: 0.25s ease;
+}
+
+.login-btn:hover{
+  background: #3A241F;
 }
 
 /* GOOGLE */
-.google-btn {
+
+.google-btn{
   margin-top: 12px;
-  margin-bottom: 20px;
 
   background: white;
+
   gap: 8px;
+
+  border: 1px solid #D7D7D7;
 }
 
-.google-btn img {
+.google-btn img{
   width: 18px;
 }
 
 /* =========================
-   LOGIN TEXT
+   EXTRA
 ========================= */
-.login-text {
+
+.extra{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 16px;
+}
+
+/* REMEMBER */
+
+.remember{
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  font-family: 'Boogaloo', cursive;
+  font-size: 20px;
+
+  cursor: pointer;
+
+  margin: 0;
+}
+
+/* CHECKBOX */
+
+.remember input{
+  width: 17px;
+  height: 17px;
+
+  margin: 0;
+
+  accent-color: #4C312A;
+}
+
+/* FORGOT */
+
+.forgot{
+  font-family: 'Boogaloo', cursive;
+  font-size: 20px;
+
+  color: #4C312A;
+  text-decoration: none;
+}
+
+.forgot:hover{
+  text-decoration: underline;
+}
+
+/* =========================
+   SIGNUP
+========================= */
+
+.signup{
+  margin-top: 24px;
+
   text-align: center;
   font-size: 15px;
 }
 
-.login-text a {
+.signup a{
   color: #4D7CFE;
   text-decoration: none;
 }
@@ -155,15 +229,19 @@ body {
 /* =========================
    IMAGE
 ========================= */
-.signup-right img {
-  width: 560px;
+
+.login-right img{
+  width: 640px;
 }
 
 /* =========================
    FOOTER
 ========================= */
-footer {
+
+footer{
   text-align: center;
+
   padding: 25px;
+
   font-size: 12px;
 }

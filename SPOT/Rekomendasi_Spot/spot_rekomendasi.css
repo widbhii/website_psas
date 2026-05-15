@@ -55,31 +55,28 @@ body{
   gap: 70px;
 }
 
-/* BUTTON */
+/* LINK */
 
-.category-box button{
-  border: none;
-  background: transparent;
-
+.category-box a{
   color: white;
+
+  text-decoration: none;
 
   font-family: 'Alatsi', sans-serif;
   font-size: 24px;
-
-  cursor: pointer;
 
   transition: 0.2s ease;
 }
 
 /* ACTIVE */
 
-.category-box button.active{
+.category-box a.active{
   color: #FFD97C;
 }
 
 /* HOVER */
 
-.category-box button:hover{
+.category-box a:hover{
   color: #FFD97C;
 }
 
@@ -162,6 +159,8 @@ body{
 ========================= */
 
 .spot-card{
+  position: relative;
+
   width: 390px;
 
   background: white;
@@ -170,6 +169,58 @@ body{
   border-radius: 18px;
 
   overflow: hidden;
+
+  transition: 0.25s ease;
+}
+
+.spot-card:hover{
+  transform: translateY(-4px);
+}
+
+/* =========================
+   SAVE BUTTON
+========================= */
+
+.save-toggle{
+  display: none;
+}
+
+.save-btn{
+  position: absolute;
+
+  top: 16px;
+  right: 16px;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: rgba(76, 49, 42, 0.95);
+  color: #FFD97C;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  z-index: 10;
+
+  transition: 0.25s ease;
+}
+
+.save-btn:hover{
+  transform: scale(1.08);
+}
+
+.save-toggle:checked + .save-btn{
+  background: #FFD97C;
+  color: #4C312A;
+
+  box-shadow: 0 0 10px rgba(255, 217, 124, 0.7);
 }
 
 /* =========================
