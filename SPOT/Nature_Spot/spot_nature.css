@@ -1,0 +1,320 @@
+/* =========================
+   BASE
+========================= */
+
+body{
+  margin: 0;
+  background: #D7CCC8;
+  color: #3E2723;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   SPOTS
+========================= */
+
+.spots{
+  width: 1280px;
+  min-height: 1186px;
+
+  margin: auto;
+
+  padding: 140px 0 90px;
+}
+
+/* =========================
+   TOP
+========================= */
+
+.spots-top{
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 80px;
+}
+
+/* =========================
+   CATEGORY
+========================= */
+
+.category-box{
+  width: 470px;
+  height: 62px;
+
+  background: #4C312A;
+
+  border-radius: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 70px;
+}
+
+/* LINK */
+
+.category-box a{
+  color: white;
+
+  text-decoration: none;
+
+  font-family: 'Alatsi', sans-serif;
+  font-size: 24px;
+
+  transition: 0.2s ease;
+}
+
+/* ACTIVE */
+
+.category-box a.active{
+  color: #FFD97C;
+}
+
+/* HOVER */
+
+.category-box a:hover{
+  color: #FFD97C;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box{
+  position: absolute;
+  right: 0;
+
+  width: 300px;
+  height: 54px;
+
+  border: 1.5px solid #4C312A;
+  border-radius: 18px;
+
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 16px;
+}
+
+.search-icon{
+  width: 24px;
+  height: 24px;
+
+  margin-right: 10px;
+}
+
+.search-box input{
+  flex: 1;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  padding: 0 12px;
+
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+
+  color: #3E2723;
+}
+
+.search-box input::placeholder{
+  color: #7B625B;
+}
+
+.filter-btn{
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.filter-btn img{
+  width: 24px;
+  height: 24px;
+}
+
+/* =========================
+   CARD WRAP
+========================= */
+
+.card-wrap{
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: space-between;
+
+  row-gap: 80px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.spot-card{
+  position: relative;
+
+  width: 390px;
+
+  background: white;
+
+  border: 1.5px solid #4C312A;
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  transition: 0.25s ease;
+}
+
+/* HOVER */
+
+.spot-card:hover{
+  transform: translateY(-4px);
+}
+
+/* =========================
+   SAVE BUTTON
+========================= */
+
+.save-toggle{
+  display: none;
+}
+
+.save-btn{
+  position: absolute;
+
+  top: 16px;
+  right: 16px;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: rgba(76, 49, 42, 0.95);
+  color: #FFD97C;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  z-index: 10;
+
+  transition: 0.25s ease;
+}
+
+/* HOVER STAR */
+
+.save-btn:hover{
+  transform: scale(1.08);
+}
+
+/* ACTIVE STAR */
+
+.save-toggle:checked + .save-btn{
+  background: #FFD97C;
+  color: #4C312A;
+
+  box-shadow: 0 0 10px rgba(255, 217, 124, 0.7);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.card-img{
+  width: 100%;
+  height: 235px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.card-content{
+  padding: 20px;
+}
+
+/* TAG */
+
+.tag{
+  font-size: 13px;
+
+  margin-bottom: 8px;
+}
+
+/* TITLE */
+
+.card-content h3{
+  font-family: 'Boogaloo', cursive;
+  font-size: 32px;
+
+  margin: 0 0 10px;
+}
+
+/* LOCATION */
+
+.location{
+  font-size: 14px;
+
+  margin-bottom: 22px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn-wrap{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-content button{
+  width: 95px;
+  height: 34px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #4C312A;
+  color: white;
+
+  font-family: 'Alatsi', sans-serif;
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.card-content button:hover{
+  background: #3A241F;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  text-align: center;
+
+  padding: 30px 20px;
+
+  font-size: 13px;
+  color: #3E2723;
+}
