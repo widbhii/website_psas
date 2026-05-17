@@ -1,0 +1,247 @@
+/* =========================
+   BASE
+========================= */
+
+body{
+  background: #CFC3BD;
+  color: #4C312A;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.login{
+  padding: 60px 0;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.login-wrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 40px;
+}
+
+/* =========================
+   LEFT
+========================= */
+
+.login-left{
+  width: 420px;
+}
+
+/* TITLE */
+
+.login-left h2{
+  font-family: 'Boogaloo', cursive;
+  font-size: 58px;
+
+  text-align: center;
+
+  margin-bottom: 10px;
+}
+
+/* SUBTITLE */
+
+.login-left p{
+  font-size: 16px;
+  text-align: center;
+
+  margin-bottom: 28px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.login-left form{
+  width: 100%;
+}
+
+/* LABEL */
+
+.login-left label{
+  display: block;
+
+  margin-top: 16px;
+  margin-bottom: 8px;
+
+  font-size: 20px;
+  font-family: 'Boogaloo', cursive;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.login-left input[type="email"],
+.login-left input[type="password"]{
+  width: 100%;
+  height: 50px;
+
+  padding: 0 16px;
+
+  border: 1px solid #7A5A50;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #4C312A;
+  font-size: 15px;
+
+  outline: none;
+}
+
+.login-left input::placeholder{
+  color: #8B7A74;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.login-btn,
+.google-btn{
+  width: 100%;
+  height: 48px;
+
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Alatsi', sans-serif;
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+/* LOGIN BUTTON */
+
+.login-btn{
+  margin-top: 20px;
+
+  background: #4C312A;
+  color: white;
+
+  text-decoration: none;
+
+  transition: 0.25s ease;
+}
+
+.login-btn:hover{
+  background: #3A241F;
+}
+
+/* GOOGLE */
+
+.google-btn{
+  margin-top: 12px;
+
+  background: white;
+
+  gap: 8px;
+
+  border: 1px solid #D7D7D7;
+}
+
+.google-btn img{
+  width: 18px;
+}
+
+/* =========================
+   EXTRA
+========================= */
+
+.extra{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 16px;
+}
+
+/* REMEMBER */
+
+.remember{
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  font-family: 'Boogaloo', cursive;
+  font-size: 20px;
+
+  cursor: pointer;
+
+  margin: 0;
+}
+
+/* CHECKBOX */
+
+.remember input{
+  width: 17px;
+  height: 17px;
+
+  margin: 0;
+
+  accent-color: #4C312A;
+}
+
+/* FORGOT */
+
+.forgot{
+  font-family: 'Boogaloo', cursive;
+  font-size: 20px;
+
+  color: #4C312A;
+  text-decoration: none;
+}
+
+.forgot:hover{
+  text-decoration: underline;
+}
+
+/* =========================
+   SIGNUP
+========================= */
+
+.signup{
+  margin-top: 24px;
+
+  text-align: center;
+  font-size: 15px;
+}
+
+.signup a{
+  color: #4D7CFE;
+  text-decoration: none;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.login-right img{
+  width: 640px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  text-align: center;
+
+  padding: 25px;
+
+  font-size: 12px;
+}

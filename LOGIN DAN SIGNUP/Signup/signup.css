@@ -1,0 +1,209 @@
+/* =========================
+   BASE
+========================= */
+
+body{
+  background: #CFC3BD;
+  color: #4C312A;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.signup-section{
+  padding: 60px 0;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.signup-wrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 40px;
+}
+
+/* =========================
+   LEFT
+========================= */
+
+.signup-left{
+  width: 420px;
+}
+
+/* TITLE */
+
+.signup-left h2{
+  font-family: 'Boogaloo', cursive;
+  font-size: 58px;
+
+  text-align: center;
+
+  margin-bottom: 10px;
+}
+
+/* SUBTITLE */
+
+.signup-left p{
+  font-size: 16px;
+  text-align: center;
+
+  margin-bottom: 28px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.signup-left form{
+  width: 100%;
+}
+
+/* LABEL */
+
+.signup-left label{
+  display: block;
+
+  margin-top: 16px;
+  margin-bottom: 8px;
+
+  font-size: 20px;
+  font-family: 'Boogaloo', cursive;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.signup-left input[type="text"],
+.signup-left input[type="email"],
+.signup-left input[type="password"]{
+  width: 100%;
+  height: 50px;
+
+  padding: 0 16px;
+
+  border: 1px solid #7A5A50;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #4C312A;
+  font-size: 15px;
+
+  outline: none;
+}
+
+.signup-left input::placeholder{
+  color: #8B7A74;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   PASSWORD NOTE
+========================= */
+
+.password-note{
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: 13px;
+  color: #6F5B55;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.signup-btn,
+.google-btn{
+  width: 100%;
+  height: 48px;
+
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Alatsi', sans-serif;
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+/* CREATE ACCOUNT */
+
+.signup-btn{
+  margin-top: 20px;
+
+  background: #4C312A;
+  color: white;
+
+  text-decoration: none;
+
+  transition: 0.25s ease;
+}
+
+.signup-btn:hover{
+  background: #3A241F;
+}
+
+/* GOOGLE */
+
+.google-btn{
+  margin-top: 12px;
+  margin-bottom: 20px;
+
+  background: white;
+
+  gap: 8px;
+
+  border: 1px solid #D7D7D7;
+}
+
+.google-btn img{
+  width: 18px;
+}
+
+/* =========================
+   SIGN IN
+========================= */
+
+.signin{
+  text-align: center;
+  font-size: 15px;
+}
+
+.signin a{
+  color: #4D7CFE;
+  text-decoration: none;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.signup-right img{
+  width: 640px;
+
+  transform: translateX(14px);
+} 
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  text-align: center;
+
+  padding: 25px;
+
+  font-size: 12px;
+}
