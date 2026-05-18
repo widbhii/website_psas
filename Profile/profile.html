@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Account - ChillZone</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="profile.css"> 
+</head>
+<body class="profile-page">
+
+  <div class="profile-container">
+    
+    <aside class="sidebar">
+      <button class="sidebar-btn active" onclick="openTab(event, 'account-settings')">Account Settings</button>
+      <button class="sidebar-btn" onclick="openTab(event, 'preferences')">Preferences</button>
+      <button class="sidebar-btn" onclick="openTab(event, 'saved-content')">Saved Content</button>
+      <button class="sidebar-btn" onclick="openTab(event, 'support')">Support</button>
+      <button class="sidebar-btn" onclick="openTab(event, 'log-out')">Log Out</button>
+    </aside>
+
+    <main class="main-content">
+
+      <div id="account-settings" class="tab-content active">
+        <h2 class="content-title">Account Settings</h2>
+        
+        <div class="user-info-section">
+          <div class="avatar-wrapper">
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2043&auto=format&fit=crop" alt="Avatar" class="avatar-img">
+            <div class="edit-avatar-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4C312A" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+          </div>
+          <div class="user-meta">
+            <h3>Your Name</h3>
+            <p>Youremail@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Change Username</label>
+          <input type="text" placeholder="Change your Name">
+        </div>
+        <div class="input-group">
+          <label>Change Email</label>
+          <input type="email" placeholder="Change your Email">
+        </div>
+        <div class="input-group">
+          <label>Change Password</label>
+          <input type="password" placeholder="Change your Password">
+        </div>
+      </div>
+
+      <div id="preferences" class="tab-content">
+        <h2 class="content-title">Preferences</h2>
+        
+        <div class="input-group">
+          <label>Language</label>
+          <div class="custom-select" onclick="toggleDropdown('lang-dropdown')">
+            <span>English</span>
+            <span class="arrow">▼</span>
+            <div id="lang-dropdown" class="dropdown-options">
+              <div class="option selected">English <span class="checkmark">✓</span></div>
+              <div class="option">Indonesia <span class="circle-mark"></span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Theme</label>
+          <div class="custom-select" onclick="toggleDropdown('theme-dropdown')">
+            <span>Default</span>
+            <span class="arrow">▼</span>
+            <div id="theme-dropdown" class="dropdown-options">
+              <div class="option selected">Default <span class="checkmark">✓</span></div>
+              <div class="option">Dark <span class="circle-mark"></span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Location preference</label>
+          <div class="toggle-container">
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div id="saved-content" class="tab-content">
+        <h2 class="content-title">Saved Content</h2>
+        <h3 class="sub-title">Wishlist places</h3>
+        
+        <div class="wishlist-grid">
+          <div class="wishlist-card">
+            <img src="../GAMBAR UNTUK SPOT/curug-telaga.png" alt="Telaga Sunyi">
+            <div class="card-body">
+              <span class="tag">Spots</span>
+              <h4>Telaga Sunyi Waterfall</h4>
+              <p>Sumbang</p>
+              <a href="#" class="btn-detail">Detail</a>
+            </div>
+          </div>
+          <div class="wishlist-card">
+            <img src="../GAMBAR UNTUK SPOT/ebony.png" alt="Ebony Cafe">
+            <div class="card-body">
+              <span class="tag">Spots</span>
+              <h4>Ebony Cafe</h4>
+              <p>Baturaden</p>
+              <a href="#" class="btn-detail">Detail</a>
+            </div>
+          </div>
+          <div class="wishlist-card">
+            <img src="../GAMBAR UNTUK SPOT/small.png" alt="Small World">
+            <div class="card-body">
+              <span class="tag">Spots</span>
+              <h4>Small World</h4>
+              <p>Baturaden</p>
+              <a href="#" class="btn-detail">Detail</a>
+            </div>
+          </div>
+          <div class="wishlist-card">
+            <img src="../GAMBAR UNTUK SPOT/menara.png" alt="Menara Pandang">
+            <div class="card-body">
+              <span class="tag">Spots</span>
+              <h4>Menara Pandang Teratai</h4>
+              <p>Purwokerto Timur</p>
+              <a href="#" class="btn-detail">Detail</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="support" class="tab-content">
+        <h2 class="content-title">Support</h2>
+        
+        <div class="input-group">
+          <label>Help Center</label>
+          <div class="custom-select flex-col" onclick="toggleDropdown('help-dropdown')">
+            <div class="flex-row">
+              <span class="text-sm text-wrap">If you experience any issues on the website, please contact the appropriate team based on your problem ....</span>
+              <span class="arrow">▼</span>
+            </div>
+            <div id="help-dropdown" class="support-dropdown-content">
+              <div class="support-box">
+                <h5>Contact Hipster</h5>
+                <p>For issues related to:<br>• Website design<br>• UI/UX appearance<br>• Layout or visual errors</p>
+              </div>
+              <div class="support-box">
+                <h5>Contact Hustler</h5>
+                <p>For issues related to:<br>• General Information<br>• Partnerships/collaboration</p>
+              </div>
+              <div class="support-box">
+                <h5>Contact Hacker</h5>
+                <p>For issues related to:<br>• Website features<br>• System bugs or errors</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Contact Us</label>
+          <div class="custom-select flex-col" onclick="toggleDropdown('contact-dropdown')">
+            <div class="flex-row">
+              <span>Hipster Team (0856-0015-4164 Or 0812-2895-2618)</span>
+              <span class="arrow">▼</span>
+            </div>
+            <div id="contact-dropdown" class="simple-dropdown">
+              <div>Hipster Team (0856-0015-4164 Or 0812-2895-2618)</div>
+              <div>Hustler Team (0821-2426-9878, 0856-0015-4164, and 0822-4113-3234)</div>
+              <div>Hacker Team (0812-2895-2618, 0822-4113-3234, 0821-2426-9878)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="log-out" class="tab-content">
+        <h2 class="content-title">Log Out</h2>
+        <div class="input-group">
+          <label>Log Out</label>
+          <div class="action-bar-logout">Sign out from your account</div>
+        </div>
+        <div class="input-group">
+          <label>Delete Account</label>
+          <div class="action-bar-logout">Permanently remove your account and data</div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, sidebarbtn;
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+      }
+      sidebarbtn = document.getElementsByClassName("sidebar-btn");
+      for (i = 0; i < sidebarbtn.length; i++) {
+        sidebarbtn[i].classList.remove("active");
+      }
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+
+    function toggleDropdown(id) {
+      var dropdown = document.getElementById(id);
+      dropdown.classList.toggle("show");
+    }
+
+    document.querySelectorAll('.dropdown-options, .support-dropdown-content, .simple-dropdown').forEach(item => {
+      item.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+    });
+  </script>
+</body>
+</html>
