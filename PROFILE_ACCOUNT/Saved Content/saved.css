@@ -1,0 +1,241 @@
+/* saved.css */
+
+/* =========================s
+   BASE
+========================= */
+
+body{
+  margin: 0;
+
+  background: #D7CCC8;
+  color: #3E2723;
+
+  font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.saved-page{
+  display: flex;
+
+  min-height: 100vh;
+
+  padding-top: 110px;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+  width: 320px;
+
+  background: #4C312A;
+
+  padding: 40px 28px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* PROFILE */
+
+.profile-box{
+  text-align: center;
+
+  margin-bottom: 50px;
+}
+
+.profile-img{
+  width: 90px;
+  height: 90px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  margin-bottom: 16px;
+}
+
+.profile-box h2{
+  color: white;
+
+  font-family: 'Boogaloo', cursive;
+  font-size: 36px;
+
+  margin: 0;
+}
+
+/* MENU */
+
+.sidebar-menu{
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.sidebar-menu button,
+.logout-btn{
+  width: 100%;
+  height: 54px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: #E7DED8;
+  color: #4C312A;
+
+  font-family: 'Alatsi', sans-serif;
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.sidebar-menu button:hover,
+.logout-btn:hover{
+  transform: translateY(-2px);
+}
+
+.sidebar-menu .active{
+  background: #E9C46A;
+}
+
+/* LOGOUT */
+
+.logout-btn{
+  margin-top: 50px;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.saved-content{
+  flex: 1;
+
+  padding: 50px 60px;
+}
+
+/* TITLE */
+
+.saved-content h1{
+  font-family: 'Boogaloo', cursive;
+  font-size: 68px;
+
+  margin: 0 0 16px;
+}
+
+.saved-content h2{
+  font-size: 30px;
+  font-weight: 500;
+
+  margin-bottom: 28px;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.saved-grid{
+  background: #5A372E;
+
+  border-radius: 28px;
+
+  padding: 38px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 28px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.saved-card{
+  background: white;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  transition: 0.25s ease;
+}
+
+.saved-card:hover{
+  transform: translateY(-4px);
+}
+
+/* IMAGE */
+
+.saved-card img{
+  width: 100%;
+  height: 220px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+/* INFO */
+
+.saved-info{
+  padding: 18px;
+}
+
+.saved-info .tag{
+  font-size: 13px;
+
+  margin-bottom: 8px;
+}
+
+.saved-info h3{
+  font-family: 'Boogaloo', cursive;
+  font-size: 30px;
+
+  margin: 0 0 10px;
+}
+
+.saved-info p{
+  margin: 0 0 18px;
+
+  font-size: 14px;
+}
+
+/* BUTTON */
+
+.detail-btn{
+  width: 90px;
+  height: 34px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #4C312A;
+  color: white;
+
+  font-family: 'Alatsi', sans-serif;
+
+  cursor: pointer;
+
+  float: right;
+}
+
+.detail-btn:hover{
+  background: #3A241F;
+}
+
+/* EMPTY */
+
+.empty-text{
+  color: white;
+
+  font-size: 18px;
+}
