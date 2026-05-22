@@ -49,7 +49,7 @@ body{
    SIDEBAR BUTTON
 ========================= */
 
-.menu-btn{
+.sidebar-btn{
   width: 290px;
   height: 72px;
 
@@ -68,11 +68,11 @@ body{
   transition: 0.2s ease;
 }
 
-.menu-btn.active{
+.sidebar-btn.active{
   background: #F2D36F;
 }
 
-.menu-btn:hover{
+.sidebar-btn:hover{
   transform: scale(1.03);
 }
 
@@ -129,6 +129,118 @@ body{
   border-radius: 34px;
 
   padding: 34px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 28px;
+
+  align-content: flex-start;
+}
+
+/* =========================
+   SAVED CARD
+========================= */
+
+.saved-card{
+  width: 420px;
+
+  background: #F5F5F5;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+}
+
+/* =========================
+   CARD IMAGE
+========================= */
+
+.saved-img{
+  width: 100%;
+  height: 240px;
+
+  object-fit: cover;
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.saved-info{
+  padding: 20px;
+}
+
+/* =========================
+   CARD TAG
+========================= */
+
+.saved-tag{
+  font-size: 16px;
+  color: #666;
+
+  margin-bottom: 8px;
+}
+
+/* =========================
+   CARD TITLE
+========================= */
+
+.saved-info h3{
+  font-family: 'Alatsi', sans-serif;
+  font-size: 34px;
+  font-weight: 400;
+
+  color: #4C312A;
+
+  margin-bottom: 8px;
+}
+
+/* =========================
+   CARD LOCATION
+========================= */
+
+.saved-info p{
+  font-size: 18px;
+  color: #555;
+
+  margin-bottom: 22px;
+}
+
+/* =========================
+   DETAIL BUTTON
+========================= */
+
+.detail-btn{
+  width: 105px;
+  height: 38px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #5A372F;
+  color: white;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.detail-btn:hover{
+  opacity: 0.9;
+}
+
+/* =========================
+   EMPTY TEXT
+========================= */
+
+.empty-text{
+  font-size: 22px;
+  color: #E7D9D3;
 }
 
 /* =========================
@@ -177,11 +289,15 @@ body{
     font-size: 22px;
   }
 
-  .menu-btn{
+  .sidebar-btn{
     width: 240px;
     height: 64px;
 
     font-size: 20px;
+  }
+
+  .saved-card{
+    width: 100%;
   }
 
 }

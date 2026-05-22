@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,12 +13,14 @@
   <!-- CSS -->
   <link rel="stylesheet" href="../../style.css">
   <link rel="stylesheet" href="spot_rekomendasi.css">
+
 </head>
 
 <body>
 
 <!-- NAVBAR -->
 <header class="navbar">
+
   <div class="nav-inner">
 
     <h1 class="logo">ChillZone</h1>
@@ -48,6 +51,7 @@
     >
 
   </div>
+
 </header>
 
 <!-- SPOTS -->
@@ -57,21 +61,21 @@
   <div class="spots-top">
 
     <!-- CATEGORY -->
-<div class="category-box">
+    <div class="category-box">
 
-  <a href="../Nature_Spot/spot_nature.html">
-    Nature
-  </a>
+      <a href="../Nature_Spot/spot_nature.html">
+        Nature
+      </a>
 
-  <a href="../Coffee_Spot/spot_coffee.html">
-    Coffee
-  </a>
+      <a href="../Coffee_Spot/spot_coffee.html">
+        Coffee
+      </a>
 
-  <a href="../Places_Spot/spot_places.html">
-    Places
-  </a>
+      <a href="../Places_Spot/spot_places.html">
+        Places
+      </a>
 
-</div>
+    </div>
 
     <!-- SEARCH -->
     <div class="search-box">
@@ -95,7 +99,7 @@
   <div class="card-wrap">
 
     <!-- CARD 1 -->
-    <div class="spot-card">
+    <div class="spot-card" data-id="1">
 
       <input type="checkbox" id="save1" class="save-toggle">
 
@@ -125,7 +129,7 @@
     </div>
 
     <!-- CARD 2 -->
-    <div class="spot-card">
+    <div class="spot-card" data-id="2">
 
       <input type="checkbox" id="save2" class="save-toggle">
 
@@ -155,7 +159,7 @@
     </div>
 
     <!-- CARD 3 -->
-    <div class="spot-card">
+    <div class="spot-card" data-id="3">
 
       <input type="checkbox" id="save3" class="save-toggle">
 
@@ -185,7 +189,7 @@
     </div>
 
     <!-- CARD 4 -->
-    <div class="spot-card">
+    <div class="spot-card" data-id="4">
 
       <input type="checkbox" id="save4" class="save-toggle">
 
@@ -215,7 +219,7 @@
     </div>
 
     <!-- CARD 5 -->
-    <div class="spot-card">
+    <div class="spot-card" data-id="5">
 
       <input type="checkbox" id="save5" class="save-toggle">
 
@@ -245,7 +249,7 @@
     </div>
 
     <!-- CARD 6 -->
-    <div class="spot-card">
+    <div class="spot-card" data-id="6">
 
       <input type="checkbox" id="save6" class="save-toggle">
 
@@ -280,9 +284,69 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 ChillZone. All rights reserved.</p>
-  <p>Create your vibe · Zone your moment · Own your experience</p>
+
+  <p>
+    © 2026 ChillZone. All rights reserved.
+  </p>
+
+  <p>
+    Create your vibe · Zone your moment · Own your experience
+  </p>
+
 </footer>
+
+<!-- SAVE SCRIPT -->
+<script>
+
+const saveButtons =
+document.querySelectorAll(".save-btn");
+
+saveButtons.forEach(button => {
+
+    button.addEventListener("click", function(){
+
+        const card =
+        this.closest(".spot-card");
+
+        const spotId =
+        card.getAttribute("data-id");
+
+        fetch("../../backend/save_spot.php", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type":
+                "application/x-www-form-urlencoded"
+            },
+
+            body: "spot_id=" + spotId
+
+        })
+
+        .then(response => response.text())
+
+        .then(data => {
+
+            if(data.includes("saved")){
+
+                alert("Spot berhasil disimpan ⭐");
+
+            }
+
+            else if(data.includes("already")){
+
+                alert("Spot sudah ada di wishlist");
+
+            }
+
+        });
+
+    });
+
+});
+
+</script>
 
 </body>
 </html>
