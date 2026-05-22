@@ -1,131 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
-  <meta 
-    name="viewport" 
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Saved Content - ChillZone</title>
 
-  <!-- FONT -->
-  <link 
-    href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Poppins:wght@300;400;500;600&family=Alatsi&display=swap" 
-    rel="stylesheet"
-  >
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Alatsi&display=swap" rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="saved.css">
+  <link rel="stylesheet" href="../Saved Content/saved.css"
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<header class="navbar">
+  <div class="saved-container">
 
-  <div class="nav-inner">
+    <!-- SIDEBAR -->
+    <div class="sidebar">
 
-    <h1 class="logo">
-      ChillZone
-    </h1>
-
-    <nav class="menu">
-
-      <a href="../HOME/home.html">
-        Home
-      </a>
-
-      <a href="../SPOTS/Spot_Rekomendasi/spot_rekomendasi.html">
-        Spots
-      </a>
-
-      <a href="../REVIEW/review.html">
-        Review
-      </a>
-
-      <a href="../ARTICLE/article.html">
-        Article
-      </a>
-
-    </nav>
-
-    <img 
-      src="../KEBUTUHAN ELEMENT/user icon 1.png" 
-      class="profile"
-    >
-
-  </div>
-
-</header>
-
-<!-- SAVED PAGE -->
-<section class="saved-page">
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-
-    <div class="sidebar-top">
-
-      <h2>
-        My Profile
-      </h2>
-
-      <a href="#">
+      <button class="menu-btn">
         Account Settings
-      </a>
+      </button>
 
-      <a href="#">
+      <button class="menu-btn">
         Preferences
-      </a>
+      </button>
 
-      <a 
-        href="saved.html" 
-        class="active"
-      >
+      <button class="menu-btn active">
         Saved Content
-      </a>
+      </button>
 
-      <a href="#">
+      <button class="menu-btn">
         Support
-      </a>
+      </button>
+
+      <button class="menu-btn">
+        Log Out
+      </button>
 
     </div>
 
-    <button class="logout-btn">
-      Log Out
-    </button>
+    <!-- RIGHT CONTENT -->
+    <div class="saved-content">
 
-  </aside>
+      <!-- TITLE -->
+      <h1>Saved Content</h1>
 
-  <!-- CONTENT -->
-  <div class="saved-content">
+      <!-- SUBTITLE -->
+      <h2>Wishlist Places</h2>
 
-    <h1>
-      Saved Content
-    </h1>
+      <!-- SAVE CONTENT BOX -->
+      <div class="saved-card-wrap">
 
-    <p class="subtitle">
-      Your favorite places saved from ChillZone.
-    </p>
+        <!-- 
+          NANTI CARD HASIL SAVE MASUK KE SINI
+          DARI saved_content.js
+        -->
 
-    <!-- GRID -->
-    <div 
-      class="saved-grid" 
-      id="savedGrid"
-    >
-
-      <!-- CARD otomatis dari JS -->
+      </div>
 
     </div>
 
   </div>
 
-</section>
-
-<!-- JS -->
-<script src="saved-content.js"></script>
+  <!-- JS -->
+  <script src="saved_content.js"></script>
 
 </body>
 </html>

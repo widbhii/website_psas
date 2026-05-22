@@ -1,76 +1,15 @@
-// =========================
-// GET ELEMENT
-// =========================
+const menuButtons = document.querySelectorAll(".menu-btn");
 
-const savedGrid =
-  document.getElementById("savedGrid");
+menuButtons.forEach(button => {
 
-// =========================
-// GET DATA
-// =========================
+  button.addEventListener("click", () => {
 
-const savedSpots =
-  JSON.parse(
-    localStorage.getItem("savedSpots")
-  ) || [];
+    menuButtons.forEach(btn => {
+      btn.classList.remove("active");
+    });
 
-// =========================
-// EMPTY STATE
-// =========================
-
-if(savedSpots.length === 0){
-
-  savedGrid.innerHTML = `
-  
-    <p class="empty-text">
-      No saved places yet.
-    </p>
-  
-  `;
-
-}
-
-// =========================
-// SHOW SAVED CARD
-// =========================
-
-else{
-
-  savedSpots.forEach((spot) => {
-
-    savedGrid.innerHTML += `
-
-      <div class="saved-card">
-
-        <img 
-          src="${spot.image}" 
-          alt="${spot.name}"
-        >
-
-        <div class="saved-info">
-
-          <div class="tag">
-            Spots
-          </div>
-
-          <h3>
-            ${spot.name}
-          </h3>
-
-          <p>
-            ${spot.location}
-          </p>
-
-          <button class="detail-btn">
-            Details
-          </button>
-
-        </div>
-
-      </div>
-
-    `;
+    button.classList.add("active");
 
   });
 
-}
+});

@@ -1,0 +1,308 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: #D9CFCA;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+.settings-container{
+  display: grid;
+  grid-template-columns: 360px 1fr;
+
+  min-height: 100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+  background: #4C312A;
+
+  padding-top: 70px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 60px;
+}
+
+/* =========================
+   SIDEBAR BUTTON
+========================= */
+
+.sidebar-btn{
+  width: 290px;
+  height: 72px;
+
+  border: none;
+  border-radius: 60px;
+
+  background: #D8C9C4;
+  color: #000;
+
+  font-family: 'Alatsi', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.sidebar-btn.active{
+  background: #F2D36F;
+}
+
+.sidebar-btn:hover{
+  transform: scale(1.03);
+}
+
+/* =========================
+   RIGHT CONTENT
+========================= */
+
+.settings-content{
+  padding:
+  60px
+  90px;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.settings-content h1{
+  font-family: 'Alatsi', sans-serif;
+  font-size: 72px;
+  font-weight: 400;
+
+  color: #000;
+
+  margin-bottom: 50px;
+}
+
+/* =========================
+   PROFILE SECTION
+========================= */
+
+.profile-section{
+  display: flex;
+  align-items: center;
+
+  gap: 45px;
+
+  margin-bottom: 70px;
+}
+
+/* =========================
+   PROFILE IMAGE
+========================= */
+
+.profile-image-box{
+  position: relative;
+
+  width: 230px;
+  height: 230px;
+
+  flex-shrink: 0;
+}
+
+.profile-image{
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+/* =========================
+   EDIT ICON
+========================= */
+
+.edit-icon{
+  position: absolute;
+
+  right: 8px;
+  bottom: 8px;
+
+  width: 55px;
+  height: 55px;
+
+  object-fit: contain;
+}
+
+/* =========================
+   PROFILE INFO
+========================= */
+
+.profile-info h2{
+  font-family: 'Alatsi', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+
+  color: #000;
+
+  margin-bottom: 8px;
+}
+
+.profile-info p{
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+
+  color: #000;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.settings-form{
+  width: 100%;
+  max-width: 950px;
+}
+
+/* =========================
+   INPUT GROUP
+========================= */
+
+.input-group{
+  margin-bottom: 42px;
+}
+
+/* =========================
+   LABEL
+========================= */
+
+.input-group label{
+  display: block;
+
+  font-family: 'Alatsi', sans-serif;
+  font-size: 38px;
+  font-weight: 400;
+
+  color: #000;
+
+  margin-bottom: 14px;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.input-group input{
+  width: 100%;
+  height: 82px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 60px;
+
+  background: #4C312A;
+
+  padding: 0 34px;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+
+  color: rgb(255, 255, 255);
+}
+
+/* =========================
+   PLACEHOLDER
+========================= */
+
+.input-group input::placeholder{
+  color: #F3E7E2;
+  opacity: 1;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+  .settings-container{
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar{
+    padding:
+    40px
+    20px;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 24px;
+  }
+
+  .settings-content{
+    padding:
+    50px
+    40px;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .settings-content h1{
+    font-size: 50px;
+  }
+
+  .profile-section{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-image-box{
+    width: 180px;
+    height: 180px;
+  }
+
+  .profile-info h2{
+    font-size: 38px;
+  }
+
+  .profile-info p{
+    font-size: 22px;
+  }
+
+  .input-group label{
+    font-size: 28px;
+  }
+
+  .input-group input{
+    height: 72px;
+    font-size: 22px;
+  }
+
+  .sidebar-btn{
+    width: 240px;
+    height: 64px;
+
+    font-size: 20px;
+  }
+
+}
