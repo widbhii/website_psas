@@ -1,92 +1,319 @@
-* {
-  box-sizing: border-box;
+/* =========================
+   RESET
+========================= */
+
+*{
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif !important;
+  box-sizing: border-box;
 }
 
-/* NAVBAR SAMA DENGAN HOME */
-.navbar {
-  width: 100%;
-  height: 82px;
-  background: #4C312A;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-}
+/* =========================
+   BODY
+========================= */
 
-.nav-inner {
-  width: 1280px;
-  height: 100%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  color: white;
+body{
+  background: #CFC3BD;
   font-family: 'Poppins', sans-serif;
-  font-size: 28px;
-  font-weight: 600;
-  margin: 0;
+  color: #4C312A;
+  overflow-x: hidden;
 }
 
-.menu {
-  display: flex;
-  align-items: center;
-  gap: 42px;
+/* =========================
+   REVIEW SECTION
+========================= */
+
+.review-section{
+  padding:
+  120px
+  80px
+  90px;
 }
 
-.menu a {
-  color: white;
-  text-decoration: none;
-  font-family: 'Poppins', sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  transition: 0.2s ease;
+/* =========================
+   TITLE
+========================= */
+
+.review-title{
+  text-align: center;
+
+  margin-bottom: 45px;
 }
 
-.menu a.active, .menu a:hover {
-  color: #FFD97C;
+.review-title h2{
+  font-family: 'Boogaloo', cursive;
+
+  font-size: 72px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  color: #4C312A;
+
+  margin-bottom: 8px;
+
+  line-height: 1;
 }
 
-.profile {
-  width: 54px;
-  height: 54px;
-  cursor: pointer;
-}
-
-/* KONTEN AJUSTMENT */
-.content-container {
-  /* Ditambahkan !important agar tidak kalah/ditimpa oleh class 'py-16' dari Tailwind */
-  padding-top: 130px !important; 
-}
-
-.card-review {
-  transition: transform 0.2s ease;
-}
-
-.card-review:hover {
-  transform: translateY(-4px);
-}
-
-/* TOMBOL TULIS REVIEW */
-.btn-write {
-  display: inline-block;
-  background-color: #4C312A;
-  color: white;
-  padding: 12px 28px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 500;
+.review-title p{
   font-size: 16px;
-  transition: all 0.2s ease;
+  color: #6B554D;
 }
 
-.btn-write:hover {
-  background-color: #35221D;
+/* =========================
+   REVIEW WRAP
+========================= */
+
+.review-wrap{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 32px;
+}
+
+/* =========================
+   REVIEW CARD
+========================= */
+
+.review-card{
+  width: 360px;
+
+  background: #F8F3EF;
+
+  border: 1px solid #D8C8C1;
+  border-radius: 24px;
+
+  padding: 28px;
+
+  transition: 0.25s ease;
+}
+
+.review-card:hover{
+  transform: translateY(-6px);
+
+  box-shadow:
+  0 10px 24px
+  rgba(0,0,0,0.08);
+}
+
+/* =========================
+   REVIEW TOP
+========================= */
+
+.review-top{
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  margin-bottom: 18px;
+}
+
+/* =========================
+   PROFILE CIRCLE
+========================= */
+
+.profile-circle{
+  width: 56px;
+  height: 56px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  color: white;
+}
+
+.brown{
+  background: #A86A4A;
+}
+
+.green{
+  background: #5C8A67;
+}
+
+.blue{
+  background: #5C79B8;
+}
+
+/* =========================
+   NAME
+========================= */
+
+.review-top h3{
+  font-family: 'Alatsi', sans-serif;
+
+  font-size: 26px;
+  font-weight: 700;
+
+  color: #4C312A;
+
+  margin-bottom: 4px;
+}
+
+/* =========================
+   STARS
+========================= */
+
+.stars{
+  font-size: 16px;
+
+  letter-spacing: 2px;
+
+  color: #F2C94C;
+}
+
+/* =========================
+   PLACE TAG
+========================= */
+
+.place-tag{
+  display: inline-block;
+
+  margin-top: 10px;
+  margin-bottom: 16px;
+
+  padding:
+  8px
+  18px;
+
+  background: #EADDD6;
+
+  color: #8A5B4C;
+
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   REVIEW TEXT
+========================= */
+
+.review-text{
+  font-size: 15px;
+
+  line-height: 28px;
+
+  color: #6B554D;
+
+  font-style: italic;
+}
+
+/* =========================
+   BUTTON WRAP
+========================= */
+
+.review-btn-wrap{
+  text-align: center;
+
+  margin-top: 55px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.write-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 220px;
+  height: 50px;
+
+  background: #4C312A;
+  color: white;
+
+  border-radius: 40px;
+
+  text-decoration: none;
+
+  font-family: 'Alatsi', sans-serif;
+  font-size: 16px;
+
+  transition: 0.25s ease;
+}
+
+.write-btn:hover{
+  background: #35211C;
+
   color: #FFD97C;
+
   transform: translateY(-2px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  text-align: center;
+
+  padding:
+  26px
+  20px;
+
+  font-size: 12px;
+
+  color: #4C312A;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  .review-section{
+    padding:
+    110px
+    20px
+    70px;
+  }
+
+  .review-title h2{
+    font-size: 54px;
+  }
+
+  .review-title p{
+    font-size: 14px;
+  }
+
+  .review-card{
+    width: 100%;
+  }
+
+  .review-top h3{
+    font-size: 22px;
+  }
+
+  .write-btn{
+    width: 200px;
+    height: 48px;
+
+    font-size: 15px;
+  }
+
+  /* EMPTY REVIEW */
+
+  .empty-review{
+  font-size: 18px;
+  color: #6B554D;
+
+  text-align: center;
+
+  width: 100%;
+}
+
 }

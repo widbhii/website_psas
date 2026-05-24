@@ -1,45 +1,83 @@
 <?php
 
-include "config.php";
+$conn = mysqli_connect(
+    "localhost",
+    "root",
+    "",
+    "website_psas"
+);
 
-if(isset($_POST['spot_id'])){
+if(!$conn){
 
-    $spot_id = $_POST['spot_id'];
+    die("Connection failed");
 
-    // sementara pakai user id 1 dulu
-    $user_id = 1;
+}
 
-    // cek apakah sudah ada
-    $check = mysqli_query($conn,
-    "SELECT * FROM saved_content
-    WHERE user_id='$user_id'
-    AND spot_id='$spot_id'");
+/* DATA */
 
-    if(mysqli_num_rows($check) > 0){
+$spot_id =
+$_POST['spot_id'];
 
-        echo "already";
+$spot_name =
+$_POST['spot_name'];
 
-    } else {
+$spot_image =
+$_POST['spot_image'];
 
-        $insert = mysqli_query($conn,
-        "INSERT INTO saved_content(user_id, spot_id)
-        VALUES('$user_id','$spot_id')");
+$location =
+$_POST['location'];
 
-        if($insert){
+$category =
+$_POST['category'];
 
-            echo "saved";
+/* CEK DUPLIKAT */
 
-        } else {
+$check =
+mysqli_query(
+    $conn,
+    "SELECT * FROM saved_spots
+     WHERE spot_id='$spot_id'"
+);
 
-            echo "error";
+if(mysqli_num_rows($check) > 0){
 
-        }
+    echo "already";
+
+}
+
+else{
+
+    $query =
+    "INSERT INTO saved_spots
+    (
+      spot_id,
+      spot_name,
+      spot_image,
+      location,
+      category
+    )
+
+    VALUES
+    (
+      '$spot_id',
+      '$spot_name',
+      '$spot_image',
+      '$location',
+      '$category'
+    )";
+
+    if(mysqli_query($conn, $query)){
+
+        echo "saved";
 
     }
 
-} else {
+    else{
 
-    echo "no spot id";
+        echo "failed";
+
+    }
 
 }
+
 ?>
