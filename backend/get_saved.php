@@ -1,36 +1,42 @@
 <?php
 
+session_start();
+
 include "config.php";
 
-$user_id = 1;
+/* CEK LOGIN */
 
-$query = mysqli_query($conn, "
+if(!isset($_SESSION['email'])){
 
-SELECT 
-saved_content.id,
-spots.title,
-spots.category,
-spots.location,
-spots.image
+    echo json_encode([]);
+    exit;
 
-FROM saved_content
+}
 
-JOIN spots
-ON saved_content.spot_id = spots.id
+/* EMAIL LOGIN */
 
-WHERE saved_content.user_id = '$user_id'
+$email = $_SESSION['email'];
 
-ORDER BY saved_content.id DESC
+/* QUERY */
 
-");
+$sql = "SELECT * FROM saved_content
+WHERE email='$email'
+
+ORDER BY id DESC";
+
+$result = mysqli_query($conn, $sql);
+
+/* ARRAY */
 
 $data = [];
 
-while($row = mysqli_fetch_assoc($query)){
+while($row = mysqli_fetch_assoc($result)){
 
     $data[] = $row;
 
 }
+
+/* JSON */
 
 echo json_encode($data);
 

@@ -1,80 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Review - ChillZone</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Poppins:wght@300;400;500;600;700&family=Alatsi&display=swap" rel="stylesheet">
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- CSS -->
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="review.css">
+
 </head>
-<body class="bg-[#FDFBF7]">
 
-  <header class="navbar">
-    <div class="nav-inner">
-      <h1 class="logo">ChillZone</h1>
-      <nav class="menu">
-        <a href="../HOME/home.html">Home</a>
-        <a href="../SPOT/Rekomendasi_Spot/spot_rekomendasi.html">Spots</a>
-        <a href="review.html" class="active">Review</a>
-        <a href="../ARTICLE/article.html">Article</a>
-      </nav>
-      <img src="../KEBUTUHAN ELEMENT/user icon 1.png" class="profile">
-    </div>
-  </header>
+<body>
 
-  <section class="max-w-6xl mx-auto px-4 py-16 content-container">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold text-[#4C312A] mb-2">Ulasan Pengguna</h2>
-      <p class="text-[#6B594C]">Apa kata mereka tentang pengalaman menggunakan layanan kami?</p>
-    </div>
+<!-- NAVBAR -->
+<header class="navbar">
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded-2xl shadow-sm border border-[#EFEAE4] card-review">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center text-amber-700 font-bold mr-3">BS</div>
-          <div>
-            <h4 class="font-semibold text-[#4C312A]">Budi Santoso</h4>
-            <div class="text-[#FFD97C] text-sm">★★★★★</div>
-          </div>
-        </div>
-        <p class="text-[#6B594C] italic">"Website ini sangat membantu saya menemukan berbagai tempat nongkrong baru, unik dan murah di Purwokerto!"</p>
-      </div>
+  <div class="nav-inner">
 
-      <div class="bg-white p-6 rounded-2xl shadow-sm border border-[#EFEAE4] card-review">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-bold mr-3">LA</div>
-          <div>
-            <h4 class="font-semibold text-[#4C312A]">Laurence</h4>
-            <div class="text-[#FFD97C] text-sm">★★★★☆</div>
-          </div>
-        </div>
-        <p class="text-[#6B594C] italic">"Pengalamannya luar biasa, navigasinya cepat. Mungkin bisa ditambahkan fitur dark mode ke depannya."</p>
-      </div>
+    <h1 class="logo">ChillZone</h1>
 
-      <div class="bg-white p-6 rounded-2xl shadow-sm border border-[#EFEAE4] card-review">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold mr-3">PO</div>
-          <div>
-            <h4 class="font-semibold text-[#4C312A]">Pororro</h4>
-            <div class="text-[#FFD97C] text-sm">★★★★★</div>
-          </div>
-        </div>
-        <p class="text-[#6B594C] italic">"Saya akan merekomendasikan website ini ke teman-teman! Sangat berguna bagi anak muda jaman sekarang."</p>
-      </div>
-    </div>
+    <nav class="menu">
 
-    <div class="text-center mt-12">
-      <a href="add review.html" class="btn-write">
-        + Tulis Ulasan Anda
+      <a href="../HOME/home.html">
+        Home
       </a>
-    </div>
-  </section>
+
+      <a href="../SPOT/Rekomendasi_Spot/spot_rekomendasi.html">
+        Spots
+      </a>
+
+      <a href="review.html" class="active">
+        Review
+      </a>
+
+      <a href="../ARTICLE/article.html">
+        Article
+      </a>
+
+    </nav>
+
+    <img 
+      src="../KEBUTUHAN ELEMENT/user icon 1.png" 
+      class="profile"
+    >
+
+  </div>
+
+</header>
+
+<!-- REVIEW -->
+<section class="review-section">
+
+  <!-- TITLE -->
+  <div class="review-title">
+
+    <h2>
+      User Reviews
+    </h2>
+
+    <p>
+      See what people say about their favorite places.
+    </p>
+
+  </div>
+
+  <!-- REVIEW WRAP -->
+  <div class="review-wrap" id="reviewWrap">
+
+  </div>
+
+  <!-- BUTTON -->
+  <div class="review-btn-wrap">
+
+    <a href="add_review.html" class="write-btn">
+      + Write Your Review
+    </a>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+  <p>
+    © 2026 ChillZone. All rights reserved.
+  </p>
+
+  <p>
+    Create your vibe · Zone your moment · Own your experience
+  </p>
+
+</footer>
+
+<!-- SCRIPT -->
+<script>
+
+/* =========================
+   CONTAINER
+========================= */
+
+const reviewWrap =
+document.getElementById("reviewWrap");
+
+/* =========================
+   FETCH REVIEW
+========================= */
+
+fetch("../backend/fetch_review.php")
+
+.then(response => response.json())
+
+.then(data => {
+
+  /* KALAU BELUM ADA REVIEW */
+
+  if(data.length === 0){
+
+    reviewWrap.innerHTML = `
+
+      <p class="empty-review">
+        No reviews yet.
+      </p>
+
+    `;
+
+    return;
+  }
+
+  /* LOOP REVIEW */
+
+  data.forEach(review => {
+
+    /* BIKIN BINTANG */
+
+    let stars = "";
+
+    for(let i = 0; i < review.rating; i++){
+
+      stars += "★";
+
+    }
+
+    /* AMBIL INISIAL */
+
+    const initials =
+    review.username
+    .substring(0,2)
+    .toUpperCase();
+
+    /* CARD */
+
+    reviewWrap.innerHTML += `
+
+      <div class="review-card">
+
+        <div class="review-top">
+
+          <div class="profile-circle brown">
+            ${initials}
+          </div>
+
+          <div>
+
+            <h3>
+              ${review.username}
+            </h3>
+
+            <div class="stars">
+              ${stars}
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- TEMPAT -->
+        <div class="place-tag">
+          ${review.place_name}
+        </div>
+
+        <!-- REVIEW -->
+        <p class="review-text">
+          "${review.review_text}"
+        </p>
+
+      </div>
+
+    `;
+
+  });
+
+})
+
+.catch(error => {
+
+  console.log(error);
+
+});
+
+</script>
 
 </body>
 </html>

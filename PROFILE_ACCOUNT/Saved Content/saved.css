@@ -8,10 +8,6 @@
   box-sizing: border-box;
 }
 
-/* =========================
-   BODY
-========================= */
-
 body{
   background: #D9CFCA;
   font-family: 'Poppins', sans-serif;
@@ -97,7 +93,7 @@ body{
 
   color: #000;
 
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
 /* =========================
@@ -106,141 +102,141 @@ body{
 
 .saved-content h2{
   font-family: 'Poppins', sans-serif;
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: 500;
+
+  margin-bottom: 40px;
 
   color: #000;
-
-  margin-bottom: 35px;
 }
 
 /* =========================
-   SAVE CONTENT BOX
+   CARD WRAP
 ========================= */
 
 .saved-card-wrap{
-  width: 100%;
-  max-width: 980px;
-
-  min-height: 580px;
-
-  background: #4C312A;
-
-  border-radius: 34px;
-
-  padding: 34px;
-
   display: flex;
   flex-wrap: wrap;
 
-  gap: 28px;
-
-  align-content: flex-start;
+  gap: 40px;
 }
 
 /* =========================
-   SAVED CARD
+   SPOT CARD
 ========================= */
 
-.saved-card{
-  width: 420px;
+.spot-card{
+  width: 390px;
 
-  background: #F5F5F5;
+  background: white;
 
+  border: 1.5px solid #4C312A;
   border-radius: 18px;
 
   overflow: hidden;
+
+  transition: 0.25s ease;
+}
+
+.spot-card:hover{
+  transform: translateY(-4px);
+
+  box-shadow:
+  0 10px 24px
+  rgba(0,0,0,0.08);
 }
 
 /* =========================
-   CARD IMAGE
+   IMAGE
 ========================= */
 
-.saved-img{
+.card-img{
   width: 100%;
-  height: 240px;
+  height: 235px;
 
   object-fit: cover;
+
+  display: block;
 }
 
 /* =========================
-   CARD CONTENT
+   CONTENT
 ========================= */
 
-.saved-info{
+.card-content{
   padding: 20px;
 }
 
-/* =========================
-   CARD TAG
-========================= */
+/* TAG */
 
-.saved-tag{
-  font-size: 16px;
-  color: #666;
+.tag{
+  font-size: 13px;
 
   margin-bottom: 8px;
+
+  color: #7B625B;
 }
 
-/* =========================
-   CARD TITLE
-========================= */
+/* TITLE */
 
-.saved-info h3{
-  font-family: 'Alatsi', sans-serif;
-  font-size: 34px;
-  font-weight: 400;
+.card-content h3{
+  font-family: 'Boogaloo', cursive;
+  font-size: 32px;
+
+  margin: 0 0 10px;
 
   color: #4C312A;
-
-  margin-bottom: 8px;
 }
 
-/* =========================
-   CARD LOCATION
-========================= */
+/* LOCATION */
 
-.saved-info p{
-  font-size: 18px;
-  color: #555;
+.location{
+  font-size: 14px;
 
   margin-bottom: 22px;
+
+  color: #6B554D;
 }
 
 /* =========================
-   DETAIL BUTTON
+   BUTTON
 ========================= */
 
-.detail-btn{
-  width: 105px;
-  height: 38px;
+.btn-wrap{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-content button{
+  width: 95px;
+  height: 34px;
 
   border: none;
   border-radius: 8px;
 
-  background: #5A372F;
+  background: #4C312A;
   color: white;
 
-  font-family: 'Poppins', sans-serif;
-  font-size: 15px;
-  font-weight: 500;
+  font-family: 'Alatsi', sans-serif;
+  font-size: 14px;
 
   cursor: pointer;
 
   transition: 0.2s ease;
 }
 
-.detail-btn:hover{
-  opacity: 0.9;
+.card-content button:hover{
+  background: #3A241F;
 }
 
 /* =========================
-   EMPTY TEXT
+   EMPTY
 ========================= */
 
 .empty-text{
-  font-size: 22px;
-  color: #E7D9D3;
+  font-size: 20px;
+
+  color: #4C312A;
 }
 
 /* =========================
@@ -275,12 +271,6 @@ body{
 
 @media(max-width:768px){
 
-  .saved-content{
-    padding:
-    40px
-    20px;
-  }
-
   .saved-content h1{
     font-size: 50px;
   }
@@ -289,15 +279,15 @@ body{
     font-size: 22px;
   }
 
+  .spot-card{
+    width: 100%;
+  }
+
   .sidebar-btn{
     width: 240px;
     height: 64px;
 
     font-size: 20px;
-  }
-
-  .saved-card{
-    width: 100%;
   }
 
 }
