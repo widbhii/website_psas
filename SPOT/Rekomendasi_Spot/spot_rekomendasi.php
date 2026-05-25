@@ -9,16 +9,32 @@ include "../../backend/session.php";
 <head>
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Spot Rekomendasi - ChillZone</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Spot Rekomendasi - ChillZone
+  </title>
 
   <!-- FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Poppins:wght@300;400;500&family=Alatsi&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Poppins:wght@300;400;500&family=Alatsi&display=swap"
+    rel="stylesheet"
+  >
 
   <!-- CSS -->
-  <link rel="stylesheet" href="../../style.css">
-  <link rel="stylesheet" href="spot_rekomendasi.css">
+  <link
+    rel="stylesheet"
+    href="../../style.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="spot_rekomendasi.css"
+  >
 
 </head>
 
@@ -59,337 +75,26 @@ include "../../navbar.php";
     <!-- SEARCH -->
     <div class="search-box">
 
-      <img 
-        src="../../KEBUTUHAN ELEMENT/search.png" 
+      <img
+        src="../../KEBUTUHAN ELEMENT/search.png"
         class="search-icon"
       >
 
-      <input type="text" placeholder="Search">
-
-      <button class="filter-btn">
-
-        <img src="../../KEBUTUHAN ELEMENT/filter.png">
-
-      </button>
+      <input
+        type="text"
+        placeholder="Search all spots..."
+        id="searchInput"
+      >
 
     </div>
 
   </div>
 
   <!-- CARD WRAP -->
-  <div class="card-wrap">
-
-    <!-- CARD 1 -->
-    <div 
-      class="spot-card"
-
-      data-id="R1"
-
-      data-name="Lembah Patih"
-
-      data-image="../../GAMBAR UNTUK SPOT/lembah-patih.png"
-
-      data-location="Baturaden"
-
-      data-category="Coffee"
-    >
-
-      <input type="checkbox" id="save1" class="save-toggle">
-
-      <label for="save1" class="save-btn">
-        ★
-      </label>
-
-      <img 
-        src="../../GAMBAR UNTUK SPOT/lembah-patih.png" 
-        class="card-img"
-      >
-
-      <div class="card-content">
-
-        <div class="tag">
-          Spots
-        </div>
-
-        <h3>
-          Lembah Patih
-        </h3>
-
-        <div class="location">
-          Baturaden
-        </div>
-
-        <div class="btn-wrap">
-
-          <button>
-            Details
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- CARD 2 -->
-    <div 
-      class="spot-card"
-
-      data-id="R2"
-
-      data-name="Ethos Digital Valley"
-
-      data-image="../../GAMBAR UNTUK SPOT/ethos-digital.png"
-
-      data-location="Sumbang"
-
-      data-category="Coffee"
-    >
-
-      <input type="checkbox" id="save2" class="save-toggle">
-
-      <label for="save2" class="save-btn">
-        ★
-      </label>
-
-      <img 
-        src="../../GAMBAR UNTUK SPOT/ethos-digital.png" 
-        class="card-img"
-      >
-
-      <div class="card-content">
-
-        <div class="tag">
-          Spots
-        </div>
-
-        <h3>
-          Ethos Digital Valley
-        </h3>
-
-        <div class="location">
-          Sumbang
-        </div>
-
-        <div class="btn-wrap">
-
-          <button>
-            Details
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- CARD 3 -->
-    <div 
-      class="spot-card"
-
-      data-id="R3"
-
-      data-name="Bayan Village & Cafe"
-
-      data-image="../../GAMBAR UNTUK SPOT/bayan-village.png"
-
-      data-location="Baturaden"
-
-      data-category="Nature"
-    >
-
-      <input type="checkbox" id="save3" class="save-toggle">
-
-      <label for="save3" class="save-btn">
-        ★
-      </label>
-
-      <img 
-        src="../../GAMBAR UNTUK SPOT/bayan-village.png" 
-        class="card-img"
-      >
-
-      <div class="card-content">
-
-        <div class="tag">
-          Spots
-        </div>
-
-        <h3>
-          Bayan Village & Cafe
-        </h3>
-
-        <div class="location">
-          Baturaden
-        </div>
-
-        <div class="btn-wrap">
-
-          <button>
-            Details
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- CARD 4 -->
-    <div 
-      class="spot-card"
-
-      data-id="R4"
-
-      data-name="Taman Langit"
-
-      data-image="../../GAMBAR UNTUK SPOT/taman-langit.png"
-
-      data-location="Baturaden"
-
-      data-category="Places"
-    >
-
-      <input type="checkbox" id="save4" class="save-toggle">
-
-      <label for="save4" class="save-btn">
-        ★
-      </label>
-
-      <img 
-        src="../../GAMBAR UNTUK SPOT/taman-langit.png" 
-        class="card-img"
-      >
-
-      <div class="card-content">
-
-        <div class="tag">
-          Spots
-        </div>
-
-        <h3>
-          Taman Langit
-        </h3>
-
-        <div class="location">
-          Baturaden
-        </div>
-
-        <div class="btn-wrap">
-
-          <button>
-            Details
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- CARD 5 -->
-    <div 
-      class="spot-card"
-
-      data-id="R5"
-
-      data-name="Rita Supermall"
-
-      data-image="../../GAMBAR UNTUK SPOT/rita-supermall.png"
-
-      data-location="Purwokerto Timur"
-
-      data-category="Places"
-    >
-
-      <input type="checkbox" id="save5" class="save-toggle">
-
-      <label for="save5" class="save-btn">
-        ★
-      </label>
-
-      <img 
-        src="../../GAMBAR UNTUK SPOT/rita-supermall.png" 
-        class="card-img"
-      >
-
-      <div class="card-content">
-
-        <div class="tag">
-          Spots
-        </div>
-
-        <h3>
-          Rita Supermall
-        </h3>
-
-        <div class="location">
-          Purwokerto Timur
-        </div>
-
-        <div class="btn-wrap">
-
-          <button>
-            Details
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- CARD 6 -->
-    <div 
-      class="spot-card"
-
-      data-id="R6"
-
-      data-name="Waterfall"
-
-      data-image="../../GAMBAR UNTUK SPOT/air-terjun.png"
-
-      data-location="Baturaden"
-
-      data-category="Nature"
-    >
-
-      <input type="checkbox" id="save6" class="save-toggle">
-
-      <label for="save6" class="save-btn">
-        ★
-      </label>
-
-      <img 
-        src="../../GAMBAR UNTUK SPOT/air-terjun.png" 
-        class="card-img"
-      >
-
-      <div class="card-content">
-
-        <div class="tag">
-          Spots
-        </div>
-
-        <h3>
-          Waterfall
-        </h3>
-
-        <div class="location">
-          Baturaden
-        </div>
-
-        <div class="btn-wrap">
-
-          <button>
-            Details
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
+  <div
+    class="card-wrap"
+    id="cardWrap"
+  >
 
   </div>
 
@@ -408,84 +113,436 @@ include "../../navbar.php";
 
 </footer>
 
-<!-- SAVE SCRIPT -->
 <script>
 
-const saveButtons =
-document.querySelectorAll(".save-btn");
+/* =========================
+   CARD WRAP
+========================= */
 
-saveButtons.forEach(button => {
+const cardWrap =
+document.getElementById(
+  "cardWrap"
+);
 
-    button.addEventListener("click", function(){
+/* =========================
+   ALL SPOTS DATA
+========================= */
 
-        const card =
-        this.closest(".spot-card");
+const allSpots = [
 
-        const spotId =
-        card.getAttribute("data-id");
+  /* ================= NATURE ================= */
 
-        const spotName =
-        card.getAttribute("data-name");
+  {
+    id: "N1",
+    name: "Mount Slamet",
+    image: "../../GAMBAR UNTUK SPOT/gunung-slamet.png",
+    location: "Baturraden",
+    category: "Nature"
+  },
 
-        const spotImage =
-        card.getAttribute("data-image");
+  {
+    id: "N2",
+    name: "Baturraden Tourist Attraction",
+    image: "../../GAMBAR UNTUK SPOT/lokawisata.png",
+    location: "Baturraden",
+    category: "Nature"
+  },
 
-        const location =
-        card.getAttribute("data-location");
+  {
+    id: "N3",
+    name: "Bayan Village & Cafe",
+    image: "../../GAMBAR UNTUK SPOT/bayan-village.png",
+    location: "Baturraden",
+    category: "Nature"
+  },
 
-        const category =
-        card.getAttribute("data-category");
+  {
+    id: "N4",
+    name: "Limpakuwus Pine Forest",
+    image: "../../GAMBAR UNTUK SPOT/hutan-pinus.png",
+    location: "Baturraden",
+    category: "Nature"
+  },
 
-        fetch("../../backend/save_spot.php", {
+  {
+    id: "N5",
+    name: "Germanggis",
+    image: "../../GAMBAR UNTUK SPOT/germanggis.png",
+    location: "Cilongok",
+    category: "Nature"
+  },
 
-            method: "POST",
+  {
+    id: "N6",
+    name: "Menggala Ranch",
+    image: "../../GAMBAR UNTUK SPOT/menggala.png",
+    location: "Pekuncen",
+    category: "Nature"
+  },
 
-            headers: {
+  {
+    id: "N7",
+    name: "Caub",
+    image: "../../GAMBAR UNTUK SPOT/caub.png",
+    location: "Baturraden",
+    category: "Nature"
+  },
 
-                "Content-Type":
-                "application/x-www-form-urlencoded"
+  {
+    id: "N8",
+    name: "Jenggala Waterfall",
+    image: "../../GAMBAR UNTUK SPOT/curug-jenggala.png",
+    location: "Baturraden",
+    category: "Nature"
+  },
 
-            },
+  {
+    id: "N9",
+    name: "Tirta Sela Waterfall",
+    image: "../../GAMBAR UNTUK SPOT/curug-tirta.png",
+    location: "Kedungbanteng",
+    category: "Nature"
+  },
 
-            body:
+  {
+    id: "N10",
+    name: "Bayan Waterfall",
+    image: "../../GAMBAR UNTUK SPOT/curug-bayan.png",
+    location: "Baturraden",
+    category: "Nature"
+  },
 
-            "spot_id=" + spotId +
+  {
+    id: "N11",
+    name: "Silent Lake Waterfall",
+    image: "../../GAMBAR UNTUK SPOT/curug-telaga.png",
+    location: "Karanglewas",
+    category: "Nature"
+  },
 
-            "&spot_name=" + encodeURIComponent(spotName) +
+  {
+    id: "N12",
+    name: "Angel Waterfall",
+    image: "../../GAMBAR UNTUK SPOT/curug-bidadari.png",
+    location: "Baturraden",
+    category: "Nature"
+  },
 
-            "&spot_image=" + encodeURIComponent(spotImage) +
+  /* ================= COFFEE ================= */
 
-            "&location=" + encodeURIComponent(location) +
+  {
+    id: "C1",
+    name: "Bayan Village & Cafe",
+    image: "../../GAMBAR UNTUK SPOT/bayan-village.png",
+    location: "Baturraden",
+    category: "Coffee"
+  },
 
-            "&category=" + encodeURIComponent(category)
+  {
+    id: "C2",
+    name: "Arasta Alpha",
+    image: "../../GAMBAR UNTUK SPOT/arasta.png",
+    location: "Purwokerto Timur",
+    category: "Coffee"
+  },
 
-        })
+  {
+    id: "C3",
+    name: "Lembah Patih",
+    image: "../../GAMBAR UNTUK SPOT/lembah-patih.png",
+    location: "Baturraden",
+    category: "Coffee"
+  },
 
-        .then(response => response.text())
+  {
+    id: "C4",
+    name: "Ethos Digital Valley",
+    image: "../../GAMBAR UNTUK SPOT/ethos-digital.png",
+    location: "Sumbang",
+    category: "Coffee"
+  },
 
-        .then(data => {
+  {
+    id: "C5",
+    name: "Cerita Alam",
+    image: "../../GAMBAR UNTUK SPOT/cerita-alam.png",
+    location: "Baturraden",
+    category: "Coffee"
+  },
 
-            if(data.includes("saved")){
+  {
+    id: "C6",
+    name: "Ebony Cafe",
+    image: "../../GAMBAR UNTUK SPOT/ebony.png",
+    location: "Baturraden",
+    category: "Coffee"
+  },
 
-                alert("Spot berhasil disimpan ⭐");
+  {
+    id: "C7",
+    name: "L@ Puerto",
+    image: "../../GAMBAR UNTUK SPOT/l@.png",
+    location: "Sokaraja",
+    category: "Coffee"
+  },
 
-            }
+  {
+    id: "C8",
+    name: "Lav Cafe",
+    image: "../../GAMBAR UNTUK SPOT/lav.png",
+    location: "Purwokerto Timur",
+    category: "Coffee"
+  },
 
-            else if(data.includes("already")){
+  {
+    id: "C9",
+    name: "Social House",
+    image: "../../GAMBAR UNTUK SPOT/social.png",
+    location: "Purwokerto Selatan",
+    category: "Coffee"
+  },
 
-                alert("Spot sudah ada di wishlist");
+  {
+    id: "C10",
+    name: "AT NINE Coffee and Space",
+    image: "../../GAMBAR UNTUK SPOT/at-nine.png",
+    location: "Purwokerto Timur",
+    category: "Coffee"
+  },
 
-            }
+  {
+    id: "C11",
+    name: "Alas House",
+    image: "../../GAMBAR UNTUK SPOT/alas.png",
+    location: "Purwokerto Timur",
+    category: "Coffee"
+  },
 
-            else{
+  {
+    id: "C12",
+    name: "Fore Coffee",
+    image: "../../GAMBAR UNTUK SPOT/fore.png",
+    location: "Purwokerto Utara",
+    category: "Coffee"
+  },
 
-                alert(data);
+  /* ================= PLACES ================= */
 
-            }
+  {
+    id: "P1",
+    name: "Rita Supermall",
+    image: "../../GAMBAR UNTUK SPOT/rita-supermall.png",
+    location: "Purwokerto Timur",
+    category: "Places"
+  },
 
-        });
+  {
+    id: "P2",
+    name: "Menara Pandang Teratai",
+    image: "../../GAMBAR UNTUK SPOT/menara.png",
+    location: "Purwokerto Timur",
+    category: "Places"
+  },
 
-    });
+  {
+    id: "P3",
+    name: "Bayan Village & Cafe",
+    image: "../../GAMBAR UNTUK SPOT/bayan-village.png",
+    location: "Baturraden",
+    category: "Places"
+  },
+
+  {
+    id: "P4",
+    name: "The Village",
+    image: "../../GAMBAR UNTUK SPOT/the-village.png",
+    location: "Baturraden",
+    category: "Places"
+  },
+
+  {
+    id: "P5",
+    name: "Small World",
+    image: "../../GAMBAR UNTUK SPOT/small.png",
+    location: "Baturraden",
+    category: "Places"
+  },
+
+  {
+    id: "P6",
+    name: "The Forest Island",
+    image: "../../GAMBAR UNTUK SPOT/the-forest.png",
+    location: "Baturraden",
+    category: "Places"
+  },
+
+  {
+    id: "P7",
+    name: "Arcelio Aquapark",
+    image: "../../GAMBAR UNTUK SPOT/arcelio.png",
+    location: "Purwokerto Utara",
+    category: "Places"
+  },
+
+  {
+    id: "P8",
+    name: "Taman Andhang Pangrenan",
+    image: "../../GAMBAR UNTUK SPOT/taman.png",
+    location: "Karangklesem",
+    category: "Places"
+  },
+
+  {
+    id: "P9",
+    name: "Happy Time",
+    image: "../../GAMBAR UNTUK SPOT/happy.png",
+    location: "Rita Supermall",
+    category: "Places"
+  }
+
+];
+
+/* =========================
+   SHOW SPOTS
+========================= */
+
+function displaySpots(spots){
+
+  cardWrap.innerHTML = "";
+
+  if(spots.length === 0){
+
+    cardWrap.innerHTML = `
+
+      <h2
+        style="
+          width:100%;
+          text-align:center;
+          color:#4C312A;
+          margin-top:40px;
+        "
+      >
+        Spot not found.
+      </h2>
+
+    `;
+
+    return;
+
+  }
+
+  spots.forEach(spot => {
+
+    cardWrap.innerHTML += `
+
+    <div class="spot-card">
+
+      <img
+        src="${spot.image}"
+        class="card-img"
+      >
+
+      <div class="card-content">
+
+        <div class="tag">
+          ${spot.category}
+        </div>
+
+        <h3>
+          ${spot.name}
+        </h3>
+
+        <div class="location">
+          ${spot.location}
+        </div>
+
+        <div class="btn-wrap">
+
+          <a href="../Detail Spot/detail_spot.php?id=${spot.id}">
+
+            <button type="button">
+              Details
+            </button>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    `;
+
+  });
+
+}
+
+/* =========================
+   DEFAULT SPOTS
+========================= */
+
+displaySpots([
+
+  allSpots[14],
+  allSpots[15],
+  allSpots[2],
+  allSpots[27],
+  allSpots[24],
+  allSpots[7]
+
+]);
+
+/* =========================
+   SEARCH
+========================= */
+
+const searchInput =
+document.getElementById(
+  "searchInput"
+);
+
+searchInput.addEventListener(
+"keyup",
+
+function(){
+
+  const keyword =
+  searchInput.value.toLowerCase();
+
+  if(keyword === ""){
+
+    displaySpots([
+
+      allSpots[14],
+      allSpots[15],
+      allSpots[2],
+      allSpots[27],
+      allSpots[24],
+      allSpots[7]
+
+    ]);
+
+    return;
+
+  }
+
+  const filteredSpots =
+  allSpots.filter(spot =>
+
+    spot.name.toLowerCase().includes(keyword)
+
+    ||
+
+    spot.location.toLowerCase().includes(keyword)
+
+    ||
+
+    spot.category.toLowerCase().includes(keyword)
+
+  );
+
+  displaySpots(filteredSpots);
 
 });
 

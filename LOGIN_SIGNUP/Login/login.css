@@ -98,6 +98,39 @@ body{
   outline: none;
 }
 
+/* PASSWORD BOX */
+
+.password-box{
+  position: relative;
+
+  width: 100%;
+}
+
+/* INPUT */
+
+.password-box input{
+  width: 100%;
+
+  padding-right: 50px;
+}
+
+/* EYE ICON */
+
+.toggle-password{
+  position: absolute;
+
+  right: 18px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  user-select: none;
+}
+
 .login-left input::placeholder{
   color: #8B7A74;
   font-family: 'Poppins', sans-serif;

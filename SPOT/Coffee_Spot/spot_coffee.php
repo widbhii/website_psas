@@ -85,16 +85,9 @@ include "../../navbar.php";
 
       <input
         type="text"
-        placeholder="Search"
+        placeholder="Search coffee spots..."
+        id="searchInput"
       >
-
-      <button class="filter-btn">
-
-        <img
-          src="../../KEBUTUHAN ELEMENT/filter.png"
-        >
-
-      </button>
 
     </div>
 
@@ -132,7 +125,7 @@ include "../../navbar.php";
       <div class="card-content">
 
         <div class="tag">
-          Spots
+          Coffee
         </div>
 
         <h3>
@@ -188,7 +181,7 @@ include "../../navbar.php";
       <div class="card-content">
 
         <div class="tag">
-          Spots
+          Coffee
         </div>
 
         <h3>
@@ -244,7 +237,7 @@ include "../../navbar.php";
       <div class="card-content">
 
         <div class="tag">
-          Spots
+          Coffee
         </div>
 
         <h3>
@@ -300,7 +293,7 @@ include "../../navbar.php";
       <div class="card-content">
 
         <div class="tag">
-          Spots
+          Coffee
         </div>
 
         <h3>
@@ -356,7 +349,7 @@ include "../../navbar.php";
       <div class="card-content">
 
         <div class="tag">
-          Spots
+          Coffee
         </div>
 
         <h3>
@@ -412,7 +405,7 @@ include "../../navbar.php";
       <div class="card-content">
 
         <div class="tag">
-          Spots
+          Coffee
         </div>
 
         <h3>
@@ -468,7 +461,7 @@ include "../../navbar.php";
       <div class="card-content">
 
         <div class="tag">
-          Spots
+          Coffee
         </div>
 
         <h3>
@@ -524,7 +517,7 @@ include "../../navbar.php";
       <div class="card-content">
 
         <div class="tag">
-          Spots
+          Coffee
         </div>
 
         <h3>
@@ -580,7 +573,7 @@ include "../../navbar.php";
       <div class="card-content">
 
         <div class="tag">
-          Spots
+          Coffee
         </div>
 
         <h3>
@@ -636,7 +629,7 @@ include "../../navbar.php";
       <div class="card-content">
 
         <div class="tag">
-          Spots
+          Coffee
         </div>
 
         <h3>
@@ -692,7 +685,7 @@ include "../../navbar.php";
       <div class="card-content">
 
         <div class="tag">
-          Spots
+          Coffee
         </div>
 
         <h3>
@@ -748,7 +741,7 @@ include "../../navbar.php";
       <div class="card-content">
 
         <div class="tag">
-          Spots
+          Coffee
         </div>
 
         <h3>
@@ -778,6 +771,80 @@ include "../../navbar.php";
   </div>
 
 </section>
+
+<!-- SEARCH SCRIPT -->
+<script>
+
+/* =========================
+   SEARCH SPOT
+========================= */
+
+const searchInput =
+document.getElementById(
+  "searchInput"
+);
+
+const spotCards =
+document.querySelectorAll(
+  ".spot-card"
+);
+
+/* SEARCH EVENT */
+
+searchInput.addEventListener(
+"keyup",
+
+function(){
+
+  const keyword =
+  searchInput.value.toLowerCase();
+
+  spotCards.forEach(card => {
+
+    const spotName =
+    card.getAttribute(
+      "data-name"
+    ).toLowerCase();
+
+    const location =
+    card.getAttribute(
+      "data-location"
+    ).toLowerCase();
+
+    const category =
+    card.getAttribute(
+      "data-category"
+    ).toLowerCase();
+
+    /* FILTER */
+
+    if(
+
+      spotName.includes(keyword)
+      ||
+
+      location.includes(keyword)
+      ||
+
+      category.includes(keyword)
+
+    ){
+
+      card.style.display = "block";
+
+    }
+
+    else{
+
+      card.style.display = "none";
+
+    }
+
+  });
+
+});
+
+</script>
 
 </body>
 </html>

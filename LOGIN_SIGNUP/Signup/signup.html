@@ -96,12 +96,23 @@
         <!-- PASSWORD -->
         <label>Password</label>
 
-        <input
-          type="password"
-          name="password"
-          placeholder="Enter your password"
-          required
-        >
+        <div class="password-box">
+
+  <input
+    type="password"
+    name="password"
+    id="signupPassword"
+    placeholder="Create Password"
+  >
+
+  <span
+    class="toggle-password"
+    onclick="toggleSignupPassword()"
+  >
+    👁
+  </span>
+
+</div>
 
         <!-- NOTE -->
         <small class="password-note">
@@ -171,6 +182,31 @@
   </p>
 
 </footer>
+
+<script>
+
+function toggleSignupPassword(){
+
+  const passwordInput =
+  document.getElementById(
+    "signupPassword"
+  );
+
+  if(passwordInput.type === "password"){
+
+    passwordInput.type = "text";
+
+  }
+
+  else{
+
+    passwordInput.type = "password";
+
+  }
+
+}
+
+</script>
 
 </body>
 </html>
