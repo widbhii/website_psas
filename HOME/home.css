@@ -223,3 +223,8 @@ textarea{
   float: right;
   margin-top: 20px;
 }
+
+.nav-inner a{
+  display: fle;
+  align-items: center;
+}

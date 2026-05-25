@@ -171,3 +171,22 @@ input:checked + .slider:before { transform: translateX(24px); }
 .support-box p { font-size: 13px; line-height: 1.6; }
 .simple-dropdown div { padding: 10px; border-bottom: 1px solid #4C312A; }
 .simple-dropdown div:last-child { border-bottom: none; }
+/* ==========================================================================
+   FIX NAVBAR SUPAYA MUNCUL DI ATAS (TARUH DI PALING BAWAH PROFILE.CSS)
+   ========================================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 82px;
+  z-index: 9999; /* Maksa navbar biar gak tenggelam */
+}
+
+body.profile-page {
+  display: flex;
+  flex-direction: column; /* Maksa navbar di atas, container di bawah */
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 140px !important; /* Ngasih jarak biar dashboard gak ketutup navbar */
+}
