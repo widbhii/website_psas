@@ -1,17 +1,35 @@
+<?php
+
+include "../backend/session.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Write Review - ChillZone</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Write Review - ChillZone
+  </title>
 
   <!-- FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Poppins:wght@300;400;500;600;700&family=Alatsi&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Poppins:wght@300;400;500;600;700&family=Alatsi&display=swap"
+    rel="stylesheet"
+  >
 
   <!-- CSS -->
-  <link rel="stylesheet" href="add_review.css"
+  <link
+    rel="stylesheet"
+    href="add_review.css"
+  >
 
 </head>
 
@@ -30,8 +48,8 @@
   </p>
 
   <!-- FORM -->
-  <form 
-    action="../backend/add_review.php" 
+  <form
+    action="../backend/add_review.php"
     method="POST"
     class="review-form"
   >
@@ -43,12 +61,13 @@
         Full Name
       </label>
 
-      <input 
-        type="text"
-        name="username"
-        class="form-input"
-        placeholder="Enter your name..."
-        required
+      <input
+      type="text"
+      name="username"
+      class="form-input"
+      placeholder="Enter your name..."
+      value="<?php echo $_SESSION['username']; ?>"
+      required
       >
 
     </div>
@@ -60,7 +79,7 @@
         Choose Category
       </label>
 
-      <select 
+      <select
         id="categorySelect"
         name="category"
         class="form-input"
@@ -94,7 +113,7 @@
         Choose Place
       </label>
 
-      <select 
+      <select
         id="placeSelect"
         name="place_name"
         class="form-input"
@@ -118,30 +137,50 @@
 
       <div class="star-rating">
 
-        <button type="button" data-value="1" class="star-btn">
+        <button
+          type="button"
+          data-value="1"
+          class="star-btn"
+        >
           ★
         </button>
 
-        <button type="button" data-value="2" class="star-btn">
+        <button
+          type="button"
+          data-value="2"
+          class="star-btn"
+        >
           ★
         </button>
 
-        <button type="button" data-value="3" class="star-btn">
+        <button
+          type="button"
+          data-value="3"
+          class="star-btn"
+        >
           ★
         </button>
 
-        <button type="button" data-value="4" class="star-btn">
+        <button
+          type="button"
+          data-value="4"
+          class="star-btn"
+        >
           ★
         </button>
 
-        <button type="button" data-value="5" class="star-btn">
+        <button
+          type="button"
+          data-value="5"
+          class="star-btn"
+        >
           ★
         </button>
 
       </div>
 
-      <!-- VALUE YANG MASUK DATABASE -->
-      <input 
+      <!-- VALUE -->
+      <input
         type="hidden"
         name="rating"
         id="ratingValue"
@@ -158,7 +197,7 @@
         Review
       </label>
 
-      <textarea 
+      <textarea
         name="review_text"
         class="form-input"
         rows="5"
@@ -169,7 +208,10 @@
     </div>
 
     <!-- BUTTON -->
-    <button type="submit" class="submit-btn">
+    <button
+      type="submit"
+      class="submit-btn"
+    >
       Submit Review
     </button>
 
@@ -224,7 +266,7 @@ const places = {
     "Menara Pandang Teratai",
     "Bayan Village & Cafe",
     "The Village",
-    "Small Word",
+    "Small World",
     "The Forest Island",
     "Arcelio Aquapark",
     "Andhang Pangrenan Park",
@@ -239,26 +281,34 @@ const places = {
 ========================= */
 
 const categorySelect =
-document.getElementById("categorySelect");
+document.getElementById(
+"categorySelect"
+);
 
 const placeSelect =
-document.getElementById("placeSelect");
+document.getElementById(
+"placeSelect"
+);
 
 /* =========================
    CHANGE CATEGORY
 ========================= */
 
-categorySelect.addEventListener("change", () => {
+categorySelect.addEventListener(
+"change",
+() => {
 
   const selectedCategory =
   categorySelect.value;
 
   placeSelect.innerHTML =
+
   '<option value="">Select Place</option>';
 
   if(selectedCategory in places){
 
-    places[selectedCategory].forEach(place => {
+    places[selectedCategory]
+    .forEach(place => {
 
       const option =
       document.createElement("option");
@@ -283,7 +333,9 @@ const stars =
 document.querySelectorAll(".star-btn");
 
 const ratingValue =
-document.getElementById("ratingValue");
+document.getElementById(
+"ratingValue"
+);
 
 stars.forEach((star, index) => {
 

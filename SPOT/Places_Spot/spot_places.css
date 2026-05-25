@@ -55,8 +55,6 @@ body{
   gap: 70px;
 }
 
-/* LINK */
-
 .category-box a{
   color: white;
 
@@ -68,13 +66,9 @@ body{
   transition: 0.2s ease;
 }
 
-/* ACTIVE */
-
 .category-box a.active{
   color: #FFD97C;
 }
-
-/* HOVER */
 
 .category-box a:hover{
   color: #FFD97C;
@@ -270,6 +264,12 @@ body{
 .btn-wrap{
   display: flex;
   justify-content: flex-end;
+
+  margin-top: 20px;
+}
+
+.btn-wrap a{
+  text-decoration: none;
 }
 
 .card-content button{
@@ -286,6 +286,8 @@ body{
   font-size: 14px;
 
   cursor: pointer;
+
+  transition: 0.2s ease;
 }
 
 .card-content button:hover{

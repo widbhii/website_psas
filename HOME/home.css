@@ -1,4 +1,10 @@
-/* HERO */
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  padding: 90px 0 40px;
+}
 
 .hero-wrap{
   display: flex;
@@ -9,29 +15,71 @@
 }
 
 .hero-left{
-  max-width: 500px;
+  max-width: 520px;
+
+  margin-top: -40px;
 }
 
 .hero-left h2{
   font-family: 'Boogaloo', cursive;
-  font-size: 60px;
+  font-size: 64px;
 
-  line-height: 70px;
+  line-height: 72px;
+
+  margin: 0;
 }
 
 .hero-left p{
-  margin-top: 20px;
+  margin-top: 24px;
 
-  max-width: 400px;
+  max-width: 420px;
 
   font-size: 16px;
-  line-height: 28px;
+  line-height: 30px;
+}
+
+/* BUTTON */
+
+.btn{
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 190px;
+  height: 56px;
+
+  margin-top: 28px;
+
+  border-radius: 14px;
+
+  background: #4C312A;
+  color: white;
+
+  text-decoration: none;
+
+  font-family: 'Alatsi', sans-serif;
+  font-size: 18px;
+
+  transition: 0.25s ease;
+}
+
+.btn:hover{
+  background: #3A241F;
+
+  transform: translateY(-2px);
 }
 
 /* HERO IMAGE */
 
+.hero-right{
+  margin-top: -70px;
+}
+
 .hero-right img{
   width: 620px;
+
+  display: block;
 }
 
 /* =========================
@@ -40,11 +88,13 @@
 
 .tear-section{
   position: relative;
-  margin-top: 20px;
+
+  margin-top: -40px;
 }
 
 .tear{
   width: 100%;
+
   display: block;
 
   position: relative;
@@ -56,7 +106,7 @@
 .tear-text{
   position: absolute;
 
-  top: 50%;
+  top: 45%;
   left: 50%;
 
   transform: translate(-50%, -50%);
@@ -68,12 +118,15 @@
 
 .tear-text h2{
   font-family: 'Boogaloo', cursive;
-  font-size: 40px;
+  font-size: 42px;
+
+  margin: 0;
 }
 
 .tear-text p{
-  margin-top: 8px;
-  font-size: 14px;
+  margin-top: 10px;
+
+  font-size: 15px;
 }
 
 /* SPARK */
@@ -93,7 +146,7 @@
   position: absolute;
 
   left: 120px;
-  top: 500px;
+  top: 430px;
 
   width: 120px;
 
@@ -104,7 +157,7 @@
   position: absolute;
 
   right: 120px;
-  top: 500px;
+  top: 430px;
 
   width: 120px;
 
@@ -116,50 +169,61 @@
 ========================= */
 
 .contact{
-  padding: 100px 0 60px;
+  padding: 40px 0 60px;
+
+  margin-top: -40px;
 }
 
 .contact-wrap{
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 
-  gap: 60px;
+  gap: 70px;
 }
 
 /* LEFT */
 
+.contact-left{
+  max-width: 420px;
+}
+
 .contact-left h2{
   font-family: 'Boogaloo', cursive;
-  font-size: 56px;
+  font-size: 60px;
 
-  line-height: 60px;
+  line-height: 64px;
+
+  margin: 0;
 }
 
 .desc{
-  margin-top: 20px;
+  margin-top: 24px;
+
+  font-size: 17px;
 }
 
 .desc2{
-  margin-top: 10px;
+  margin-top: 12px;
 
-  max-width: 300px;
+  max-width: 320px;
 
-  line-height: 28px;
+  line-height: 30px;
 }
 
 /* INFO */
 
 .info{
-  margin-top: 30px;
+  margin-top: 34px;
 }
 
 .info-item{
   display: flex;
   align-items: center;
 
-  gap: 12px;
+  gap: 14px;
 
-  margin-top: 16px;
+  margin-top: 18px;
 }
 
 .info-item img{
@@ -170,16 +234,33 @@
   font-size: 15px;
 }
 
+/* LINK */
+
+.info-item a{
+  color: #3E2723;
+
+  text-decoration: none;
+
+  transition: 0.2s ease;
+}
+
+.info-item a:hover{
+  color: #6D4C41;
+
+  text-decoration: underline;
+}
+
 /* =========================
    FORM
 ========================= */
 
 .contact-right{
-  width: 500px;
+  width: 520px;
 }
 
 .row{
   display: flex;
+
   gap: 20px;
 }
 
@@ -189,18 +270,29 @@ input,
 textarea{
   width: 100%;
 
-  margin-top: 12px;
-  padding: 12px 14px;
+  margin-top: 14px;
+  padding: 14px 16px;
 
-  border: 1px solid #4C312A;
-  border-radius: 8px;
+  border: 1.5px solid #4C312A;
+  border-radius: 10px;
 
   background: transparent;
 
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
 
+  color: #3E2723;
+
   outline: none;
+
+  box-sizing: border-box;
+}
+
+/* PLACEHOLDER */
+
+input::placeholder,
+textarea::placeholder{
+  color: #7B625B;
 }
 
 /* FOCUS */
@@ -213,7 +305,8 @@ textarea:focus{
 /* TEXTAREA */
 
 textarea{
-  height: 120px;
+  height: 140px;
+
   resize: none;
 }
 
@@ -221,5 +314,20 @@ textarea{
 
 .send{
   float: right;
-  margin-top: 20px;
+
+  margin-top: 22px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  text-align: center;
+
+  padding: 30px 20px;
+
+  font-size: 13px;
+
+  color: #3E2723;
 }
