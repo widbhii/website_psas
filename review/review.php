@@ -1,58 +1,54 @@
+<?php
+
+include "../backend/session.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Review - ChillZone</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Review - ChillZone
+  </title>
 
   <!-- FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Poppins:wght@300;400;500;600;700&family=Alatsi&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Poppins:wght@300;400;500;600;700&family=Alatsi&display=swap"
+    rel="stylesheet"
+  >
 
   <!-- CSS -->
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="review.css">
+  <link
+    rel="stylesheet"
+    href="../style.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="review.css"
+  >
 
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<header class="navbar">
+    <?php
 
-  <div class="nav-inner">
+    $page = "review";
+    
+    include "../navbar.php";
 
-    <h1 class="logo">ChillZone</h1>
-
-    <nav class="menu">
-
-      <a href="../HOME/home.html">
-        Home
-      </a>
-
-      <a href="../SPOT/Rekomendasi_Spot/spot_rekomendasi.html">
-        Spots
-      </a>
-
-      <a href="review.html" class="active">
-        Review
-      </a>
-
-      <a href="../ARTICLE/article.html">
-        Article
-      </a>
-
-    </nav>
-
-    <img 
-      src="../KEBUTUHAN ELEMENT/user icon 1.png" 
-      class="profile"
-    >
+  ?>  
 
   </div>
-
-</header>
 
 <!-- REVIEW -->
 <section class="review-section">
@@ -71,14 +67,20 @@
   </div>
 
   <!-- REVIEW WRAP -->
-  <div class="review-wrap" id="reviewWrap">
+  <div
+    class="review-wrap"
+    id="reviewWrap"
+  >
 
   </div>
 
   <!-- BUTTON -->
   <div class="review-btn-wrap">
 
-    <a href="add_review.html" class="write-btn">
+    <a
+      href="add_review.php"
+      class="write-btn"
+    >
       + Write Your Review
     </a>
 
@@ -107,7 +109,9 @@
 ========================= */
 
 const reviewWrap =
-document.getElementById("reviewWrap");
+document.getElementById(
+"reviewWrap"
+);
 
 /* =========================
    FETCH REVIEW
@@ -119,7 +123,7 @@ fetch("../backend/fetch_review.php")
 
 .then(data => {
 
-  /* KALAU BELUM ADA REVIEW */
+  /* EMPTY */
 
   if(data.length === 0){
 
@@ -134,11 +138,11 @@ fetch("../backend/fetch_review.php")
     return;
   }
 
-  /* LOOP REVIEW */
+  /* LOOP */
 
   data.forEach(review => {
 
-    /* BIKIN BINTANG */
+    /* BINTANG */
 
     let stars = "";
 
@@ -148,9 +152,10 @@ fetch("../backend/fetch_review.php")
 
     }
 
-    /* AMBIL INISIAL */
+    /* INISIAL */
 
     const initials =
+
     review.username
     .substring(0,2)
     .toUpperCase();
@@ -161,12 +166,17 @@ fetch("../backend/fetch_review.php")
 
       <div class="review-card">
 
+        <!-- TOP -->
         <div class="review-top">
 
+          <!-- PROFILE -->
           <div class="profile-circle brown">
+
             ${initials}
+
           </div>
 
+          <!-- USER -->
           <div>
 
             <h3>
@@ -181,14 +191,18 @@ fetch("../backend/fetch_review.php")
 
         </div>
 
-        <!-- TEMPAT -->
+        <!-- PLACE -->
         <div class="place-tag">
+
           ${review.place_name}
+
         </div>
 
         <!-- REVIEW -->
         <p class="review-text">
+
           "${review.review_text}"
+
         </p>
 
       </div>

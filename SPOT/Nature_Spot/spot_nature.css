@@ -173,8 +173,6 @@ body{
   transition: 0.25s ease;
 }
 
-/* HOVER */
-
 .spot-card:hover{
   transform: translateY(-4px);
 }
@@ -214,13 +212,9 @@ body{
   transition: 0.25s ease;
 }
 
-/* HOVER STAR */
-
 .save-btn:hover{
   transform: scale(1.08);
 }
-
-/* ACTIVE STAR */
 
 .save-toggle:checked + .save-btn{
   background: #FFD97C;
@@ -282,6 +276,12 @@ body{
 .btn-wrap{
   display: flex;
   justify-content: flex-end;
+
+  margin-top: 20px;
+}
+
+.btn-wrap a{
+  text-decoration: none;
 }
 
 .card-content button{
@@ -317,4 +317,54 @@ footer{
 
   font-size: 13px;
   color: #3E2723;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1300px){
+
+  .spots{
+    width: 95%;
+  }
+
+}
+
+@media(max-width:900px){
+
+  .card-wrap{
+    justify-content: center;
+
+    gap: 40px;
+  }
+
+  .spots-top{
+    flex-direction: column;
+
+    gap: 30px;
+  }
+
+  .search-box{
+    position: static;
+  }
+
+}
+
+@media(max-width:500px){
+
+  .spot-card{
+    width: 100%;
+  }
+
+  .category-box{
+    width: 100%;
+
+    gap: 30px;
+  }
+
+  .category-box a{
+    font-size: 18px;
+  }
+
 }

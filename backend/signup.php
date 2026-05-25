@@ -144,8 +144,25 @@ while($row = mysqli_fetch_assoc($check)){
    INSERT USER BARU
 ========================= */
 
+/* HASH PASSWORD */
+
+$passwordHash =
+password_hash(
+$password,
+PASSWORD_DEFAULT
+);
+
+/* INSERT */
+
 $sql = "INSERT INTO users(username,email,password)
-VALUES('$username','$email','$password')";
+
+VALUES(
+
+'$username',
+'$email',
+'$passwordHash'
+
+)";
 
 mysqli_query($conn, $sql);
 

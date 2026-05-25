@@ -55,8 +55,6 @@ body{
   gap: 70px;
 }
 
-/* LINK */
-
 .category-box a{
   color: white;
 
@@ -68,13 +66,9 @@ body{
   transition: 0.2s ease;
 }
 
-/* ACTIVE */
-
 .category-box a.active{
   color: #FFD97C;
 }
-
-/* HOVER */
 
 .category-box a:hover{
   color: #FFD97C;
@@ -173,8 +167,6 @@ body{
   transition: 0.25s ease;
 }
 
-/* HOVER */
-
 .spot-card:hover{
   transform: translateY(-4px);
 }
@@ -214,13 +206,9 @@ body{
   transition: 0.25s ease;
 }
 
-/* HOVER STAR */
-
 .save-btn:hover{
   transform: scale(1.08);
 }
-
-/* ACTIVE STAR */
 
 .save-toggle:checked + .save-btn{
   background: #FFD97C;
@@ -250,15 +238,11 @@ body{
   padding: 20px;
 }
 
-/* TAG */
-
 .tag{
   font-size: 13px;
 
   margin-bottom: 8px;
 }
-
-/* TITLE */
 
 .card-content h3{
   font-family: 'Boogaloo', cursive;
@@ -266,8 +250,6 @@ body{
 
   margin: 0 0 10px;
 }
-
-/* LOCATION */
 
 .location{
   font-size: 14px;
@@ -282,6 +264,12 @@ body{
 .btn-wrap{
   display: flex;
   justify-content: flex-end;
+
+  margin-top: 20px;
+}
+
+.btn-wrap a{
+  text-decoration: none;
 }
 
 .card-content button{

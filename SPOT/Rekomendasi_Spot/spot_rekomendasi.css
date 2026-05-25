@@ -173,6 +173,8 @@ body{
   transition: 0.25s ease;
 }
 
+/* HOVER */
+
 .spot-card:hover{
   transform: translateY(-4px);
 }
@@ -212,9 +214,13 @@ body{
   transition: 0.25s ease;
 }
 
+/* HOVER STAR */
+
 .save-btn:hover{
   transform: scale(1.08);
 }
+
+/* ACTIVE STAR */
 
 .save-toggle:checked + .save-btn{
   background: #FFD97C;
@@ -276,7 +282,17 @@ body{
 .btn-wrap{
   display: flex;
   justify-content: flex-end;
+
+  margin-top: 20px;
 }
+
+/* LINK BUTTON */
+
+.btn-wrap a{
+  text-decoration: none;
+}
+
+/* BUTTON */
 
 .card-content button{
   width: 95px;
@@ -292,7 +308,11 @@ body{
   font-size: 14px;
 
   cursor: pointer;
+
+  transition: 0.2s ease;
 }
+
+/* BUTTON HOVER */
 
 .card-content button:hover{
   background: #3A241F;

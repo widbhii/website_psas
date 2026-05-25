@@ -1,60 +1,37 @@
-<!-- spot_coffee.html -->
+<?php
+
+include "../../backend/session.php";
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Coffee Spots - ChillZone</title>
+  <title>Spot Rekomendasi - ChillZone</title>
 
   <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Poppins:wght@300;400;500&family=Alatsi&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="../../style.css">
-  <link rel="stylesheet" href="spot_coffee.css">
+  <link rel="stylesheet" href="spot_rekomendasi.css">
+
 </head>
 
 <body>
 
 <!-- NAVBAR -->
-<header class="navbar">
+<?php
 
-  <div class="nav-inner">
+$page = "spots";
 
-    <h1 class="logo">
-      ChillZone
-    </h1>
+include "../../navbar.php";
 
-    <nav class="menu">
-
-      <a href="../../HOME/home.html">
-        Home
-      </a>
-
-      <a href="../Rekomendasi_Spot/spot_rekomendasi.html" class="active">
-        Spots
-      </a>
-
-      <a href="../../REVIEW/review.html">
-        Review
-      </a>
-
-      <a href="../../ARTICLE/article.html">
-        Article
-      </a>
-
-    </nav>
-
-    <img 
-      src="../../KEBUTUHAN ELEMENT/user icon 1.png" 
-      class="profile"
-    >
-
-  </div>
-
-</header>
+?>
 
 <!-- SPOTS -->
 <section class="spots">
@@ -65,15 +42,15 @@
     <!-- CATEGORY -->
     <div class="category-box">
 
-      <a href="../Nature_Spot/spot_nature.html">
+      <a href="../Nature_Spot/spot_nature.php">
         Nature
       </a>
 
-      <a href="spot_coffee.html" class="active">
+      <a href="../Coffee_Spot/spot_coffee.php">
         Coffee
       </a>
 
-      <a href="../Places_Spot/spot_places.html">
+      <a href="../Places_Spot/spot_places.php">
         Places
       </a>
 
@@ -106,11 +83,11 @@
     <div 
       class="spot-card"
 
-      data-id="C1"
+      data-id="R1"
 
-      data-name="Bayan Village & Cafe"
+      data-name="Lembah Patih"
 
-      data-image="../../GAMBAR UNTUK SPOT/bayan-village.png"
+      data-image="../../GAMBAR UNTUK SPOT/lembah-patih.png"
 
       data-location="Baturaden"
 
@@ -124,22 +101,30 @@
       </label>
 
       <img 
-        src="../../GAMBAR UNTUK SPOT/bayan-village.png" 
+        src="../../GAMBAR UNTUK SPOT/lembah-patih.png" 
         class="card-img"
       >
 
       <div class="card-content">
 
         <div class="tag">
-          Coffee
+          Spots
         </div>
 
         <h3>
-          Bayan Village & Cafe
+          Lembah Patih
         </h3>
 
         <div class="location">
           Baturaden
+        </div>
+
+        <div class="btn-wrap">
+
+          <button>
+            Details
+          </button>
+
         </div>
 
       </div>
@@ -150,13 +135,13 @@
     <div 
       class="spot-card"
 
-      data-id="C2"
+      data-id="R2"
 
-      data-name="Arasta Alpha"
+      data-name="Ethos Digital Valley"
 
-      data-image="../../GAMBAR UNTUK SPOT/arasta.png"
+      data-image="../../GAMBAR UNTUK SPOT/ethos-digital.png"
 
-      data-location="Purwokerto Timur"
+      data-location="Sumbang"
 
       data-category="Coffee"
     >
@@ -168,94 +153,6 @@
       </label>
 
       <img 
-        src="../../GAMBAR UNTUK SPOT/arasta.png" 
-        class="card-img"
-      >
-
-      <div class="card-content">
-
-        <div class="tag">
-          Coffee
-        </div>
-
-        <h3>
-          Arasta Alpha
-        </h3>
-
-        <div class="location">
-          Purwokerto Timur
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- CARD 3 -->
-    <div 
-      class="spot-card"
-
-      data-id="C3"
-
-      data-name="Lembah Patih"
-
-      data-image="../../GAMBAR UNTUK SPOT/lembah-patih.png"
-
-      data-location="Baturaden"
-
-      data-category="Coffee"
-    >
-
-      <input type="checkbox" id="save3" class="save-toggle">
-
-      <label for="save3" class="save-btn">
-        ★
-      </label>
-
-      <img 
-        src="../../GAMBAR UNTUK SPOT/lembah-patih.png" 
-        class="card-img"
-      >
-
-      <div class="card-content">
-
-        <div class="tag">
-          Coffee
-        </div>
-
-        <h3>
-          Lembah Patih
-        </h3>
-
-        <div class="location">
-          Baturaden
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- CARD 4 -->
-    <div 
-      class="spot-card"
-
-      data-id="C4"
-
-      data-name="Ethos Digital Valley"
-
-      data-image="../../GAMBAR UNTUK SPOT/ethos-digital.png"
-
-      data-location="Sumbang"
-
-      data-category="Coffee"
-    >
-
-      <input type="checkbox" id="save4" class="save-toggle">
-
-      <label for="save4" class="save-btn">
-        ★
-      </label>
-
-      <img 
         src="../../GAMBAR UNTUK SPOT/ethos-digital.png" 
         class="card-img"
       >
@@ -263,7 +160,7 @@
       <div class="card-content">
 
         <div class="tag">
-          Coffee
+          Spots
         </div>
 
         <h3>
@@ -274,6 +171,118 @@
           Sumbang
         </div>
 
+        <div class="btn-wrap">
+
+          <button>
+            Details
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CARD 3 -->
+    <div 
+      class="spot-card"
+
+      data-id="R3"
+
+      data-name="Bayan Village & Cafe"
+
+      data-image="../../GAMBAR UNTUK SPOT/bayan-village.png"
+
+      data-location="Baturaden"
+
+      data-category="Nature"
+    >
+
+      <input type="checkbox" id="save3" class="save-toggle">
+
+      <label for="save3" class="save-btn">
+        ★
+      </label>
+
+      <img 
+        src="../../GAMBAR UNTUK SPOT/bayan-village.png" 
+        class="card-img"
+      >
+
+      <div class="card-content">
+
+        <div class="tag">
+          Spots
+        </div>
+
+        <h3>
+          Bayan Village & Cafe
+        </h3>
+
+        <div class="location">
+          Baturaden
+        </div>
+
+        <div class="btn-wrap">
+
+          <button>
+            Details
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CARD 4 -->
+    <div 
+      class="spot-card"
+
+      data-id="R4"
+
+      data-name="Taman Langit"
+
+      data-image="../../GAMBAR UNTUK SPOT/taman-langit.png"
+
+      data-location="Baturaden"
+
+      data-category="Places"
+    >
+
+      <input type="checkbox" id="save4" class="save-toggle">
+
+      <label for="save4" class="save-btn">
+        ★
+      </label>
+
+      <img 
+        src="../../GAMBAR UNTUK SPOT/taman-langit.png" 
+        class="card-img"
+      >
+
+      <div class="card-content">
+
+        <div class="tag">
+          Spots
+        </div>
+
+        <h3>
+          Taman Langit
+        </h3>
+
+        <div class="location">
+          Baturaden
+        </div>
+
+        <div class="btn-wrap">
+
+          <button>
+            Details
+          </button>
+
+        </div>
+
       </div>
 
     </div>
@@ -282,15 +291,15 @@
     <div 
       class="spot-card"
 
-      data-id="C5"
+      data-id="R5"
 
-      data-name="Cerita Alam"
+      data-name="Rita Supermall"
 
-      data-image="../../GAMBAR UNTUK SPOT/cerita-alam.png"
+      data-image="../../GAMBAR UNTUK SPOT/rita-supermall.png"
 
-      data-location="Baturaden"
+      data-location="Purwokerto Timur"
 
-      data-category="Coffee"
+      data-category="Places"
     >
 
       <input type="checkbox" id="save5" class="save-toggle">
@@ -300,22 +309,30 @@
       </label>
 
       <img 
-        src="../../GAMBAR UNTUK SPOT/cerita-alam.png" 
+        src="../../GAMBAR UNTUK SPOT/rita-supermall.png" 
         class="card-img"
       >
 
       <div class="card-content">
 
         <div class="tag">
-          Coffee
+          Spots
         </div>
 
         <h3>
-          Cerita Alam
+          Rita Supermall
         </h3>
 
         <div class="location">
-          Baturaden
+          Purwokerto Timur
+        </div>
+
+        <div class="btn-wrap">
+
+          <button>
+            Details
+          </button>
+
         </div>
 
       </div>
@@ -326,15 +343,15 @@
     <div 
       class="spot-card"
 
-      data-id="C6"
+      data-id="R6"
 
-      data-name="Ebony Cafe"
+      data-name="Waterfall"
 
-      data-image="../../GAMBAR UNTUK SPOT/ebony.png"
+      data-image="../../GAMBAR UNTUK SPOT/air-terjun.png"
 
       data-location="Baturaden"
 
-      data-category="Coffee"
+      data-category="Nature"
     >
 
       <input type="checkbox" id="save6" class="save-toggle">
@@ -344,22 +361,30 @@
       </label>
 
       <img 
-        src="../../GAMBAR UNTUK SPOT/ebony.png" 
+        src="../../GAMBAR UNTUK SPOT/air-terjun.png" 
         class="card-img"
       >
 
       <div class="card-content">
 
         <div class="tag">
-          Coffee
+          Spots
         </div>
 
         <h3>
-          Ebony Cafe
+          Waterfall
         </h3>
 
         <div class="location">
           Baturaden
+        </div>
+
+        <div class="btn-wrap">
+
+          <button>
+            Details
+          </button>
+
         </div>
 
       </div>
