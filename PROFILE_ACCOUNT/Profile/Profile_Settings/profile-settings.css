@@ -11,6 +11,7 @@
 body{
   background: #D9CFCA;
   font-family: 'Poppins', sans-serif;
+
   overflow-x: hidden;
 }
 
@@ -20,7 +21,8 @@ body{
 
 .settings-container{
   display: grid;
-  grid-template-columns: 360px 1fr;
+
+  grid-template-columns: 340px 1fr;
 
   min-height: 100vh;
 }
@@ -38,7 +40,7 @@ body{
   flex-direction: column;
   align-items: center;
 
-  gap: 60px;
+  gap: 34px;
 }
 
 /* =========================
@@ -46,20 +48,22 @@ body{
 ========================= */
 
 .sidebar-btn{
-  width: 290px;
-  height: 72px;
+  width: 260px;
+  height: 68px;
 
-  border: none;
-  border-radius: 60px;
+  border-radius: 50px;
 
   background: #D8C9C4;
   color: #000;
 
   font-family: 'Alatsi', sans-serif;
-  font-size: 24px;
-  font-weight: 400;
+  font-size: 22px;
 
-  cursor: pointer;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   transition: 0.2s ease;
 }
@@ -73,13 +77,13 @@ body{
 }
 
 /* =========================
-   RIGHT CONTENT
+   CONTENT
 ========================= */
 
 .settings-content{
   padding:
   60px
-  90px;
+  80px;
 }
 
 /* =========================
@@ -88,12 +92,12 @@ body{
 
 .settings-content h1{
   font-family: 'Alatsi', sans-serif;
-  font-size: 72px;
+  font-size: 64px;
   font-weight: 400;
 
   color: #000;
 
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 /* =========================
@@ -104,9 +108,9 @@ body{
   display: flex;
   align-items: center;
 
-  gap: 45px;
+  gap: 30px;
 
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 
 /* =========================
@@ -116,8 +120,8 @@ body{
 .profile-image-box{
   position: relative;
 
-  width: 230px;
-  height: 230px;
+  width: 170px;
+  height: 170px;
 
   flex-shrink: 0;
 }
@@ -129,6 +133,8 @@ body{
   border-radius: 50%;
 
   object-fit: cover;
+
+  border: 5px solid #4C312A;
 }
 
 /* =========================
@@ -138,33 +144,45 @@ body{
 .edit-icon{
   position: absolute;
 
-  right: 8px;
-  bottom: 8px;
+  bottom: 6px;
+  right: 6px;
 
-  width: 55px;
-  height: 55px;
+  width: 42px;
+  height: 42px;
 
   object-fit: contain;
+
+  cursor: pointer;
 }
 
 /* =========================
    PROFILE INFO
 ========================= */
 
+.profile-info{
+  background: #F2D36F;
+
+  padding:
+  24px
+  34px;
+
+  border-radius: 24px;
+
+  min-width: 320px;
+}
+
 .profile-info h2{
   font-family: 'Alatsi', sans-serif;
-  font-size: 48px;
+  font-size: 34px;
   font-weight: 400;
 
   color: #000;
 
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .profile-info p{
-  font-family: 'Poppins', sans-serif;
-  font-size: 28px;
-  font-weight: 400;
+  font-size: 16px;
 
   color: #000;
 }
@@ -175,7 +193,7 @@ body{
 
 .settings-form{
   width: 100%;
-  max-width: 950px;
+  max-width: 620px;
 }
 
 /* =========================
@@ -183,23 +201,18 @@ body{
 ========================= */
 
 .input-group{
-  margin-bottom: 42px;
+  margin-bottom: 26px;
 }
-
-/* =========================
-   LABEL
-========================= */
 
 .input-group label{
   display: block;
 
-  font-family: 'Alatsi', sans-serif;
-  font-size: 38px;
-  font-weight: 400;
+  margin-bottom: 10px;
 
-  color: #000;
+  font-size: 18px;
+  font-weight: 500;
 
-  margin-bottom: 14px;
+  color: #3E2723;
 }
 
 /* =========================
@@ -208,31 +221,60 @@ body{
 
 .input-group input{
   width: 100%;
-  height: 82px;
 
-  border: none;
-  outline: none;
+  padding:
+  16px
+  18px;
 
-  border-radius: 60px;
+  border: 1.5px solid #4C312A;
+  border-radius: 14px;
 
-  background: #4C312A;
-
-  padding: 0 34px;
+  background: white;
 
   font-family: 'Poppins', sans-serif;
-  font-size: 28px;
-  font-weight: 400;
+  font-size: 15px;
 
-  color: rgb(255, 255, 255);
+  color: #3E2723;
+
+  outline: none;
+
+  transition: 0.2s ease;
+}
+
+.input-group input::placeholder{
+  color: #8A7269;
+}
+
+.input-group input:focus{
+  border-color: #2F1D19;
 }
 
 /* =========================
-   PLACEHOLDER
+   BUTTON
 ========================= */
 
-.input-group input::placeholder{
-  color: #F3E7E2;
-  opacity: 1;
+.save-profile-btn{
+  width: 220px;
+  height: 56px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: #4C312A;
+  color: white;
+
+  font-family: 'Alatsi', sans-serif;
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.save-profile-btn:hover{
+  background: #3A241F;
+
+  transform: translateY(-2px);
 }
 
 /* =========================
@@ -254,7 +296,7 @@ body{
     flex-wrap: wrap;
     justify-content: center;
 
-    gap: 24px;
+    gap: 20px;
   }
 
   .settings-content{
@@ -267,8 +309,14 @@ body{
 
 @media(max-width:768px){
 
+  .settings-content{
+    padding:
+    40px
+    24px;
+  }
+
   .settings-content h1{
-    font-size: 50px;
+    font-size: 48px;
   }
 
   .profile-section{
@@ -277,32 +325,28 @@ body{
   }
 
   .profile-image-box{
-    width: 180px;
-    height: 180px;
+    width: 140px;
+    height: 140px;
+  }
+
+  .profile-info{
+    width: 100%;
+    min-width: auto;
   }
 
   .profile-info h2{
-    font-size: 38px;
-  }
-
-  .profile-info p{
-    font-size: 22px;
-  }
-
-  .input-group label{
     font-size: 28px;
   }
 
-  .input-group input{
-    height: 72px;
-    font-size: 22px;
+  .sidebar-btn{
+    width: 220px;
+    height: 60px;
+
+    font-size: 19px;
   }
 
-  .sidebar-btn{
-    width: 240px;
-    height: 64px;
-
-    font-size: 20px;
+  .save-profile-btn{
+    width: 100%;
   }
 
 }

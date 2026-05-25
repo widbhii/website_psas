@@ -1,10 +1,10 @@
 <?php
 
-include "../../backend/session.php";
+include "../../../backend/session.php";
 
-session_start();
+include "../../../backend/config.php";
 
-include "../../backend/config.php";
+$menu = "account";
 
 /* AMBIL DATA USER */
 
@@ -12,9 +12,12 @@ $user_id = $_SESSION['user_id'];
 
 $query =
 mysqli_query(
-$conn,
-"SELECT * FROM users
-WHERE id='$user_id'"
+
+  $conn,
+
+  "SELECT * FROM users
+  WHERE id='$user_id'"
+
 );
 
 $user =
@@ -50,7 +53,7 @@ mysqli_fetch_assoc($query);
   >
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Alatsi&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Boogaloo&family=Alatsi&display=swap"
     rel="stylesheet"
   >
 
@@ -67,49 +70,11 @@ mysqli_fetch_assoc($query);
 <div class="settings-container">
 
   <!-- SIDEBAR -->
-  <div class="sidebar">
+  <?php
 
-    <a href="profile-settings.php">
+  include "../../../sidebar.php";
 
-      <button class="sidebar-btn active">
-        Account Settings
-      </button>
-
-    </a>
-
-    <a href="#">
-
-      <button class="sidebar-btn">
-        Preferences
-      </button>
-
-    </a>
-
-    <a href="../Saved_Content/saved.php">
-
-      <button class="sidebar-btn">
-        Saved Content
-      </button>
-
-    </a>
-
-    <a href="#">
-
-      <button class="sidebar-btn">
-        Support
-      </button>
-
-    </a>
-
-    <a href="../../backend/logout.php">
-
-      <button class="sidebar-btn">
-        Log Out
-      </button>
-
-    </a>
-
-  </div>
+  ?>
 
   <!-- CONTENT -->
   <div class="settings-content">
@@ -131,7 +96,7 @@ mysqli_fetch_assoc($query);
         >
 
         <img
-          src="../../KEBUTUHAN ELEMENT/profile.png"
+          src="../../../KEBUTUHAN ELEMENT/profile.png"
           class="edit-icon"
         >
 
@@ -159,7 +124,9 @@ mysqli_fetch_assoc($query);
     <!-- FORM -->
     <form
       class="settings-form"
-      action="../../backend/update_profile.php"
+
+      action="../../../backend/update_profile.php"
+
       method="POST"
     >
 
@@ -172,8 +139,11 @@ mysqli_fetch_assoc($query);
 
         <input
           type="text"
+
           name="username"
+
           placeholder="Change your Name"
+
           value="<?php echo $user['username']; ?>"
         >
 
@@ -188,8 +158,11 @@ mysqli_fetch_assoc($query);
 
         <input
           type="email"
+
           name="email"
+
           placeholder="Change your Email"
+
           value="<?php echo $user['email']; ?>"
         >
 
@@ -204,7 +177,9 @@ mysqli_fetch_assoc($query);
 
         <input
           type="password"
+
           name="password"
+
           placeholder="Change your Password"
         >
 
@@ -213,9 +188,12 @@ mysqli_fetch_assoc($query);
       <!-- BUTTON -->
       <button
         type="submit"
+
         class="save-profile-btn"
       >
+
         Save Changes
+
       </button>
 
     </form>

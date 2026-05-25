@@ -11,6 +11,7 @@
 body{
   background: #D9CFCA;
   font-family: 'Poppins', sans-serif;
+
   overflow-x: hidden;
 }
 
@@ -20,7 +21,8 @@ body{
 
 .saved-container{
   display: grid;
-  grid-template-columns: 360px 1fr;
+
+  grid-template-columns: 340px 1fr;
 
   min-height: 100vh;
 }
@@ -38,7 +40,7 @@ body{
   flex-direction: column;
   align-items: center;
 
-  gap: 60px;
+  gap: 34px;
 }
 
 /* =========================
@@ -46,20 +48,22 @@ body{
 ========================= */
 
 .sidebar-btn{
-  width: 290px;
-  height: 72px;
+  width: 260px;
+  height: 68px;
 
-  border: none;
-  border-radius: 60px;
+  border-radius: 50px;
 
   background: #D8C9C4;
   color: #000;
 
   font-family: 'Alatsi', sans-serif;
-  font-size: 24px;
-  font-weight: 400;
+  font-size: 22px;
 
-  cursor: pointer;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   transition: 0.2s ease;
 }
@@ -79,7 +83,7 @@ body{
 .saved-content{
   padding:
   60px
-  90px;
+  80px;
 }
 
 /* =========================
@@ -88,12 +92,12 @@ body{
 
 .saved-content h1{
   font-family: 'Alatsi', sans-serif;
-  font-size: 72px;
+  font-size: 64px;
   font-weight: 400;
 
   color: #000;
 
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 /* =========================
@@ -101,8 +105,7 @@ body{
 ========================= */
 
 .saved-content h2{
-  font-family: 'Poppins', sans-serif;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 500;
 
   margin-bottom: 40px;
@@ -118,7 +121,7 @@ body{
   display: flex;
   flex-wrap: wrap;
 
-  gap: 40px;
+  gap: 36px;
 }
 
 /* =========================
@@ -126,7 +129,7 @@ body{
 ========================= */
 
 .spot-card{
-  width: 390px;
+  width: 360px;
 
   background: white;
 
@@ -152,7 +155,7 @@ body{
 
 .card-img{
   width: 100%;
-  height: 235px;
+  height: 230px;
 
   object-fit: cover;
 
@@ -183,7 +186,7 @@ body{
   font-family: 'Boogaloo', cursive;
   font-size: 32px;
 
-  margin: 0 0 10px;
+  margin-bottom: 10px;
 
   color: #4C312A;
 }
@@ -207,7 +210,7 @@ body{
   justify-content: flex-end;
 }
 
-.card-content button{
+.detail-btn{
   width: 95px;
   height: 34px;
 
@@ -225,7 +228,7 @@ body{
   transition: 0.2s ease;
 }
 
-.card-content button:hover{
+.detail-btn:hover{
   background: #3A241F;
 }
 
@@ -258,7 +261,7 @@ body{
     flex-wrap: wrap;
     justify-content: center;
 
-    gap: 24px;
+    gap: 20px;
   }
 
   .saved-content{
@@ -271,23 +274,34 @@ body{
 
 @media(max-width:768px){
 
+  .saved-content{
+    padding:
+    40px
+    24px;
+  }
+
   .saved-content h1{
-    font-size: 50px;
+    font-size: 48px;
   }
 
   .saved-content h2{
     font-size: 22px;
   }
 
+  .saved-card-wrap{
+    justify-content: center;
+  }
+
   .spot-card{
     width: 100%;
+    max-width: 380px;
   }
 
   .sidebar-btn{
-    width: 240px;
-    height: 64px;
+    width: 220px;
+    height: 60px;
 
-    font-size: 20px;
+    font-size: 19px;
   }
 
 }

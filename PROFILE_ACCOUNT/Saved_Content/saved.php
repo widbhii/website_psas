@@ -2,6 +2,8 @@
 
 include "../../backend/session.php";
 
+$menu = "saved";
+
 ?>
 
 <!DOCTYPE html>
@@ -9,18 +11,38 @@ include "../../backend/session.php";
 <head>
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Saved Content - ChillZone</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Saved Content - ChillZone
+  </title>
 
   <!-- GOOGLE FONT -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Boogaloo&family=Alatsi&display=swap" rel="stylesheet">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Boogaloo&family=Alatsi&display=swap"
+    rel="stylesheet"
+  >
 
   <!-- CSS -->
-  <link rel="stylesheet" href="saved.css">
+  <link
+    rel="stylesheet"
+    href="saved.css"
+  >
 
 </head>
 
@@ -29,29 +51,11 @@ include "../../backend/session.php";
 <div class="saved-container">
 
   <!-- SIDEBAR -->
-  <div class="sidebar">
+  <?php
 
-    <button class="sidebar-btn">
-      Account Settings
-    </button>
+  include "../../sidebar.php";
 
-    <button class="sidebar-btn">
-      Preferences
-    </button>
-
-    <button class="sidebar-btn active">
-      Saved Content
-    </button>
-
-    <button class="sidebar-btn">
-      Support
-    </button>
-
-    <button class="sidebar-btn">
-      Log Out
-    </button>
-
-  </div>
+  ?>
 
   <!-- RIGHT CONTENT -->
   <div class="saved-content">
@@ -66,8 +70,8 @@ include "../../backend/session.php";
       Wishlist Places
     </h2>
 
-    <!-- SAVE CONTENT BOX -->
-    <div 
+    <!-- CARD WRAP -->
+    <div
       class="saved-card-wrap"
       id="wishlist-container"
     >
@@ -139,9 +143,10 @@ fetch("../../backend/fetch_saved.php")
               ${item.location}
             </div>
 
+            <!-- BUTTON -->
             <div class="btn-wrap">
 
-              <button>
+              <button class="detail-btn">
                 Details
               </button>
 
