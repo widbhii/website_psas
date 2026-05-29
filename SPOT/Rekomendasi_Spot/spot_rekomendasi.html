@@ -177,7 +177,7 @@
         <div class="location">Baturaden</div>
 
         <div class="btn-wrap">
-          <button>Details</button>
+          <button onclick="openModal()">Details</button>
         </div>
 
       </div>
@@ -283,6 +283,107 @@
   <p>© 2026 ChillZone. All rights reserved.</p>
   <p>Create your vibe · Zone your moment · Own your experience</p>
 </footer>
+<div id="bayanModal" class="modal-overlay" onclick="closeModalOutside(event)">
+  <div class="modal-container">
+    <button class="close-modal" onclick="closeModal()">&times;</button>
+    
+    <div class="modal-main">
+        <div class="modal-left">
+            <div class="modal-tab-menu">
+                <button class="m-tab-btn active" onclick="switchModalTab(event, 'm-about', 'm-img-about')">About</button>
+                <button class="m-tab-btn" onclick="switchModalTab(event, 'm-menu', 'm-img-menu')">Menu</button>
+                <button class="m-tab-btn" onclick="switchModalTab(event, 'm-vibes', 'm-img-vibes')">The Vibes</button>
+                <button class="m-tab-btn" onclick="switchModalTab(event, 'm-contact', 'm-img-contact')">Contact</button>
+            </div>
 
+            <div id="m-about" class="m-panel active">
+                <h2>Bayan Village & Cafe</h2>
+                <p>Tourist attraction and culinary spot with an open nature concept in the Baturraden area, offering a cool mountain atmosphere with views of forests and rivers. It is suitable for hanging out, healing, and gathering with friends or family.</p>
+                <div class="m-info-section">
+                    <div class="m-info-title">Location</div>
+                    <div class="m-info-desc">Dusun III Kalipagu, Ketenger, Baturraden, Banyumas Regency, Central Java</div>
+                    <div class="m-info-title">Opening Hours</div>
+                    <div class="m-info-desc">Everyday - 08.00 am - 22.00 pm</div>
+                    <div class="m-info-title">Price Range Bayan Resto</div>
+                    <div class="m-info-desc">Rp 25.000 - Rp 150.000</div>
+                    <div class="m-info-title">Price Range Bayan Village</div>
+                    <div class="m-info-desc">Starting from Rp 400.000</div>
+                </div>
+            </div>
+
+            <div id="m-menu" class="m-panel">
+                <h2>Bayan Village & Cafe</h2>
+                <p>Bayan Village offers a variety of food and beverages that are perfect to enjoy in an open-air natural setting. The menu is quite diverse, ranging from heavy meals and light snacks to hot and refreshing drinks such as coffee, tea, and fruit juices.</p>
+                <div class="m-info-section">
+                    <div class="m-info-title">Menu Favorit / Price List</div>
+                    <div class="m-info-desc">Silakan lihat lampiran brosur menu asli di sebelah kanan untuk info harga lengkap.
+                    </div>
+                </div>
+            </div>
+
+            <div id="m-vibes" class="m-panel">
+                <h2>Bayan Village & Cafe</h2>
+                <ul class="m-list">
+                    <li>Cool and refreshing open-air natural atmosphere</li>
+                    <li>Calming views of forests and flowing rivers</li>
+                    <li>Many aesthetic and Instagram-worthy photo spots</li>
+                    <li>Indoor and outdoor seating areas</li>
+                    <li>Spacious parking area & Prayer room (Mushola)</li>
+                    <li>Live music at certain times</li>
+                </ul>
+                <div class="m-info-section" style="margin-top: 15px;">
+                    <div class="m-info-title">Payment Method</div>
+                    <div class="m-info-desc">✓ Tunai &nbsp; ✓ Non-Tunai (QRIS)</div>
+                </div>
+            </div>
+
+            <div id="m-contact" class="m-panel">
+                <h2>Arasta Alpha, Overste Isdiman</h2>
+                <div class="m-info-section" style="border: none; padding-top: 0; margin-top: 10px;">
+                    <ul class="m-list">
+                        <li><strong>📞 Telepon:</strong> 0858-6524-2070</li>
+                        <li><strong>📸 Instagram:</strong> @bayanvillageby</li>
+                        <li><strong>📍 Wilayah:</strong> Purwokerto Timur</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-right">
+            <img id="m-img-about" class="active" src="../../GAMBAR UNTUK SPOT/bayan-village.png" alt="About Bayan">
+            <img id="m-img-menu" src="../../GAMBAR UNTUK SPOT/menu-curugbayan.jpeg" alt="Menu Bayan">
+            <img id="m-img-vibes" src="../../GAMBAR UNTUK SPOT/bayan-vibes.png" alt="Vibes Bayan">
+            <img id="m-img-contact" src="../../GAMBAR UNTUK SPOT/bayan-contact.png" alt="Contact Bayan">
+        </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    function openModal() {
+        document.getElementById('bayanModal').classList.add('show');
+    }
+    function closeModal() {
+        document.getElementById('bayanModal').classList.remove('show');
+    }
+    function closeModalOutside(event) {
+        if (event.target.id === 'bayanModal') { closeModal(); }
+    }
+    function switchModalTab(event, tabId, imgId) {
+        const panels = document.querySelectorAll('.m-panel');
+        panels.forEach(p => p.classList.remove('active'));
+
+        const images = document.querySelectorAll('.modal-right img');
+        images.forEach(img => img.classList.remove('active'));
+
+        const buttons = document.querySelectorAll('.m-tab-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        document.getElementById(tabId).classList.add('active');
+        document.getElementById(imgId).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+    
+</script>
 </body>
 </html>

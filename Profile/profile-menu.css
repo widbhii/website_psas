@@ -8,21 +8,22 @@
 
 /* Base Background Halaman Luar */
 body.profile-menu-page {
-  background-color: #E2DCD5; /* Warna abu-abu cream luar figma */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #E2DCD5; 
   min-height: 100vh;
-  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Menyusun navbar di atas, card di bawah */
+  align-items: center;    /* Nengahin navbar dan card secara horizontal */
+  padding: 0 0 50px 0;    /* Jarak aman di bawah card biar ga mepet layar */
 }
 
 /* WIDGET CARD WRAPPER UTAMA */
 .menu-card-container {
-  width: 960px; /* Gunakan pixel untuk ukuran tetap */
-  background-color: #ECE6DF; /* Warna cream di dalam kotak figma */
+  width: 960px; 
+  margin-top: 140px; /* <--- TAMBAHKAN BARIS INI (Beri jarak dari navbar) */
+  background-color: #ECE6DF; 
   position: relative;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
-  overflow: visible; /* Biar badge profil kucing bisa keluar melewati garis */
+  overflow: visible; 
   display: flex;
   flex-direction: column;
 }
@@ -170,10 +171,3 @@ body.profile-menu-page {
   z-index: 9999; /* Maksa navbar biar gak tenggelam */
 }
 
-body.profile-menu-page {
-  display: flex;
-  flex-direction: column; /* Maksa navbar di atas, card di bawah */
-  justify-content: flex-start;
-  align-items: center;
-  padding-top: 140px !important; /* Ngasih jarak biar card gak ketutup navbar */
-}
