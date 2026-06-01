@@ -14,7 +14,7 @@ if(!isset($_SESSION['user_id'])){
 
       alert('Please login first!');
 
-      window.location='../LOGIN_SIGNUP/Login/login.html';
+      window.location='../LOGIN_SIGNUP/Login/login.php';
 
     </script>
 

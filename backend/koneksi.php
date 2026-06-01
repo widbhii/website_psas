@@ -1,17 +1,15 @@
 <?php
 
 $conn = mysqli_connect(
-
     "localhost",
     "root",
     "",
-    "website_psas"
-
+    "chillzone"
 );
 
 if(!$conn){
 
-    die("Koneksi gagal");
+    die("Koneksi database gagal: " . mysqli_connect_error());
 
 }
 

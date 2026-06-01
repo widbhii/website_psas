@@ -1,6 +1,6 @@
 <?php
 
-include "config.php";
+include "koneksi.php";
 
 /* =========================
    AMBIL DATA FORM
@@ -23,7 +23,7 @@ if(
     echo "
     <script>
       alert('Semua data wajib diisi!');
-      window.location='../LOGIN_SIGNUP/Signup/signup.html';
+      window.location='../LOGIN_SIGNUP/Signup/signup.php';
     </script>
     ";
 
@@ -39,7 +39,7 @@ if(strlen($password) < 8){
     echo "
     <script>
       alert('Password harus minimal 8 karakter!');
-      window.location='../LOGIN_SIGNUP/Signup/signup.html';
+      window.location='../LOGIN_SIGNUP/Signup/signup.php';
     </script>
     ";
 
@@ -58,7 +58,7 @@ for($i = 0; $i < strlen($username); $i++){
         echo "
         <script>
           alert('Username tidak boleh memakai spasi!');
-          window.location='../LOGIN_SIGNUP/Signup/signup.html';
+          window.location='../LOGIN_SIGNUP/Signup/signup.php';
         </script>
         ";
 
@@ -89,7 +89,7 @@ if($hasNumber == false){
     echo "
     <script>
       alert('Password harus memiliki angka!');
-      window.location='../LOGIN_SIGNUP/Signup/signup.html';
+      window.location='../LOGIN_SIGNUP/Signup/signup.php';
     </script>
     ";
 
@@ -117,7 +117,7 @@ while($row = mysqli_fetch_assoc($check)){
         echo "
         <script>
           alert('Email sudah terdaftar!');
-          window.location='../LOGIN_SIGNUP/Signup/signup.html';
+          window.location='../LOGIN_SIGNUP/Signup/signup.php';
         </script>
         ";
 
@@ -131,7 +131,7 @@ while($row = mysqli_fetch_assoc($check)){
         echo "
         <script>
           alert('Username sudah dipakai!');
-          window.location='../LOGIN_SIGNUP/Signup/signup.html';
+          window.location='../LOGIN_SIGNUP/Signup/signup.php';
         </script>
         ";
 
@@ -173,7 +173,7 @@ mysqli_query($conn, $sql);
 echo "
 <script>
   alert('Signup berhasil!');
-  window.location='../LOGIN_SIGNUP/Login/login.html';
+  window.location='../LOGIN_SIGNUP/Login/login.php';
 </script>
 ";
 
