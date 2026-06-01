@@ -13,7 +13,8 @@ $query = mysqli_query(
 $conn,
 
 "SELECT * FROM spots
-WHERE category='Nature'"
+WHERE category='Nature'
+ORDER BY title ASC"
 
 );
 
@@ -73,20 +74,33 @@ include "../../navbar.php";
     <!-- CATEGORY -->
     <div class="category-box">
 
-      <a
-        href="spot_nature.php"
-        class="active"
-      >
-        Nature
-      </a>
+    <a
+    href="../Nature_Spot/spot_nature.php"
+    class="active"
+    >
+    Nature
+    </a>
 
-      <a href="../Coffee_Spot/spot_coffee.php">
+    <a href="../Coffee_Spot/spot_coffee.php">
         Coffee
-      </a>
+    </a>
 
-      <a href="../Places_Spot/spot_places.php">
-        Places
-      </a>
+    <a
+    href="../Places_Spot/spot_places.php"
+    >
+    Places
+    </a>
+
+    <?php if(isset($_SESSION['user_id'])){ ?>
+
+    <a
+        href="../Add_Spot/add_spot.php"
+        class="add-spot-menu"
+    >
+        + Add Spot
+    </a>
+
+    <?php } ?>
 
     </div>
 

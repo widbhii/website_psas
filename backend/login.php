@@ -2,7 +2,7 @@
 
 session_start();
 
-include "config.php";
+include "koneksi.php";
 
 /* =========================
    AMBIL DATA FORM
@@ -23,7 +23,7 @@ if(empty($email) || empty($password)){
 
       alert('Data harus diisi!');
 
-      window.location='../LOGIN_SIGNUP/Login/login.html';
+      window.location='../LOGIN_SIGNUP/Login/login.php';
 
     </script>
     ";
@@ -96,7 +96,7 @@ if(mysqli_num_rows($result) == 1){
 
           alert('Email atau Password salah!');
 
-          window.location='../LOGIN_SIGNUP/Login/login.html';
+          window.location='../LOGIN_SIGNUP/Login/login.php';
 
         </script>
         ";
@@ -116,7 +116,7 @@ else{
 
       alert('Email atau Password salah!');
 
-      window.location='../LOGIN_SIGNUP/Login/login.html';
+      window.location='../LOGIN_SIGNUP/Login/login.php';
 
     </script>
     ";

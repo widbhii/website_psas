@@ -1,0 +1,267 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+
+  min-height:100vh;
+
+  background:#CFC3BD;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  padding:40px 20px;
+
+  font-family:'Poppins',sans-serif;
+
+}
+
+/* =========================
+   CARD
+========================= */
+
+.spot-card{
+
+  width:100%;
+  max-width:520px;
+
+  background:#F8F3EF;
+
+  border-radius:28px;
+
+  padding:42px 38px;
+
+  border:1px solid #E5D7D1;
+
+  box-shadow:
+  0 12px 30px
+  rgba(76,49,42,0.08);
+
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.spot-title{
+
+  font-family:'Boogaloo',cursive;
+
+  font-size:60px;
+
+  color:#4C312A;
+
+  text-align:center;
+
+  line-height:1;
+
+  margin-bottom:10px;
+
+}
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.spot-subtitle{
+
+  text-align:center;
+
+  color:#6B554D;
+
+  font-size:15px;
+
+  margin-bottom:34px;
+
+}
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.form-group{
+
+  margin-bottom:22px;
+
+}
+
+/* =========================
+   LABEL
+========================= */
+
+.form-label{
+
+  display:block;
+
+  margin-bottom:10px;
+
+  font-size:18px;
+  font-weight:600;
+
+  color:#4C312A;
+
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.form-input{
+
+  width:100%;
+
+  padding:14px 16px;
+
+  border:1.5px solid #DCCDC7;
+
+  border-radius:14px;
+
+  background:#FFFDFC;
+
+  color:#4C312A;
+
+  font-size:15px;
+
+  font-family:'Poppins',sans-serif;
+
+  outline:none;
+
+  transition:.2s ease;
+
+}
+
+/* =========================
+   FOCUS
+========================= */
+
+.form-input:focus{
+
+  border-color:#4C312A;
+
+  background:white;
+
+}
+
+/* =========================
+   SELECT
+========================= */
+
+select{
+
+  cursor:pointer;
+
+}
+
+/* =========================
+   TEXTAREA
+========================= */
+
+textarea{
+
+  resize:none;
+
+}
+
+/* =========================
+   FILE INPUT
+========================= */
+
+input[type="file"]{
+
+  padding:12px;
+
+  background:white;
+
+  cursor:pointer;
+
+}
+
+/* =========================
+   PREVIEW
+========================= */
+
+.preview-image{
+
+  width:100%;
+
+  height:220px;
+
+  object-fit:cover;
+
+  border-radius:16px;
+
+  border:1px solid #DCCDC7;
+
+  margin-top:12px;
+
+  display:none;
+
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.submit-btn{
+
+  width:100%;
+  height:54px;
+
+  margin-top:10px;
+
+  border:none;
+  border-radius:50px;
+
+  background:#4C312A;
+
+  color:white;
+
+  font-family:'Alatsi',sans-serif;
+
+  font-size:18px;
+
+  cursor:pointer;
+
+  transition:.25s ease;
+
+}
+
+.submit-btn:hover{
+
+  background:#35211C;
+
+  color:#FFD97C;
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  .spot-card{
+
+    padding:34px 24px;
+
+  }
+
+  .spot-title{
+
+    font-size:48px;
+
+  }
+
+}
