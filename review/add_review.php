@@ -1,6 +1,26 @@
 <?php
 
 include "../backend/session.php";
+include "../backend/config.php";
+
+/* =========================
+   AMBIL DATA SPOTS
+========================= */
+
+$spots = [];
+
+$query = mysqli_query(
+    $conn,
+    "SELECT title, category
+     FROM spots
+     ORDER BY category, title"
+);
+
+while($row = mysqli_fetch_assoc($query)){
+
+    $spots[] = $row;
+
+}
 
 ?>
 
@@ -8,273 +28,234 @@ include "../backend/session.php";
 <html lang="en">
 <head>
 
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
 
-  <title>
-    Write Review - ChillZone
-  </title>
+<title>
+Write Review - ChillZone
+</title>
 
-  <!-- FONT -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Poppins:wght@300;400;500;600;700&family=Alatsi&display=swap"
-    rel="stylesheet"
-  >
+<link
+href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Poppins:wght@300;400;500;600;700&family=Alatsi&display=swap"
+rel="stylesheet"
+>
 
-  <!-- CSS -->
-  <link
-    rel="stylesheet"
-    href="add_review.css"
-  >
+<link
+rel="stylesheet"
+href="add_review.css"
+>
 
 </head>
 
 <body>
 
-<!-- REVIEW FORM -->
 <div class="review-card">
 
-  <!-- TITLE -->
-  <h2 class="review-title">
-    Write Your Review
-  </h2>
+<h2 class="review-title">
+Write Your Review
+</h2>
 
-  <p class="review-subtitle">
-    Share your experience with ChillZone places.
-  </p>
+<p class="review-subtitle">
+Share your experience with ChillZone places.
+</p>
 
-  <!-- FORM -->
-  <form
-    action="../backend/add_review.php"
-    method="POST"
-    class="review-form"
-  >
+<form
+action="../backend/add_review.php"
+method="POST"
+class="review-form"
+>
 
-    <!-- NAME -->
-    <div class="form-group">
+<!-- NAME -->
 
-      <label class="form-label">
-        Full Name
-      </label>
+<div class="form-group">
 
-      <input
-      type="text"
-      name="username"
-      class="form-input"
-      placeholder="Enter your name..."
-      value="<?php echo $_SESSION['username']; ?>"
-      required
-      >
+<label class="form-label">
+Full Name
+</label>
 
-    </div>
-
-    <!-- CATEGORY -->
-    <div class="form-group">
-
-      <label class="form-label">
-        Choose Category
-      </label>
-
-      <select
-        id="categorySelect"
-        name="category"
-        class="form-input"
-        required
-      >
-
-        <option value="">
-          Select Category
-        </option>
-
-        <option value="Nature">
-          Nature
-        </option>
-
-        <option value="Coffee">
-          Coffee
-        </option>
-
-        <option value="Places">
-          Places
-        </option>
-
-      </select>
-
-    </div>
-
-    <!-- PLACE -->
-    <div class="form-group">
-
-      <label class="form-label">
-        Choose Place
-      </label>
-
-      <select
-        id="placeSelect"
-        name="place_name"
-        class="form-input"
-        required
-      >
-
-        <option value="">
-          Select Place
-        </option>
-
-      </select>
-
-    </div>
-
-    <!-- RATING -->
-    <div class="form-group">
-
-      <label class="form-label">
-        Rating
-      </label>
-
-      <div class="star-rating">
-
-        <button
-          type="button"
-          data-value="1"
-          class="star-btn"
-        >
-          ★
-        </button>
-
-        <button
-          type="button"
-          data-value="2"
-          class="star-btn"
-        >
-          ★
-        </button>
-
-        <button
-          type="button"
-          data-value="3"
-          class="star-btn"
-        >
-          ★
-        </button>
-
-        <button
-          type="button"
-          data-value="4"
-          class="star-btn"
-        >
-          ★
-        </button>
-
-        <button
-          type="button"
-          data-value="5"
-          class="star-btn"
-        >
-          ★
-        </button>
-
-      </div>
-
-      <!-- VALUE -->
-      <input
-        type="hidden"
-        name="rating"
-        id="ratingValue"
-        value="0"
-        required
-      >
-
-    </div>
-
-    <!-- REVIEW -->
-    <div class="form-group">
-
-      <label class="form-label">
-        Review
-      </label>
-
-      <textarea
-        name="review_text"
-        class="form-input"
-        rows="5"
-        placeholder="Tell your experience..."
-        required
-      ></textarea>
-
-    </div>
-
-    <!-- BUTTON -->
-    <button
-      type="submit"
-      class="submit-btn"
-    >
-      Submit Review
-    </button>
-
-  </form>
+<input
+type="text"
+name="username"
+class="form-input"
+value="<?php echo $_SESSION['username']; ?>"
+required
+readonly
+>
 
 </div>
 
-<!-- SCRIPT -->
+<!-- CATEGORY -->
+
+<div class="form-group">
+
+<label class="form-label">
+Choose Category
+</label>
+
+<select
+id="categorySelect"
+name="category"
+class="form-input"
+required
+>
+
+<option value="">
+Select Category
+</option>
+
+<?php
+
+$categories = [];
+
+foreach($spots as $spot){
+
+    if(!in_array(
+        $spot['category'],
+        $categories
+    )){
+
+        $categories[] =
+        $spot['category'];
+
+        echo "
+
+        <option value='".$spot['category']."'>
+        ".$spot['category']."
+        </option>
+
+        ";
+
+    }
+
+}
+
+?>
+
+</select>
+
+</div>
+
+<!-- PLACE -->
+
+<div class="form-group">
+
+<label class="form-label">
+Choose Place
+</label>
+
+<select
+id="placeSelect"
+name="place_name"
+class="form-input"
+required
+>
+
+<option value="">
+Select Place
+</option>
+
+</select>
+
+</div>
+
+<!-- RATING -->
+
+<div class="form-group">
+
+<label class="form-label">
+Rating
+</label>
+
+<div class="star-rating">
+
+<button
+type="button"
+class="star-btn"
+>
+★
+</button>
+
+<button
+type="button"
+class="star-btn"
+>
+★
+</button>
+
+<button
+type="button"
+class="star-btn"
+>
+★
+</button>
+
+<button
+type="button"
+class="star-btn"
+>
+★
+</button>
+
+<button
+type="button"
+class="star-btn"
+>
+★
+</button>
+
+</div>
+
+<input
+type="hidden"
+name="rating"
+id="ratingValue"
+value="0"
+required
+>
+
+</div>
+
+<!-- REVIEW -->
+
+<div class="form-group">
+
+<label class="form-label">
+Review
+</label>
+
+<textarea
+name="review_text"
+class="form-input"
+rows="5"
+placeholder="Tell your experience..."
+required
+></textarea>
+
+</div>
+
+<button
+type="submit"
+class="submit-btn"
+>
+Submit Review
+</button>
+
+</form>
+
+</div>
+
 <script>
 
 /* =========================
-   DATA TEMPAT
+   DATA SPOTS DARI DATABASE
 ========================= */
 
-const places = {
-
-  Nature: [
-
-    "Mount Slamet",
-    "Baturraden Tourist Attraction",
-    "Bayan Village & Cafe",
-    "Limpakuwus Pine Forest",
-    "Germanggis",
-    "Menggala Ranch",
-    "Curug Jenggala Waterfall",
-    "Tirta Sela Waterfall",
-    "Bayan Waterfall",
-    "Silent Lake Waterfall",
-    "Angel Waterfall"
-
-  ],
-
-  Coffee: [
-
-    "Bayan Village & Cafe",
-    "Arasta Alpha, Overste Isdiman",
-    "Lembah Patih",
-    "Ethos Digital Valley",
-    "Cerita Alam",
-    "Ebony Cafe",
-    "L@ Puerto",
-    "Social House",
-    "AT NINE Coffee and Space",
-    "Alas House",
-    "Fore Coffee"
-
-  ],
-
-  Places: [
-
-    "Rita Supermall",
-    "Menara Pandang Teratai",
-    "Bayan Village & Cafe",
-    "The Village",
-    "Small World",
-    "The Forest Island",
-    "Arcelio Aquapark",
-    "Andhang Pangrenan Park",
-    "Happy Time"
-
-  ]
-
-};
+const spots =
+<?php echo json_encode($spots); ?>;
 
 /* =========================
    SELECT
@@ -298,73 +279,95 @@ categorySelect.addEventListener(
 "change",
 () => {
 
-  const selectedCategory =
-  categorySelect.value;
+const selectedCategory =
+categorySelect.value;
 
-  placeSelect.innerHTML =
+placeSelect.innerHTML =
 
-  '<option value="">Select Place</option>';
+'<option value="">Select Place</option>';
 
-  if(selectedCategory in places){
+spots.forEach(spot => {
 
-    places[selectedCategory]
-    .forEach(place => {
+if(
+spot.category ===
+selectedCategory
+){
 
-      const option =
-      document.createElement("option");
+const option =
+document.createElement(
+"option"
+);
 
-      option.value = place;
+option.value =
+spot.title;
 
-      option.textContent = place;
+option.textContent =
+spot.title;
 
-      placeSelect.appendChild(option);
+placeSelect.appendChild(
+option
+);
 
-    });
-
-  }
+}
 
 });
+
+}
+);
 
 /* =========================
    STAR RATING
 ========================= */
 
 const stars =
-document.querySelectorAll(".star-btn");
+document.querySelectorAll(
+".star-btn"
+);
 
 const ratingValue =
 document.getElementById(
 "ratingValue"
 );
 
-stars.forEach((star, index) => {
+stars.forEach(
+(star,index) => {
 
-  star.addEventListener("click", () => {
+star.addEventListener(
+"click",
+() => {
 
-    const value =
-    index + 1;
+const value =
+index + 1;
 
-    ratingValue.value = value;
+ratingValue.value =
+value;
 
-    stars.forEach((s, i) => {
+stars.forEach(
+(s,i) => {
 
-      if(i < value){
+if(i < value){
 
-        s.classList.add("active");
+s.classList.add(
+"active"
+);
 
-      }
+}
+else{
 
-      else{
+s.classList.remove(
+"active"
+);
 
-        s.classList.remove("active");
+}
 
-      }
+}
+);
 
-    });
+}
+);
 
-  });
-
-});
+}
+);
 
 </script>
 

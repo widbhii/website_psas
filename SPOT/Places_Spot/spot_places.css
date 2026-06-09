@@ -270,6 +270,60 @@ body{
 }
 
 /* =========================
+   DELETE BUTTON
+========================= */
+
+.delete-form{
+
+  position:absolute;
+
+  top:16px;
+
+  right:68px;
+
+  z-index:10;
+
+}
+
+.delete-icon{
+
+  width:42px;
+
+  height:42px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:#4C312A;
+
+  color:#FFD97C;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:18px;
+
+  cursor:pointer;
+
+  transition:0.3s ease;
+
+}
+
+.delete-icon:hover{
+
+  background:#B04A4A;
+
+  color:white;
+
+  transform:scale(1.08);
+
+}
+
+/* =========================
    IMAGE
 ========================= */
 

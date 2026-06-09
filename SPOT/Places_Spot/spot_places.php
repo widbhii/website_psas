@@ -136,7 +136,7 @@ include "../../navbar.php";
 
       data-name="<?php echo $spot['title']; ?>"
 
-      data-image="../../GAMBAR UNTUK SPOT/<?php echo $spot['image']; ?>"
+      data-image="../../uploads/<?php echo $spot['image']; ?>"
 
       data-location="<?php echo $spot['location']; ?>"
 
@@ -153,9 +153,50 @@ include "../../navbar.php";
         ★
       </label>
 
+      <?php
+
+if(
+isset($_SESSION['user_id'])
+&&
+$_SESSION['user_id']
+==
+$spot['created_by']
+){
+
+?>
+
+<form
+class="delete-form"
+action="../../backend/delete_spot.php"
+method="POST"
+onsubmit="return confirm('Delete this spot?')"
+>
+
+<input
+type="hidden"
+name="spot_id"
+value="<?php echo $spot['id']; ?>"
+>
+
+<button
+type="submit"
+class="delete-icon"
+title="Delete Spot"
+>
+🗑
+</button>
+
+</form>
+
+<?php
+
+}
+
+?>
+
       <!-- IMAGE -->
       <img
-        src="../../GAMBAR UNTUK SPOT/<?php echo $spot['image']; ?>"
+        src="../../uploads/<?php echo $spot['image']; ?>"
         class="card-img"
       >
 
@@ -185,7 +226,7 @@ include "../../navbar.php";
             </button>
 
           </a>
-
+          
         </div>
 
       </div>
