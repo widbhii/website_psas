@@ -1,4 +1,49 @@
 /* =========================
+   DARK MODE
+========================= */
+
+body.dark{
+  background:#1E1E1E;
+  color:white;
+}
+
+body.dark .settings-content h1,
+body.dark .back-link,
+body.dark .input-group label{
+  color:white;
+}
+
+body.dark .sidebar{
+  background:#121212;
+}
+
+body.dark .sidebar-btn{
+  background:#2D2D2D;
+  color:white;
+}
+
+body.dark .sidebar-btn.active{
+  background:#F2D36F;
+  color:black;
+}
+
+body.dark .input-group select,
+body.dark .input-group input{
+  background:#2D2D2D;
+  color:white;
+  border:1px solid #555;
+}
+
+body.dark .save-profile-btn{
+  background:#F2D36F;
+  color:black;
+}
+
+body.dark .save-profile-btn:hover{
+  background:#EAC85A;
+}
+
+/* =========================
    RESET
 ========================= */
 
@@ -30,6 +75,7 @@ body{
 
 .sidebar{
   background:#4C312A;
+
   padding-top:70px;
 
   display:flex;
@@ -46,9 +92,9 @@ body{
   border-radius:50px;
 
   background:#D8C9C4;
-  color:#000 !important;
+  color:#000;
 
-  text-decoration:none !important;
+  text-decoration:none;
 
   font-family:'Alatsi',sans-serif;
   font-size:22px;
@@ -58,11 +104,6 @@ body{
   justify-content:center;
 
   transition:.2s ease;
-}
-
-.sidebar-btn:link,
-.sidebar-btn:visited{
-  color:#000 !important;
 }
 
 .sidebar-btn.active{
@@ -90,25 +131,20 @@ body{
 
   margin-bottom:18px;
 
-  color:#4C312A !important;
+  text-decoration:none;
 
-  text-decoration:none !important;
+  color:#4C312A;
 
-  font-family:'Poppins',sans-serif;
   font-size:18px;
   font-weight:500;
 }
 
-.back-link:link{
-  color:#4C312A !important;
+.back-link:hover{
+  text-decoration:underline;
 }
 
 .back-link:visited{
-  color:#4C312A !important;
-}
-
-.back-link:hover{
-  text-decoration:underline !important;
+  color:#4C312A;
 }
 
 /* =========================
@@ -117,6 +153,7 @@ body{
 
 .settings-content h1{
   font-family:'Alatsi',sans-serif;
+
   font-size:72px;
   font-weight:400;
 
@@ -165,6 +202,22 @@ body{
 }
 
 /* =========================
+   EDIT ICON
+========================= */
+
+.edit-icon{
+  position:absolute;
+
+  right:10px;
+  bottom:10px;
+
+  width:46px;
+  height:46px;
+
+  cursor:pointer;
+}
+
+/* =========================
    USER INFO
 ========================= */
 
@@ -185,6 +238,7 @@ body{
 
 .profile-info h2{
   font-family:'Alatsi',sans-serif;
+
   font-size:32px;
   font-weight:400;
 
@@ -294,6 +348,110 @@ input[type="file"]{
 }
 
 /* =========================
+   PREFERENCES FORM
+========================= */
+
+.preferences-form{
+  width:100%;
+  max-width:700px;
+}
+
+.input-group select{
+
+  width:100%;
+
+  height:62px;
+
+  padding:0 20px;
+
+  border:1.5px solid #7A5A4F;
+
+  border-radius:18px;
+
+  background:white;
+
+  font-size:16px;
+
+  outline:none;
+
+  cursor:pointer;
+
+}
+
+.input-group select:focus{
+  border-color:#4C312A;
+}
+
+/* =========================
+   TOGGLE
+========================= */
+
+.switch{
+
+  position:relative;
+
+  display:inline-block;
+
+  width:80px;
+
+  height:42px;
+
+}
+
+.switch input{
+  display:none;
+}
+
+.slider{
+
+  position:absolute;
+
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+
+  background:#ccc;
+
+  border-radius:50px;
+
+  transition:.3s;
+
+}
+
+.slider:before{
+
+  content:"";
+
+  position:absolute;
+
+  width:34px;
+  height:34px;
+
+  left:4px;
+  bottom:4px;
+
+  background:white;
+
+  border-radius:50%;
+
+  transition:.3s;
+
+}
+
+.switch input:checked + .slider{
+
+  background:#00D44A;
+
+}
+
+.switch input:checked + .slider:before{
+
+  transform:translateX(38px);
+
+}
+
+/* =========================
    RESPONSIVE
 ========================= */
 
@@ -340,6 +498,7 @@ input[type="file"]{
   .profile-info{
     width:100%;
     height:auto;
+
     padding:20px;
   }
 

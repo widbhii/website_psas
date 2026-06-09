@@ -1,48 +1,38 @@
 <div class="sidebar">
 
-  <!-- ACCOUNT -->
-  <a
+    <a
     href="/website_psas/PROFILE_ACCOUNT/Profile/Profile_Settings/profile-settings.php"
+    class="sidebar-btn <?php if($menu=='account') echo 'active'; ?>"
+    >
+        Account Settings
+    </a>
 
-    class="sidebar-btn <?php if($menu == 'account') echo 'active'; ?>"
-  >
-    Account Settings
-  </a>
+    <a
+    href="/website_psas/PROFILE_ACCOUNT/Profile/Preferences/preferences.php"
+    class="sidebar-btn <?php if($menu=='preferences') echo 'active'; ?>"
+    >
+        Preferences
+    </a>
 
-  <!-- PREFERENCES -->
-  <a
-    href="/website_psas/PROFILE_ACCOUNT/Preferences/preferences.php"
+    <a
+    href="/website_psas/PROFILE_ACCOUNT/Profile/Saved_Content/saved.php"
+    class="sidebar-btn <?php if($menu=='saved') echo 'active'; ?>"
+    >
+        Saved Content
+    </a>
 
-    class="sidebar-btn <?php if($menu == 'preferences') echo 'active'; ?>"
-  >
-    Preferences
-  </a>
-
-  <!-- SAVED -->
-  <a
-    href="/website_psas/PROFILE_ACCOUNT/Saved_Content/saved.php"
-
-    class="sidebar-btn <?php if($menu == 'saved') echo 'active'; ?>"
-  >
-    Saved Content
-  </a>
-
-  <!-- SUPPORT -->
-  <a
+    <a
     href="/website_psas/PROFILE_ACCOUNT/Support/support.php"
+    class="sidebar-btn <?php if($menu=='support') echo 'active'; ?>"
+    >
+        Support
+    </a>
 
-    class="sidebar-btn <?php if($menu == 'support') echo 'active'; ?>"
-  >
-    Support
-  </a>
-
-  <!-- LOGOUT -->
-  <a
-    href="/website_psas/backend/logout.php"
-
-    class="sidebar-btn"
-  >
+    <a
+href="/website_psas/PROFILE_ACCOUNT/Logout/logout.php"
+class="sidebar-btn <?php if($menu=='logout') echo 'active'; ?>"
+>
     Log Out
-  </a>
+</a>
 
 </div>

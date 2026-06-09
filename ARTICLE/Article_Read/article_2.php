@@ -63,7 +63,7 @@ include "../../navbar.php";
   <div class="article-image-wrap">
 
     <img
-      src="../../GAMBAR UNTUK SPOT/article2.png"
+      src="../../uploads/article2.png"
       class="article-image"
     >
 

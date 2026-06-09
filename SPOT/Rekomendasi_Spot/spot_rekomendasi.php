@@ -16,6 +16,32 @@ $query = mysqli_query(
 
 );
 
+/* CEK SPOT YANG SUDAH DISAVE USER */
+
+$saved_spots = [];
+
+if(isset($_SESSION['user_id'])){
+
+    $user_id = $_SESSION['user_id'];
+
+    $saved_query = mysqli_query(
+
+        $conn,
+
+        "SELECT spot_id
+         FROM saved_spots
+         WHERE user_id='$user_id'"
+
+    );
+
+    while($row = mysqli_fetch_assoc($saved_query)){
+
+        $saved_spots[] = $row['spot_id'];
+
+    }
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -136,15 +162,32 @@ include "../../navbar.php";
             data-category="<?php echo strtolower($spot['category']); ?>"
         >
 
-            <!-- SAVE -->
-            <input
-                type="checkbox"
-                class="save-toggle"
-            >
+         <!-- SAVE -->
+<input
+    type="checkbox"
+    id="save-<?php echo $spot['id']; ?>"
+    class="save-toggle"
 
-            <label class="save-btn">
-                ★
-            </label>
+    data-spot="<?php echo $spot['id']; ?>"
+
+    <?php
+    if(
+        in_array(
+            $spot['id'],
+            $saved_spots
+        )
+    ){
+        echo "checked";
+    }
+    ?>
+>
+
+<label
+    for="save-<?php echo $spot['id']; ?>"
+    class="save-btn"
+>
+    ★
+</label>
 
             <?php
 
@@ -216,16 +259,34 @@ title="Delete Spot"
                 </div>
 
                 <div class="btn-wrap">
+                    <?php
+if(
+isset($_SESSION['user_id'])
+&&
+$_SESSION['user_id'] == $spot['created_by']
+){
+?>
+
+<a
+href="../Edit_Spot/edit_spot.php?id=<?php echo $spot['id']; ?>"
+>
+    <button
+    type="button"
+    class="edit-card-btn"
+    >
+        Edit
+    </button>
+</a>
+
+<?php } ?>
 
     <a
-        href="../Detail Spot/detail_spot.php?id=<?php echo $spot['id']; ?>"
-    >
-
-        <button type="button">
-            Details
-        </button>
-
-    </a>
+href="../Detail_Spot/detail_spot.php?id=<?php echo $spot['id']; ?>"
+>
+    <button type="button">
+        Details
+    </button>
+</a>
 
 </div>
 
@@ -260,6 +321,7 @@ title="Delete Spot"
 </footer>
 
 <!-- SEARCH SCRIPT -->
+<!-- SEARCH SCRIPT -->
 <script>
 
 /* =========================
@@ -267,14 +329,10 @@ title="Delete Spot"
 ========================= */
 
 const searchInput =
-document.getElementById(
-"searchInput"
-);
+document.getElementById("searchInput");
 
 const spotCards =
-document.querySelectorAll(
-".spot-card"
-);
+document.querySelectorAll(".spot-card");
 
 searchInput.addEventListener(
 "keyup",
@@ -287,19 +345,13 @@ function(){
     spotCards.forEach(card => {
 
         const spotName =
-        card.getAttribute(
-        "data-name"
-        );
+        card.getAttribute("data-name");
 
         const location =
-        card.getAttribute(
-        "data-location"
-        );
+        card.getAttribute("data-location");
 
         const category =
-        card.getAttribute(
-        "data-category"
-        );
+        card.getAttribute("data-category");
 
         if(
 
@@ -315,17 +367,65 @@ function(){
 
         ){
 
-            card.style.display =
-            "block";
+            card.style.display = "block";
 
         }
 
         else{
 
-            card.style.display =
-            "none";
+            card.style.display = "none";
 
         }
+
+    });
+
+});
+
+/* =========================
+   SAVE SPOT
+========================= */
+
+document
+.querySelectorAll(".save-toggle")
+.forEach(toggle => {
+
+    toggle.addEventListener(
+    "change",
+
+    function(){
+
+        const spotId =
+        this.dataset.spot;
+
+        fetch(
+    "../../backend/save_spot.php",
+    {
+        method: "POST",
+
+        headers: {
+            "Content-Type":
+            "application/x-www-form-urlencoded"
+        },
+
+        body:
+        "spot_id=" +
+        encodeURIComponent(spotId)
+    }
+)
+
+.then(response => response.text())
+
+.then(data => {
+
+    console.log(data);
+
+})
+
+.catch(error => {
+
+    console.log(error);
+
+});
 
     });
 

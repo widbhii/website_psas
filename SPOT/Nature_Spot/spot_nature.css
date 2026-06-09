@@ -385,6 +385,20 @@ body{
 
   justify-content:flex-end;
 
+  gap:10px;
+
+}
+
+.edit-card-btn{
+
+  background:#8A6A55 !important;
+
+}
+
+.edit-card-btn:hover{
+
+  background:#6E5342 !important;
+
 }
 
 .btn-wrap a{
@@ -484,5 +498,33 @@ footer{
     gap:30px;
 
   }
+
+  .btn-wrap{
+
+  display:flex;
+
+  justify-content:flex-end;
+
+  gap:10px;
+
+}
+
+.edit-card-btn{
+
+  background:#8A6A55 !important;
+
+}
+
+.edit-card-btn:hover{
+
+  background:#6E5342 !important;
+
+}
+
+.btn-wrap a{
+
+  text-decoration:none;
+
+}
 
 }

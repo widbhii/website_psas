@@ -1,83 +1,67 @@
 <?php
 
-$conn = mysqli_connect(
-    "localhost",
-    "root",
-    "",
-    "website_psas"
-);
+include "session.php";
+include "config.php";
 
-if(!$conn){
+/* HARUS LOGIN */
 
-    die("Connection failed");
-
+if(!isset($_SESSION['user_id'])){
+    exit("Login required");
 }
 
-/* DATA */
+/* HARUS ADA SPOT ID */
 
-$spot_id =
-$_POST['spot_id'];
+if(!isset($_POST['spot_id'])){
+    exit("Spot ID missing");
+}
 
-$spot_name =
-$_POST['spot_name'];
+$user_id = $_SESSION['user_id'];
 
-$spot_image =
-$_POST['spot_image'];
+$spot_id = (int)$_POST['spot_id'];
 
-$location =
-$_POST['location'];
+/* CEK SUDAH ADA ATAU BELUM */
 
-$category =
-$_POST['category'];
+$check = mysqli_query(
 
-/* CEK DUPLIKAT */
-
-$check =
-mysqli_query(
     $conn,
-    "SELECT * FROM saved_spots
-     WHERE spot_id='$spot_id'"
+
+    "SELECT *
+     FROM saved_spots
+     WHERE user_id='$user_id'
+     AND spot_id='$spot_id'"
+
 );
 
 if(mysqli_num_rows($check) > 0){
 
-    echo "already";
+    mysqli_query(
+
+        $conn,
+
+        "DELETE FROM saved_spots
+         WHERE user_id='$user_id'
+         AND spot_id='$spot_id'"
+
+    );
+
+    echo "removed";
 
 }
-
 else{
 
-    $query =
-    "INSERT INTO saved_spots
-    (
-      spot_id,
-      spot_name,
-      spot_image,
-      location,
-      category
-    )
+    mysqli_query(
 
-    VALUES
-    (
-      '$spot_id',
-      '$spot_name',
-      '$spot_image',
-      '$location',
-      '$category'
-    )";
+        $conn,
 
-    if(mysqli_query($conn, $query)){
+        "INSERT INTO saved_spots
+        (user_id, spot_id)
 
-        echo "saved";
+        VALUES
 
-    }
+        ('$user_id','$spot_id')"
 
-    else{
+    );
 
-        echo "failed";
-
-    }
+    echo "saved";
 
 }
-
-?>

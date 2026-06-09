@@ -1,0 +1,299 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+
+    min-height:100vh;
+
+    background:#D9CFCA;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px 20px;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+/* =========================
+   CARD
+========================= */
+
+.detail-card{
+
+    width:100%;
+    max-width:1000px;
+
+    background:#F8F3EF;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 12px 30px
+    rgba(0,0,0,.08);
+
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.detail-image{
+
+    width:100%;
+    height:450px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.detail-content{
+
+    padding:35px;
+
+}
+
+/* =========================
+   CATEGORY
+========================= */
+
+.category{
+
+    display:inline-block;
+
+    background:#F2D36F;
+
+    color:#4C312A;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+    margin-bottom:15px;
+
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.detail-content h1{
+
+    font-family:'Boogaloo',cursive;
+
+    font-size:56px;
+
+    color:#4C312A;
+
+    margin-bottom:15px;
+
+}
+
+/* =========================
+   LOCATION
+========================= */
+
+.location{
+
+    color:#6D564E;
+
+    font-size:18px;
+
+    margin-bottom:25px;
+
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.description{
+
+    color:#4C312A;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+    margin-bottom:35px;
+
+}
+
+/* =========================
+   INFO BOX
+========================= */
+
+.spot-info{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-bottom:35px;
+
+}
+
+.info-box{
+
+    flex:1;
+
+    min-width:180px;
+
+    background:#F7F1ED;
+
+    border:1px solid #E6D7D1;
+
+    padding:18px;
+
+    border-radius:16px;
+
+}
+
+.info-box h3{
+
+    color:#4C312A;
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+.info-box p{
+
+    color:#5D4A43;
+
+    font-size:15px;
+
+}
+
+/* =========================
+   VIBES SECTION
+========================= */
+
+.vibes-section{
+
+    margin-bottom:35px;
+
+}
+
+.vibes-section h2{
+
+    font-family:'Boogaloo',cursive;
+
+    font-size:40px;
+
+    color:#4C312A;
+
+    margin-bottom:15px;
+
+}
+
+.vibes-image{
+
+    width:100%;
+
+    max-height:500px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    border:1px solid #E6D7D1;
+
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn{
+
+    display:inline-block;
+
+    background:#4C312A;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:14px 26px;
+
+    border-radius:50px;
+
+    font-family:'Alatsi',sans-serif;
+
+    transition:.25s ease;
+
+}
+
+.back-btn:hover{
+
+    background:#2F1D19;
+
+    color:#FFD97C;
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .detail-image{
+
+        height:250px;
+
+    }
+
+    .detail-content{
+
+        padding:25px;
+
+    }
+
+    .detail-content h1{
+
+        font-size:42px;
+
+    }
+
+    .spot-info{
+
+        flex-direction:column;
+
+    }
+
+    .vibes-section h2{
+
+        font-size:32px;
+
+    }
+
+}
