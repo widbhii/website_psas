@@ -1,32 +1,59 @@
 <?php
 
-$conn = mysqli_connect(
-    "localhost",
-    "root",
-    "",
-    "website_psas"
-);
+include "session.php";
+include "config.php";
 
-if(!$conn){
+header('Content-Type: application/json');
 
-    die("Connection failed");
-
+if(!isset($_SESSION['user_id'])){
+    echo json_encode([]);
+    exit();
 }
 
-$query =
-"SELECT * FROM saved_spots";
+$user_id = $_SESSION['user_id'];
 
-$result =
-mysqli_query($conn, $query);
+$query = mysqli_query(
+
+    $conn,
+
+    "SELECT
+
+        spots.id,
+        spots.title,
+        spots.location,
+        spots.category,
+        spots.image
+
+    FROM saved_spots
+
+    INNER JOIN spots
+
+    ON saved_spots.spot_id = spots.id
+
+    WHERE saved_spots.user_id = '$user_id'
+
+    ORDER BY spots.title ASC"
+
+);
 
 $data = [];
 
-while($row = mysqli_fetch_assoc($result)){
+while($row = mysqli_fetch_assoc($query)){
 
-    $data[] = $row;
+    $data[] = [
+
+        "spot_id"   => $row['id'],
+
+        "spot_name" => $row['title'],
+
+        "location"  => $row['location'],
+
+        "category"  => $row['category'],
+
+        "spot_image" => "/website_psas/uploads/" . $row['image']
+
+    ];
 
 }
 
 echo json_encode($data);
-
-?>

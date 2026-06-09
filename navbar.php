@@ -1,95 +1,63 @@
 <header class="navbar">
 
-  <div class="nav-inner">
+    <div class="nav-inner">
 
-    <!-- LOGO -->
-    <h1 class="logo">
-      ChillZone
-    </h1>
+        <!-- LOGO -->
+        <h1 class="logo">
+            ChillZone
+        </h1>
 
-    <!-- MENU -->
-    <nav class="menu">
+        <!-- MENU -->
+        <nav class="menu">
 
-      <!-- HOME -->
-      <a 
-        href="/website_psas/HOME/home.php"
+            <!-- HOME -->
+            <a
+                href="/website_psas/HOME/home.php"
+                class="<?php echo ($page == 'home') ? 'active' : ''; ?>"
+            >
+                Home
+            </a>
 
-        class="<?php
+            <!-- SPOTS -->
+            <a
+                href="/website_psas/SPOT/Rekomendasi_Spot/spot_rekomendasi.php"
+                class="<?php echo ($page == 'spots') ? 'active' : ''; ?>"
+            >
+                Spots
+            </a>
 
-        if($page == 'home'){
+            <!-- REVIEW -->
+            <a
+                href="/website_psas/REVIEW/review.php"
+                class="<?php echo ($page == 'review') ? 'active' : ''; ?>"
+            >
+                Review
+            </a>
 
-          echo 'active';
+            <!-- ARTICLE -->
+            <a
+                href="/website_psas/ARTICLE/article.php"
+                class="<?php echo ($page == 'article') ? 'active' : ''; ?>"
+            >
+                Article
+            </a>
 
-        }
+        </nav>
 
-        ?>"
-      >
-        Home
-      </a>
+        <!-- PROFILE -->
+        <a
+            href="/website_psas/PROFILE_ACCOUNT/Profile/Profile_Menu/profile-menu.php"
+            class="profile-link"
+        >
 
-      <!-- SPOTS -->
-      <a 
-        href="/website_psas/SPOT/Rekomendasi_Spot/spot_rekomendasi.php"
+            <img
+                src="/website_psas/KEBUTUHAN ELEMENT/user icon 1.png"
+                class="profile"
+                alt="Profile"
+            >
 
-        class="<?php
+        </a>
 
-        if($page == 'spots'){
-
-          echo 'active';
-
-        }
-
-        ?>"
-      >
-        Spots
-      </a>
-
-      <!-- REVIEW -->
-      <a 
-        href="/website_psas/REVIEW/review.php"
-
-        class="<?php
-
-        if($page == 'review'){
-
-          echo 'active';
-
-        }
-
-        ?>"
-      >
-        Review
-      </a>
-
-      <!-- ARTICLE -->
-      <a 
-        href="/website_psas/ARTICLE/article.php"
-
-        class="<?php
-
-        if($page == 'article'){
-
-          echo 'active';
-
-        }
-
-        ?>"
-      >
-        Article
-      </a>
-
-    </nav>
-
-    <!-- PROFILE -->
-    <a href="/website_psas/PROFILE_ACCOUNT/profile-menu.php">
-
-      <img
-        src="/website_psas/KEBUTUHAN ELEMENT/user icon 1.png"
-        class="profile"
-      >
-
-    </a>
-
-  </div>
+    </div>
 
 </header>

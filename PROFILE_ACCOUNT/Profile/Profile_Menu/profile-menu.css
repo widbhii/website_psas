@@ -1,0 +1,360 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#D9CFCA;
+  overflow-x:hidden;
+  font-family:'Poppins',sans-serif;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.menu-card-container{
+  width:100%;
+  min-height:100vh;
+  background:#D9CFCA;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.menu-card-header{
+  width:100%;
+  height:320px;
+
+  background:#4C312A;
+
+  position:relative;
+  overflow:hidden;
+}
+
+/* =========================
+   LOVE IMAGE
+========================= */
+
+.love-art{
+  position:absolute;
+
+  top:-10px;
+  right:-5px;
+
+  width:360px;
+  height:auto;
+
+  object-fit:contain;
+}
+
+/* =========================
+   WRAPPER
+========================= */
+
+.container{
+  width:100%;
+  max-width:1440px;
+  margin:auto;
+}
+
+/* =========================
+   BODY
+========================= */
+
+.menu-card-body{
+  display:grid;
+
+  grid-template-columns:1fr 420px;
+
+  gap:80px;
+
+  align-items:start;
+
+  padding:
+  0
+  120px
+  70px
+  120px;
+}
+
+/* =========================
+   LEFT
+========================= */
+
+.body-left-content{
+  position:relative;
+}
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+.floating-user-badge{
+  display:flex;
+
+  align-items:center;
+
+  gap:22px;
+
+  margin-top:-70px;
+
+  position:relative;
+  z-index:10;
+}
+
+/* =========================
+   PROFILE IMAGE
+========================= */
+
+.user-avatar-box{
+  width:190px;
+  height:190px;
+
+  border-radius:50%;
+
+  position:relative;
+
+  flex-shrink:0;
+}
+
+.avatar-img{
+  width:100%;
+  height:100%;
+
+  border-radius:50%;
+
+  object-fit:cover;
+
+  border:5px solid #F2D36F;
+}
+
+/* =========================
+   EDIT ICON
+========================= */
+
+.edit-profile-icon{
+  position:absolute;
+
+  bottom:8px;
+  right:8px;
+
+  width:46px;
+  height:46px;
+
+  cursor:pointer;
+}
+
+/* =========================
+   USER INFO
+========================= */
+
+.user-info-text-box{
+  width:340px;
+  height:100px;
+
+  background:#F2D36F;
+
+  border-radius:28px;
+
+  padding:14px 28px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.user-info-text-box h4{
+  font-family:'Alatsi',sans-serif;
+
+  font-size:32px;
+  font-weight:400;
+
+  margin-bottom:4px;
+
+  color:#000;
+}
+
+.user-info-text-box p{
+  font-size:18px;
+  color:#000;
+}
+
+/* =========================
+   CHILLZONE IMAGE
+========================= */
+
+.chillzone-banner-img{
+  width:100%;
+  max-width:820px;
+
+  margin-top:40px;
+
+  display:block;
+}
+
+/* =========================
+   RIGHT MENU
+========================= */
+
+.body-right-navigation{
+  display:flex;
+
+  flex-direction:column;
+
+  gap:28px;
+
+  margin-top:120px;
+
+  width:100%;
+
+  align-items:center;
+}
+
+/* =========================
+   MENU LINK
+========================= */
+
+.menu-link{
+  width:100%;
+  text-decoration:none;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.nav-capsule-btn{
+  width:100%;
+
+  height:92px;
+
+  border:none;
+  border-radius:60px;
+
+  background:#5A3427;
+
+  color:white;
+
+  font-family:'Alatsi',sans-serif;
+  font-size:32px;
+
+  cursor:pointer;
+
+  transition:.25s ease;
+}
+
+.nav-capsule-btn:hover{
+  transform:scale(1.03);
+
+  background:#6A4030;
+}
+
+.menu-link{
+
+    width:340px;
+    height:95px;
+
+    background:#4C312A;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-family:'Alatsi',sans-serif;
+    font-size:28px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    transition:.2s ease;
+}
+
+.menu-link:hover{
+
+    background:#F2D36F;
+    color:#000;
+
+    transform:scale(1.03);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+  .menu-card-body{
+
+    grid-template-columns:1fr;
+
+    padding:
+    0
+    40px
+    60px
+    40px;
+  }
+
+  .body-right-navigation{
+    margin-top:60px;
+  }
+
+  .floating-user-badge{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .menu-card-header{
+    height:250px;
+  }
+
+  .love-art{
+    width:240px;
+  }
+
+  .menu-card-body{
+
+    padding:
+    0
+    20px
+    50px
+    20px;
+  }
+
+  .user-avatar-box{
+    width:140px;
+    height:140px;
+  }
+
+  .user-info-text-box{
+    width:100%;
+    height:auto;
+  }
+
+  .user-info-text-box h4{
+    font-size:24px;
+  }
+
+  .user-info-text-box p{
+    font-size:16px;
+  }
+
+  .nav-capsule-btn{
+    height:78px;
+    font-size:24px;
+  }
+
+}
