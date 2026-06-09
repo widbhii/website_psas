@@ -36,7 +36,6 @@ body{
 
 .review-title{
   text-align: center;
-
   margin-bottom: 45px;
 }
 
@@ -91,11 +90,13 @@ body{
 }
 
 .review-card:hover{
+
   transform: translateY(-6px);
 
   box-shadow:
   0 10px 24px
   rgba(0,0,0,0.08);
+
 }
 
 /* =========================
@@ -112,7 +113,7 @@ body{
 }
 
 /* =========================
-   PROFILE CIRCLE
+   PROFILE
 ========================= */
 
 .profile-circle{
@@ -135,19 +136,12 @@ body{
   background: #A86A4A;
 }
 
-.green{
-  background: #5C8A67;
-}
-
-.blue{
-  background: #5C79B8;
-}
-
 /* =========================
    NAME
 ========================= */
 
 .review-top h3{
+
   font-family: 'Alatsi', sans-serif;
 
   font-size: 26px;
@@ -163,6 +157,7 @@ body{
 ========================= */
 
 .stars{
+
   font-size: 16px;
 
   letter-spacing: 2px;
@@ -175,6 +170,7 @@ body{
 ========================= */
 
 .place-tag{
+
   display: inline-block;
 
   margin-top: 10px;
@@ -192,8 +188,6 @@ body{
 
   font-size: 14px;
   font-weight: 600;
-
-  font-family: 'Poppins', sans-serif;
 }
 
 /* =========================
@@ -201,6 +195,7 @@ body{
 ========================= */
 
 .review-text{
+
   font-size: 15px;
 
   line-height: 28px;
@@ -211,20 +206,94 @@ body{
 }
 
 /* =========================
+   REVIEW DATE
+========================= */
+
+.review-date{
+
+  display: block;
+
+  margin-top: 14px;
+
+  color: #9A8A83;
+
+  font-size: 12px;
+
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   REVIEW ACTIONS
+========================= */
+
+.review-actions{
+
+  margin-top: 18px;
+
+  display: flex;
+
+  justify-content: flex-end;
+}
+
+/* =========================
+   DELETE BUTTON
+========================= */
+
+.delete-btn{
+
+  background: #F4E8E2;
+
+  color: #8A5B4C;
+
+  border: 1px solid #D8C8C1;
+
+  border-radius: 999px;
+
+  padding:
+  10px
+  18px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  font-family: 'Poppins', sans-serif;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.delete-btn:hover{
+
+  background: #8A5B4C;
+
+  color: white;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+  0 8px 20px
+  rgba(138,91,76,0.25);
+}
+
+/* =========================
    BUTTON WRAP
 ========================= */
 
 .review-btn-wrap{
+
   text-align: center;
 
   margin-top: 55px;
 }
 
 /* =========================
-   BUTTON
+   WRITE BUTTON
 ========================= */
 
 .write-btn{
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -246,6 +315,7 @@ body{
 }
 
 .write-btn:hover{
+
   background: #35211C;
 
   color: #FFD97C;
@@ -254,10 +324,26 @@ body{
 }
 
 /* =========================
+   EMPTY REVIEW
+========================= */
+
+.empty-review{
+
+  font-size: 18px;
+
+  color: #6B554D;
+
+  text-align: center;
+
+  width: 100%;
+}
+
+/* =========================
    FOOTER
 ========================= */
 
 footer{
+
   text-align: center;
 
   padding:
@@ -276,6 +362,7 @@ footer{
 @media(max-width:768px){
 
   .review-section{
+
     padding:
     110px
     20px
@@ -283,37 +370,31 @@ footer{
   }
 
   .review-title h2{
+
     font-size: 54px;
   }
 
   .review-title p{
+
     font-size: 14px;
   }
 
   .review-card{
+
     width: 100%;
   }
 
   .review-top h3{
+
     font-size: 22px;
   }
 
   .write-btn{
+
     width: 200px;
     height: 48px;
 
     font-size: 15px;
   }
-
-  /* EMPTY REVIEW */
-
-  .empty-review{
-  font-size: 18px;
-  color: #6B554D;
-
-  text-align: center;
-
-  width: 100%;
-}
 
 }

@@ -5,83 +5,99 @@ session_start();
 include "config.php";
 
 /* =========================
-   AMBIL DATA SESSION
+   CEK LOGIN
 ========================= */
 
-$user_id =
-$_SESSION['user_id'];
-
-/* =========================
-   AMBIL DATA FORM
-========================= */
-
-$username =
-$_POST['username'];
-
-$category =
-$_POST['category'];
-
-$place_name =
-$_POST['place_name'];
-
-$rating =
-$_POST['rating'];
-
-$review_text =
-$_POST['review_text'];
-
-/* =========================
-   VALIDASI
-========================= */
-
-if(
-
-    empty($username) ||
-    empty($category) ||
-    empty($place_name) ||
-    empty($rating) ||
-    empty($review_text)
-
-){
+if (!isset($_SESSION['user_id'])) {
 
     echo "
-
     <script>
-
-      alert('All fields must be filled!');
-
-      window.history.back();
-
+        alert('Please login first!');
+        window.location='../LOGIN_SIGNUP/Login/login.php';
     </script>
-
     ";
 
     exit;
 }
 
 /* =========================
-   INSERT DATABASE
+   AMBIL DATA SESSION
+========================= */
+
+$user_id = $_SESSION['user_id'];
+
+/* =========================
+   AMBIL DATA FORM
+========================= */
+
+$place_name = trim($_POST['place_name']);
+$rating = trim($_POST['rating']);
+$review_text = trim($_POST['review_text']);
+
+/* =========================
+   VALIDASI
+========================= */
+
+if (
+    empty($place_name) ||
+    empty($rating) ||
+    empty($review_text)
+) {
+
+    echo "
+    <script>
+        alert('All fields must be filled!');
+        window.history.back();
+    </script>
+    ";
+
+    exit;
+}
+
+/* =========================
+   CARI SPOT BERDASARKAN TITLE
+========================= */
+
+$spotQuery = mysqli_query(
+    $conn,
+    "SELECT id FROM spots WHERE title='$place_name'"
+);
+
+if (mysqli_num_rows($spotQuery) == 0) {
+
+    echo "
+    <script>
+        alert('Place not found!');
+        window.history.back();
+    </script>
+    ";
+
+    exit;
+}
+
+$spotData = mysqli_fetch_assoc($spotQuery);
+
+$spot_id = $spotData['id'];
+
+/* =========================
+   INSERT REVIEW
 ========================= */
 
 $sql = "
 
 INSERT INTO reviews(
 
+spot_id,
 user_id,
-username,
-category,
-place_name,
 rating,
-review_text
+comment
 
 )
 
 VALUES(
 
+'$spot_id',
 '$user_id',
-'$username',
-'$category',
-'$place_name',
 '$rating',
 '$review_text'
 
@@ -89,24 +105,25 @@ VALUES(
 
 ";
 
-/* JALANKAN */
+$result = mysqli_query($conn, $sql);
 
-mysqli_query($conn, $sql);
+if (!$result) {
+
+    die(mysqli_error($conn));
+}
 
 /* =========================
    BERHASIL
 ========================= */
 
 echo "
-
 <script>
 
-  alert('Review submitted successfully!');
+alert('Review submitted successfully!');
 
-  window.location='../REVIEW/review.php';
+window.location='../REVIEW/review.php';
 
 </script>
-
 ";
 
 ?>

@@ -2,24 +2,53 @@
 
 include "config.php";
 
-/* AMBIL REVIEW TERBARU */
+$sql = "
 
-$sql = "SELECT * FROM reviews
-ORDER BY created_at DESC";
+SELECT
+
+reviews.id,
+reviews.user_id,
+reviews.rating,
+reviews.comment,
+reviews.created_at,
+
+users.username,
+
+spots.title AS place_name
+
+FROM reviews
+
+JOIN users
+ON reviews.user_id = users.id
+
+JOIN spots
+ON reviews.spot_id = spots.id
+
+ORDER BY reviews.created_at DESC
+
+";
 
 $result = mysqli_query($conn, $sql);
 
 $reviews = [];
 
-/* LOOP DATA */
-
 while($row = mysqli_fetch_assoc($result)){
 
-    $reviews[] = $row;
+    $reviews[] = [
+
+        "id" => $row["id"],
+        "user_id" => $row["user_id"],
+        "username" => $row["username"],
+        "place_name" => $row["place_name"],
+        "rating" => $row["rating"],
+        "review_text" => $row["comment"],
+        "created_at" => $row["created_at"]
+
+    ];
 
 }
 
-/* KIRIM JSON */
+header("Content-Type: application/json");
 
 echo json_encode($reviews);
 

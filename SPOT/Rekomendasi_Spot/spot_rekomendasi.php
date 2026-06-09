@@ -146,9 +146,50 @@ include "../../navbar.php";
                 ★
             </label>
 
+            <?php
+
+if(
+isset($_SESSION['user_id'])
+&&
+$_SESSION['user_id']
+==
+$spot['created_by']
+){
+
+?>
+
+<form
+class="delete-form"
+action="../../backend/delete_spot.php"
+method="POST"
+onsubmit="return confirm('Delete this spot?')"
+>
+
+<input
+type="hidden"
+name="spot_id"
+value="<?php echo $spot['id']; ?>"
+>
+
+<button
+type="submit"
+class="delete-icon"
+title="Delete Spot"
+>
+🗑
+</button>
+
+</form>
+
+<?php
+
+}
+
+?>
+
             <!-- IMAGE -->
             <img
-                src="../../GAMBAR UNTUK SPOT/<?php echo $spot['image']; ?>"
+                src="../../uploads/<?php echo $spot['image']; ?>"
                 class="card-img"
                 alt="<?php echo $spot['title']; ?>"
             >
@@ -176,19 +217,17 @@ include "../../navbar.php";
 
                 <div class="btn-wrap">
 
-                    <a
-                        href="../Detail Spot/detail_spot.php?id=<?php echo $spot['id']; ?>"
-                    >
+    <a
+        href="../Detail Spot/detail_spot.php?id=<?php echo $spot['id']; ?>"
+    >
 
-                        <button type="button">
+        <button type="button">
+            Details
+        </button>
 
-                            Details
+    </a>
 
-                        </button>
-
-                    </a>
-
-                </div>
+</div>
 
             </div>
 
@@ -223,72 +262,74 @@ include "../../navbar.php";
 <!-- SEARCH SCRIPT -->
 <script>
 
+/* =========================
+   SEARCH SPOT
+========================= */
+
 const searchInput =
 document.getElementById(
-    "searchInput"
+"searchInput"
 );
 
 const spotCards =
 document.querySelectorAll(
-    ".spot-card"
+".spot-card"
 );
 
 searchInput.addEventListener(
-    "keyup",
+"keyup",
 
-    function(){
+function(){
 
-        const keyword =
-        searchInput.value.toLowerCase();
+    const keyword =
+    searchInput.value.toLowerCase();
 
-        spotCards.forEach(card => {
+    spotCards.forEach(card => {
 
-            const spotName =
-            card.getAttribute(
-                "data-name"
-            );
+        const spotName =
+        card.getAttribute(
+        "data-name"
+        );
 
-            const location =
-            card.getAttribute(
-                "data-location"
-            );
+        const location =
+        card.getAttribute(
+        "data-location"
+        );
 
-            const category =
-            card.getAttribute(
-                "data-category"
-            );
+        const category =
+        card.getAttribute(
+        "data-category"
+        );
 
-            if(
+        if(
 
-                spotName.includes(keyword)
+            spotName.includes(keyword)
 
-                ||
+            ||
 
-                location.includes(keyword)
+            location.includes(keyword)
 
-                ||
+            ||
 
-                category.includes(keyword)
+            category.includes(keyword)
 
-            ){
+        ){
 
-                card.style.display =
-                "block";
+            card.style.display =
+            "block";
 
-            }
+        }
 
-            else{
+        else{
 
-                card.style.display =
-                "none";
+            card.style.display =
+            "none";
 
-            }
+        }
 
-        });
+    });
 
-    }
-
-);
+});
 
 </script>
 

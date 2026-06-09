@@ -19,13 +19,11 @@ include "../backend/session.php";
     Review - ChillZone
   </title>
 
-  <!-- FONT -->
   <link
     href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Poppins:wght@300;400;500;600;700&family=Alatsi&display=swap"
     rel="stylesheet"
   >
 
-  <!-- CSS -->
   <link
     rel="stylesheet"
     href="../style.css"
@@ -40,20 +38,16 @@ include "../backend/session.php";
 
 <body>
 
-    <?php
+<?php
 
-    $page = "review";
-    
-    include "../navbar.php";
+$page = "review";
 
-  ?>  
+include "../navbar.php";
 
-  </div>
+?>
 
-<!-- REVIEW -->
 <section class="review-section">
 
-  <!-- TITLE -->
   <div class="review-title">
 
     <h2>
@@ -66,7 +60,6 @@ include "../backend/session.php";
 
   </div>
 
-  <!-- REVIEW WRAP -->
   <div
     class="review-wrap"
     id="reviewWrap"
@@ -74,7 +67,6 @@ include "../backend/session.php";
 
   </div>
 
-  <!-- BUTTON -->
   <div class="review-btn-wrap">
 
     <a
@@ -88,7 +80,6 @@ include "../backend/session.php";
 
 </section>
 
-<!-- FOOTER -->
 <footer>
 
   <p>
@@ -101,8 +92,14 @@ include "../backend/session.php";
 
 </footer>
 
-<!-- SCRIPT -->
 <script>
+
+/* =========================
+   USER LOGIN
+========================= */
+
+const currentUserId =
+<?php echo $_SESSION['user_id']; ?>;
 
 /* =========================
    CONTAINER
@@ -123,8 +120,6 @@ fetch("../backend/fetch_review.php")
 
 .then(data => {
 
-  /* EMPTY */
-
   if(data.length === 0){
 
     reviewWrap.innerHTML = `
@@ -138,11 +133,7 @@ fetch("../backend/fetch_review.php")
     return;
   }
 
-  /* LOOP */
-
   data.forEach(review => {
-
-    /* BINTANG */
 
     let stars = "";
 
@@ -152,31 +143,61 @@ fetch("../backend/fetch_review.php")
 
     }
 
-    /* INISIAL */
-
     const initials =
 
     review.username
     .substring(0,2)
     .toUpperCase();
 
-    /* CARD */
+    let deleteButton = "";
+
+    if(review.user_id == currentUserId){
+
+      deleteButton = `
+
+      <div class="review-actions">
+
+        <form
+          action="../backend/delete_review.php"
+          method="POST"
+          onsubmit="return confirm('Delete this review?')"
+        >
+
+          <input
+            type="hidden"
+            name="review_id"
+            value="${review.id}"
+          >
+
+          <button
+            type="submit"
+            class="delete-btn"
+          >
+
+            🗑 Delete Review
+
+          </button>
+
+        </form>
+
+      </div>
+
+      `;
+
+    }
 
     reviewWrap.innerHTML += `
 
       <div class="review-card">
 
-        <!-- TOP -->
         <div class="review-top">
 
-          <!-- PROFILE -->
           <div class="profile-circle brown">
 
             ${initials}
 
           </div>
 
-          <!-- USER -->
           <div>
 
             <h3>
@@ -184,26 +205,34 @@ fetch("../backend/fetch_review.php")
             </h3>
 
             <div class="stars">
+
               ${stars}
+
             </div>
 
           </div>
 
         </div>
 
-        <!-- PLACE -->
         <div class="place-tag">
 
           ${review.place_name}
 
         </div>
 
-        <!-- REVIEW -->
         <p class="review-text">
 
           "${review.review_text}"
 
         </p>
+
+        <span class="review-date">
+
+          ${review.created_at}
+
+        </span>
+
+        ${deleteButton}
 
       </div>
 
