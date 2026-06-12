@@ -42,7 +42,7 @@ href="logout.css"
     <div class="settings-content">
 
         <a
-        href="../Profile/Profile_Menu/profile-menu.php"
+        href="../Profile_Menu/profile-menu.php"
         class="back-link"
         >
             ← Back to Profile
@@ -52,26 +52,37 @@ href="logout.css"
             Log Out
         </h1>
 
+        <!-- LOGOUT -->
+
         <div class="logout-section">
 
             <h2>
-                Log Out
+                Sign Out
             </h2>
 
             <div class="info-box">
 
-                Sign out from your account
+                Log out from your ChillZone account on this device.
 
             </div>
 
             <a
             href="../../backend/logout.php"
+
             class="logout-btn"
+
+            onclick="
+            return confirm(
+            'Are you sure you want to log out?'
+            );
+            "
             >
                 Log Out
             </a>
 
         </div>
+
+        <!-- DELETE ACCOUNT -->
 
         <div class="logout-section">
 
@@ -81,20 +92,20 @@ href="logout.css"
 
             <div class="info-box">
 
-                Permanently remove your account and data
+                Permanently remove your account and all associated data.
 
             </div>
 
             <a
             href="../../backend/delete_account.php"
 
+            class="delete-btn"
+
             onclick="
             return confirm(
-            'Delete account permanently?'
+            'This action cannot be undone. Delete account permanently?'
             );
             "
-
-            class="delete-btn"
             >
                 Delete Account
             </a>

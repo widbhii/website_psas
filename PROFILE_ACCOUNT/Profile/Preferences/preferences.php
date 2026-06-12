@@ -1,42 +1,18 @@
 <?php
 
 include "../../../backend/session.php";
-include "../../../backend/config.php";
 
 if(!isset($_SESSION['user_id'])){
     header("Location: ../../../LOGIN_SIGNUP/Login/login.php");
     exit();
 }
 
-$user_id = $_SESSION['user_id'];
-
-$query = mysqli_query(
-
-    $conn,
-
-    "SELECT
-        language,
-        theme,
-        location_preference
-    FROM users
-    WHERE id='$user_id'"
-
-);
-
-$user = mysqli_fetch_assoc($query);
-
 $menu = "preferences";
-
-/* THEME */
-
-$current_theme =
-strtolower(
-    $user['theme']
-);
 
 ?>
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 
@@ -45,6 +21,7 @@ strtolower(
 <meta
 name="viewport"
 content="width=device-width, initial-scale=1.0"
+
 >
 
 <title>
@@ -63,161 +40,122 @@ href="preferences.css"
 
 </head>
 
-<body class="<?php echo $current_theme; ?>">
+<body>
 
 <div class="settings-container">
 
-    <?php include "../../../sidebar.php"; ?>
+<?php include "../../../sidebar.php"; ?>
 
-    <div class="settings-content">
+<div class="settings-content">
 
-        <a
-        href="../Profile_Menu/profile-menu.php"
-        class="back-link"
-        >
-            ← Back to Profile
-        </a>
+    <a
+    href="../Profile_Menu/profile-menu.php"
+    class="back-link"
+    >
+        ← Back to Profile
+    </a>
 
-        <h1>
-            Preferences
-        </h1>
+    <h1>
+        Preferences
+    </h1>
 
-        <?php
-        if(isset($_GET['success'])){
-        ?>
-        <p
-        style="
-        color:green;
-        margin-bottom:20px;
-        font-weight:600;
-        "
-        >
-            Preferences saved successfully!
+    <div class="preferences-card">
+
+        <h2>
+            Customize Your Experience
+        </h2>
+
+        <p>
+            ChillZone automatically personalizes your experience
+            based on your activity, saved content, reviews,
+            and interests.
         </p>
-        <?php
-        }
-        ?>
 
-        <form
+        <div class="preference-box">
 
-        class="preferences-form"
+            <div>
 
-        action="../../../backend/save_preferences.php"
+                <h3>
+                    Personalized Recommendations
+                </h3>
 
-        method="POST"
-
-        >
-
-            <!-- LANGUAGE -->
-
-            <div class="input-group">
-
-                <label>
-                    Language
-                </label>
-
-                <select name="language">
-
-                    <option
-                    value="English"
-                    <?php
-                    if($user['language']=="English"){
-                        echo "selected";
-                    }
-                    ?>
-                    >
-                        English
-                    </option>
-
-                    <option
-                    value="Indonesia"
-                    <?php
-                    if($user['language']=="Indonesia"){
-                        echo "selected";
-                    }
-                    ?>
-                    >
-                        Indonesia
-                    </option>
-
-                </select>
+                <p>
+                    Get spot and article recommendations
+                    based on your activity.
+                </p>
 
             </div>
 
-            <!-- THEME -->
+            <span class="status">
+                Active
+            </span>
 
-            <div class="input-group">
+        </div>
 
-                <label>
-                    Theme
-                </label>
+        <div class="preference-box">
 
-                <select name="theme">
+            <div>
 
-                    <option
-                    value="Default"
-                    <?php
-                    if($user['theme']=="Default"){
-                        echo "selected";
-                    }
-                    ?>
-                    >
-                        Default
-                    </option>
+                <h3>
+                    Saved Content
+                </h3>
 
-                    <option
-                    value="Dark"
-                    <?php
-                    if($user['theme']=="Dark"){
-                        echo "selected";
-                    }
-                    ?>
-                    >
-                        Dark
-                    </option>
-
-                </select>
+                <p>
+                    Access your saved spots and articles
+                    anytime.
+                </p>
 
             </div>
 
-            <!-- LOCATION -->
+            <span class="status">
+                Active
+            </span>
 
-            <div class="input-group">
+        </div>
 
-                <label>
-                    Location Preference
-                </label>
+        <div class="preference-box">
 
-                <label class="switch">
+            <div>
 
-                    <input
-                    type="checkbox"
-                    name="location_preference"
+                <h3>
+                    Review History
+                </h3>
 
-                    <?php
-                    if($user['location_preference']==1){
-                        echo "checked";
-                    }
-                    ?>
-
-                    >
-
-                    <span class="slider"></span>
-
-                </label>
+                <p>
+                    Manage and view all your reviews.
+                </p>
 
             </div>
 
-            <button
-            type="submit"
-            class="save-profile-btn"
-            >
-                Save Preferences
-            </button>
+            <span class="status">
+                Active
+            </span>
 
-        </form>
+        </div>
+
+        <div class="preference-box">
+
+            <div>
+
+                <h3>
+                    Account Personalization
+                </h3>
+
+                <p>
+                    Your account is optimized automatically.
+                </p>
+
+            </div>
+
+            <span class="status">
+                Active
+            </span>
+
+        </div>
 
     </div>
+
+</div>
 
 </div>
 
