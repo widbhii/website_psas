@@ -2,16 +2,19 @@
 
 $conn = mysqli_connect(
 
-    "localhost",
-    "root",
-    "",
-    "chillzone"
+    "sql312.infinityfree.com",
+    "if0_42168066",
+    "ChillZOne",
+    "if0_42168066_chillzone"
 
 );
 
 if(!$conn){
 
-    die("Connection failed");
+    die(
+        "Connection failed: " .
+        mysqli_connect_error()
+    );
 
 }
 
