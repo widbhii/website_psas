@@ -1,0 +1,230 @@
+/* =========================
+   BODY
+========================= */
+
+body{
+
+    margin:0;
+
+    background:#D7CCC8;
+
+    color:#3E2723;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+/* =========================
+   ARTICLE SECTION
+========================= */
+
+.article-section{
+
+    width:100%;
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:
+    140px
+    20px
+    100px;
+
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.article-title-box{
+
+    background:#F8F3EF;
+
+    border:2px solid #6E5146;
+
+    border-radius:20px;
+
+    padding:
+    25px
+    35px;
+
+    margin-bottom:50px;
+
+}
+
+.article-title-box h1{
+
+    font-family:'Boogaloo',cursive;
+
+    font-size:58px;
+
+    line-height:1.2;
+
+    color:#4C312A;
+
+    text-align:center;
+
+    margin:0;
+
+}
+
+/* =========================
+   LINE
+========================= */
+
+.article-line{
+
+    width:85%;
+
+    height:2px;
+
+    background:#7A625A;
+
+    margin:
+    0 auto
+    50px;
+
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.article-image-wrap{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:50px;
+
+}
+
+.article-image{
+
+    width:100%;
+
+    max-width:850px;
+
+    border-radius:24px;
+
+    display:block;
+
+    object-fit:cover;
+
+    box-shadow:
+    0 10px 30px
+    rgba(0,0,0,.12);
+
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.article-content{
+
+    max-width:850px;
+
+    margin:auto;
+
+    background:#F8F3EF;
+
+    border-radius:24px;
+
+    padding:
+    35px
+    40px;
+
+    box-shadow:
+    0 8px 20px
+    rgba(0,0,0,.05);
+
+}
+
+.article-content p{
+
+    font-size:20px;
+
+    line-height:2;
+
+    color:#4C312A;
+
+    text-align:justify;
+
+    margin-bottom:28px;
+
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn{
+
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:
+    14px
+    28px;
+
+    background:#4C312A;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:50px;
+
+    transition:.3s ease;
+
+}
+
+.back-btn:hover{
+
+    background:#2F1D19;
+
+    color:#FFD97C;
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .article-section{
+
+        padding:
+        120px
+        20px
+        80px;
+
+    }
+
+    .article-title-box h1{
+
+        font-size:38px;
+
+    }
+
+    .article-content{
+
+        padding:
+        25px
+        20px;
+
+    }
+
+    .article-content p{
+
+        font-size:17px;
+
+        line-height:1.8;
+
+    }
+
+}

@@ -1,10 +1,22 @@
 <?php
 
 include "../backend/session.php";
+include "../backend/koneksi.php";
+
+$query = mysqli_query(
+
+    $conn,
+
+    "SELECT *
+     FROM articles
+     ORDER BY id DESC"
+
+);
 
 ?>
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 
@@ -13,6 +25,7 @@ include "../backend/session.php";
 <meta
 name="viewport"
 content="width=device-width, initial-scale=1.0"
+
 >
 
 <title>
@@ -46,162 +59,202 @@ include "../navbar.php";
 
 ?>
 
-<section class="article-section">
+<section class="spots">
 
-    <!-- SEARCH -->
+```
+<div class="spots-top">
 
-    <div class="search-wrap">
+    <div class="category-box">
 
-        <div class="search-box">
+        <a
+        href="article.php"
+        class="active"
+        >
+            All Articles
+        </a>
 
-            <img
-            src="../KEBUTUHAN ELEMENT/search.png"
-            class="search-icon"
-            >
+        <?php
+        if(isset($_SESSION['user_id'])){
+        ?>
+
+        <a
+        href="add_article.php"
+        class="add-spot-menu"
+        >
+            + Add Article
+        </a>
+
+        <?php
+        }
+        ?>
+
+    </div>
+
+    <div class="search-box">
+
+        <img
+        src="../KEBUTUHAN ELEMENT/search.png"
+        class="search-icon"
+        >
+
+        <input
+        type="text"
+        id="searchInput"
+        placeholder="Search article..."
+        >
+
+    </div>
+
+</div>
+
+<div class="card-wrap">
+
+    <?php
+
+    while($article = mysqli_fetch_assoc($query)){
+
+    ?>
+
+    <div
+    class="spot-card"
+    data-name="<?php echo strtolower($article['title']); ?>"
+    >
+
+        <?php
+
+        if(
+        isset($_SESSION['user_id'])
+        &&
+        $_SESSION['user_id'] == $article['created_by']
+        ){
+
+        ?>
+
+        <form
+        class="delete-form"
+        action="../backend/delete_article.php"
+        method="POST"
+        onsubmit="return confirm('Delete this article?')"
+        >
 
             <input
-            type="text"
-            id="searchInput"
-            placeholder="Search article..."
+            type="hidden"
+            name="article_id"
+            value="<?php echo $article['id']; ?>"
             >
 
-        </div>
+            <button
+            type="submit"
+            class="delete-icon"
+            >
+                🗑
+            </button>
 
-    </div>
+        </form>
 
-    <!-- ARTICLE CARDS -->
+        <?php
+        }
+        ?>
 
-    <div class="article-wrap">
-
-        <!-- ARTICLE 1 -->
-
-        <div
-        class="article-card"
-        data-name="Recommended Cozy Cafes in Purwokerto For Hanging Out"
+        <img
+        src="../uploads/<?php echo $article['image']; ?>"
+        class="card-img"
+        alt="<?php echo htmlspecialchars($article['title']); ?>"
         >
 
-            <img
-            src="../uploads/article1.png"
-            class="article-img"
-            >
+        <div class="card-content">
 
-            <div class="article-content">
+            <div class="tag">
+                Article
+            </div>
 
-                <div class="tag">
-                    Article
-                </div>
+            <h3>
 
-                <h3>
-                    Recommended Cozy Cafes in Purwokerto For Hanging Out
-                </h3>
+                <?php
 
-                <div class="btn-wrap">
+                echo htmlspecialchars(
+                    $article['title']
+                );
 
-                    <a
-                    href="Article_Read/article_1.php"
-                    >
-                        <button>
-                            Read
-                        </button>
-                    </a>
+                ?>
 
-                </div>
+            </h3>
+
+            <div class="location">
+
+                <?php
+
+                echo substr(
+
+                    strip_tags(
+                        $article['content']
+                    ),
+
+                    0,
+
+                    100
+
+                );
+
+                ?>...
 
             </div>
 
-        </div>
+            <div class="btn-wrap">
 
-        <!-- ARTICLE 2 -->
-
-        <div
-        class="article-card"
-        data-name="Fun Places in Purwokerto For Walking Around and Hanging Out"
-        >
-
-            <img
-            src="../uploads/article2.png"
-            class="article-img"
-            >
-
-            <div class="article-content">
-
-                <div class="tag">
-                    Article
-                </div>
-
-                <h3>
-                    Fun Places in Purwokerto For Walking Around and Hanging Out
-                </h3>
-
-                <div class="btn-wrap">
-
-                    <a
-                    href="Article_Read/article_2.php"
+                <a
+                href="detail_article.php?id=<?php echo $article['id']; ?>"
+                >
+                    <button
+                    type="button"
                     >
-                        <button>
-                            Read
-                        </button>
-                    </a>
+                        Read
+                    </button>
+                </a>
 
-                </div>
+                <?php
 
-            </div>
+                if(
+                isset($_SESSION['user_id'])
+                &&
+                $_SESSION['user_id']
+                ==
+                $article['created_by']
+                ){
 
-        </div>
+                ?>
 
-        <!-- ARTICLE 3 -->
-
-        <div
-        class="article-card"
-        data-name="Healing Spots in Purwokerto With The Best Natural Views"
-        >
-
-            <img
-            src="../uploads/article3.png"
-            class="article-img"
-            >
-
-            <div class="article-content">
-
-                <div class="tag">
-                    Article
-                </div>
-
-                <h3>
-                    Healing Spots in Purwokerto With The Best Natural Views
-                </h3>
-
-                <div class="btn-wrap">
-
-                    <a
-                    href="Article_Read/article_3.php"
+                <a
+                href="edit_article.php?id=<?php echo $article['id']; ?>"
+                >
+                    <button
+                    type="button"
+                    class="edit-card-btn"
                     >
-                        <button>
-                            Read
-                        </button>
-                    </a>
+                        Edit
+                    </button>
+                </a>
 
-                </div>
+                <?php
+                }
+                ?>
 
             </div>
 
         </div>
 
     </div>
+
+    <?php
+
+    }
+
+    ?>
+
+</div>
+```
 
 </section>
-
-<footer>
-
-    <p>
-        © 2026 ChillZone. All rights reserved.
-    </p>
-
-    <p>
-        Create your vibe · Zone your moment · Own your experience
-    </p>
-
-</footer>
 
 <script>
 
@@ -210,9 +263,9 @@ document.getElementById(
     "searchInput"
 );
 
-const articleCards =
+const cards =
 document.querySelectorAll(
-    ".article-card"
+    ".spot-card"
 );
 
 searchInput.addEventListener(
@@ -224,14 +277,13 @@ searchInput.addEventListener(
         const keyword =
         this.value.toLowerCase();
 
-        articleCards.forEach(card => {
+        cards.forEach(card=>{
 
             const title =
-            card.dataset.name
-            .toLowerCase();
+            card.dataset.name;
 
             if(
-                title.includes(keyword)
+            title.includes(keyword)
             ){
 
                 card.style.display =
